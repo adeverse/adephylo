@@ -18,6 +18,8 @@
 #'
 #' @aliases orthobasis.phylo me.phylo
 #'
+#' @rdname orthobasisphylo
+#'
 #' @export
 #'
 #' @param x A tree of class \code{\link[ape:read.tree]{phylo}},
@@ -145,7 +147,6 @@ orthobasis.phylo <- function(x=NULL, prox=NULL,
 
 
 
-###########
-# me.phylo
-###########
+#' @rdname orthobasisphylo
+#' @export
 me.phylo <- orthobasis.phylo

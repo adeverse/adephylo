@@ -10,6 +10,10 @@
 \title{DIstance-Based Assignment}
 \usage{
 dibas(x, ...)
+
+\method{dibas}{dist}(x, grp, method = c("default", "leaveOneOut"), ...)
+
+simDatGroups(k = 2, p = 1000, n = 10, mu = 0, sigma = 1)
 }
 \arguments{
 \item{x}{a \code{phylo} object, or a symmetric matrix of pairwise distances

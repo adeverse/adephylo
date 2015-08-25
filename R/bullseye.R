@@ -1,14 +1,4 @@
-##
-## PLOT A FAN TREE, WITH BULLSEYE LEGEND AND AXIS, AND OPTIONAL COLORS
-## FOR TIPS
-##
-## Author: Thibaut Jombart, May 2013.
-## t.jombart@imperial.ac.uk
-##
 
-############
-## bullseye
-############
 
 
 #' Fan-like phylogeny with possible representation of traits on tips

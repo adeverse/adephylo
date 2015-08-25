@@ -7,6 +7,9 @@
 \usage{
 orthobasis.phylo(x = NULL, prox = NULL, method = c("patristic", "nNodes",
   "oriAbouheif", "Abouheif", "sumDD"), a = 1)
+
+me.phylo(x = NULL, prox = NULL, method = c("patristic", "nNodes",
+  "oriAbouheif", "Abouheif", "sumDD"), a = 1)
 }
 \arguments{
 \item{x}{A tree of class \code{\link[ape:read.tree]{phylo}},

@@ -1,24 +1,24 @@
 #' Abouheif's test based on Moran's I
-#' 
+#'
 #' The test of Abouheif (1999) is designed to detect phylogenetic
 #' autocorrelation in a quantitative trait. Pavoine \emph{et al.} (2008) have
 #' shown that this tests is in fact a Moran's I test using a particular
 #' phylogenetic proximity between tips (see details). The function
 #' \code{abouheif.moran} performs basically Abouheif's test for several traits
 #' at a time, but it can incorporate other phylogenetic proximities as well.\cr
-#' 
+#'
 #' Note that the original Abouheif's proximity (Abouheif, 1999; Pavoine
 #' \emph{et al.} 2008) unifies Moran's I and Geary'c tests (Thioulouse \emph{et
 #' al.} 1995).\cr
-#' 
+#'
 #' \code{abouheif.moran} can be used in two ways:\cr - providing a data.frame
 #' of traits (\code{x}) and a matrix of phylogenetic proximities (\code{W})\cr
 #' - providing a \linkS4class{phylo4d} object (\code{x}) and specifying the
 #' type of proximity to be used (\code{method}).
-#' 
+#'
 #' \code{W} is a squared symmetric matrix whose terms are all positive or
 #' null.\cr
-#' 
+#'
 #' \code{W} is firstly transformed in frequency matrix A by dividing it by the
 #' total sum of data matrix : \deqn{a_{ij} =
 #' \frac{W_{ij}}{\sum_{i=1}^{n}\sum_{j=1}^{n}W_{ij}}}{a_ij = W_ij / (sum_i
@@ -26,7 +26,7 @@
 #' diag(d_1,d_2, \ldots)} where \eqn{d_i = \sum_{j=1}^{n}W_{ij}}{d_i = sum_j
 #' W_ij}. For each vector x of the data frame x, the test is based on the Moran
 #' statistic \eqn{x^{t}Ax}{t(x)Ax} where x is D-centred.
-#' 
+#'
 #' @param x a data frame with continuous variables, or a \linkS4class{phylo4d}
 #' object (i.e. containing both a tree, and tip data). In the latter case,
 #' \code{method} argument is used to determine which proximity should be used.
@@ -50,47 +50,47 @@
 #' \code{\link[ape]{Moran.I}} from the ape package for the classical Moran's I
 #' test. \cr
 #' @references
-#' 
+#'
 #' Thioulouse, J., Chessel, D. and Champely, S. (1995) Multivariate analysis of
 #' spatial patterns: a unified approach to local and global structures.
 #' \emph{Environmental and Ecological Statistics}, \bold{2}, 1--14.
 #'
 #' @export
-#' 
+#'
 #' @examples
-#' 
-#' 
+#'
+#'
 #' if(require(ade4)&& require(ape) && require(phylobase)){
 #' ## load data
 #' data(ungulates)
 #' tre <- read.tree(text=ungulates$tre)
 #' x <- phylo4d(tre, ungulates$tab)
-#' 
+#'
 #' ## Abouheif's tests for each trait
 #' myTests <- abouheif.moran(x)
 #' myTests
 #' plot(myTests)
-#' 
+#'
 #' ## a variant using another proximity
 #' plot(abouheif.moran(x, method="nNodes") )
-#' 
+#'
 #' ## Another example
-#' 
+#'
 #' data(maples)
 #' tre <- read.tree(text=maples$tre)
 #' dom <- maples$tab$Dom
-#' 
+#'
 #' ## Abouheif's tests for each trait (equivalent to Cmean)
 #' W1 <- proxTips(tre,method="oriAbouheif")
 #' abouheif.moran(dom,W1)
-#' 
+#'
 #' ## Equivalence with moran.idx
-#' 
+#'
 #' W2 <- proxTips(tre,method="Abouheif")
 #' abouheif.moran(dom,W2)
-#' moran.idx(dom,W2) 
+#' moran.idx(dom,W2)
 #' }
-#' 
+#'
 abouheif.moran <- function (x, W=NULL,
                             method=c("oriAbouheif","patristic","nNodes","Abouheif","sumDD"),
                             a=1, nrepet=999,alter=c("greater", "less", "two-sided")) {

@@ -78,6 +78,7 @@
 #' tim1[c(1,3)]/tim2[c(1,3)] # C is about a thousand time faster in this case
 #' }
 #'
+#'
 distTips <- function(x, tips="all",
                       method=c("patristic","nNodes","Abouheif","sumDD"), useC=TRUE){
 
@@ -198,12 +199,6 @@ distTips <- function(x, tips="all",
 
 
 
-
-###########
-# distRoot
-###########
-
-
 #' Compute the distance of tips to the root
 #'
 #' The function \code{distRoot} computes the distance of a set of tips to the
@@ -239,6 +234,9 @@ distTips <- function(x, tips="all",
 #' Testing for phylogenetic signal in life history variable: Abouheif's test
 #' revisited. \emph{Theoretical Population Biology}: \bold{73}, 79-91.
 #' @keywords manip
+#'
+#' @export
+#'
 #' @examples
 #'
 #' if(require(ape) & require(phylobase)){

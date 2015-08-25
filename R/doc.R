@@ -122,6 +122,19 @@
 #' Chessel and Sébastien Ollier.
 #' @seealso The \code{ade4} package for multivariate analysis.
 #' @keywords manip multivariate
+#'
+#'
+#' @import methods
+#' @import phylobase
+#'
+#' @importFrom ape "as.character.DNAbin" "as.DNAbin" "as.DNAbin.alignment" "as.DNAbin.character" "as.DNAbin.list" "as.list.DNAbin" "as.matrix.DNAbin" "cbind.DNAbin" "c.DNAbin" "[.DNAbin" "labels.DNAbin" "print.DNAbin" "rbind.DNAbin" "dist.dna" "plot.phylo" "root" "nj" "bionj" "read.tree" ".PlotPhyloEnv"
+#'
+#' @importFrom ade4 "as.krandtest" "as.dudi" "as.randtest" "orthobasis.mat" "dudi.acm" "redo.dudi" "s.arrow" "s.label" "scatter" "scalewt" "dudi.pca" "add.scatter" "add.scatter.eig"
+#'
+#' @importFrom adegenet "bluepal" "redpal" "greenpal" "seasun" "spectral" "funky" "num2col" "fac2col" "any2col" "transp"
+#'
+#' @useDynLib adephylo
+#'
 NULL
 
 

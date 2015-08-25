@@ -1,17 +1,12 @@
-#########
-## dibas ('distance-based group assignment')
-#########
-
-
 
 #' DIstance-Based Assignment
-#' 
+#'
 #' These functions are under development. Please do not use them unless asked
 #' by the author.
-#' 
-#' @export
-#' 
+#'
 #' @aliases dibas dibas.matrix dibas.dist dibas.phylo dibas.vector simDatGroups
+#'
+#' @rdname dibas
 #'
 #' @param x a \code{phylo} object, or a symmetric matrix of pairwise distances
 #' of class \code{matrix} or \code{dist}.
@@ -36,103 +31,98 @@
 #' provide arguments to \code{\link{table.phylo4d}} in \code{plot} method.
 #' @author Thibaut Jombart \email{tjombart@@imperial.ac.uk}
 #' @keywords multivariate
+#'
+#' @export
+#'
 #' @examples
-#' 
+#'
 #' \dontrun{
 #' if(require(ape)){
 #' #### SIMPLE SIMULATED DATA ####
 #' ## 50 variables, 2 groups, 30 indiv
 #' dat <- simDatGroups(k=2, p=50, n=c(15,15), mu=c(0,1))
 #' names(dat)
-#' 
+#'
 #' ## make a tree
 #' tre <- nj(dist(dat$dat))
 #' plot(tre,type="unr", tip.col=c("blue","red")[as.integer(dat$grp)],
 #'    main="simulated data - tree")
-#'  
+#'
 #' ## use dibas method
 #' res <- dibas(tre, dat$grp, metric="nNodes")
 #' res
-#' 
+#'
 #' barplot(t(res$prob), main="group membership probabilities")
-#' 
-#' 
-#' 
+#'
+#'
+#'
 #' #### NON-PARAMETRIC TEST BASED ON MEAN SUCCESSFUL ASSIGNMENT ####
 #' ## use dibas method
 #' distHo <- replicate(100,
 #'    dibas(tre, sample(dat$grp), metric="patristic")$mean.ok)
 #' pval <- mean(res$mean.ok<=c(distHo,res$mean.ok))
 #' pval
-#' 
+#'
 #' hist(c(distHo,res$mean.ok), col="grey",
 #'    main="Mean successful assignement - permuted values")
 #' abline(v=res$mean.ok, col="red")
 #' mtext(side=3, text="Observed value in red")
-#' 
-#' 
-#' 
+#'
+#'
+#'
 #' #### HAND FAN SYNDROME ####
 #' ## 50 variables, 2 groups, 30 indiv
 #' dat <- simDatGroups(k=2, p=50, n=c(15,15), mu=c(0,1), sigma=c(2,4))
 #' names(dat)
-#' 
+#'
 #' ## make a tree
 #' tre <- nj(dist(dat$dat))
 #' plot(tre,type="unr", tip.col=c("blue","red")[as.integer(dat$grp)],
 #'    main="simulated data - tree")
 #' mtext(side=3, text="hand-fan syndrome")
-#' 
+#'
 #' ## use dibas method
 #' res.patri <- dibas(tre, dat$grp, metric="patristic")
 #' res.patri$grp.tab # poor results
 #' plot(table(res.patri$groups), main="Group assignment - dibas patristic")
-#' 
+#'
 #' res <- dibas(tre, dat$grp, metric="nNodes")
 #' res$grp.tab # results OK
 #' plot(table(res$groups), main="Group assignment - dibas nNodes")
-#' 
-#' 
-#' 
-#' 
+#'
+#'
+#'
+#'
 #' #### MORE COMPLEX DATASET ####
 #' if(require(adegenet)){
-#' 
+#'
 #' dat <- simDatGroups(k=5, p=50, n=c(5,10,10,30,60), mu=sample(1:5, 5,
 #'    replace=TRUE), sigma=sample(1:5)/2)
 #' names(dat)
-#' 
+#'
 #' ## make a tree
 #' tre <- nj(dist(dat$dat))
 #' plot(tre,type="unr", tip.col=fac2col(dat$grp),main="simulated data - tree")
-#' 
+#'
 #' ## use dibas method
 #' res <- dibas(tre, dat$grp, metric="Abouheif")
 #' res
-#' 
+#'
 #' plot(table(res$groups), main="Group assignment - dibas Abouheif")
-#' 
+#'
 #' }
 #' }
 #' }
-#' 
-#' 
-#' 
-#' 
-#' 
-#' 
-#' 
-#' 
-#' 
+#'
+#'
 dibas <- function (x, ...) UseMethod("dibas")
 
 
 
 
 
-################
-## dibas.matrix
-################
+#' @rdname dibas
+#' export
 dibas.matrix <- function(x, grp, method=c("default","leaveOneOut"), ...){
     method <- match.arg(method)
     ## DECLARE SOME VARIABLES, HANDLE ARGUMENTS ##
@@ -259,13 +249,9 @@ dibas.matrix <- function(x, grp, method=c("default","leaveOneOut"), ...){
 
 
 
-################
-## dibas.vector
-################
-##
-## in this one, one distance to a reference point
-## is used to defined group membership probabilities
-##
+
+#' @rdname dibas
+#' export
 dibas.vector <- function(x, grp, method=c("default","leaveOneOut"), n.items=NULL, ...){
     method <- match.arg(method)
 
@@ -355,9 +341,8 @@ dibas.vector <- function(x, grp, method=c("default","leaveOneOut"), n.items=NULL
 
 
 
-###############
-## dibas.phylo
-###############
+#' @rdname dibas
+#' export
 dibas.phylo <- function(x, grp, method=c("default","leaveOneOut"), fromRoot=FALSE, metric=c("Abouheif", "nNodes", "patristic", "sumDD"),
                         n.items=NULL, ...){
     ## if(!require(ape)) stop("ape package is required")
@@ -379,9 +364,8 @@ dibas.phylo <- function(x, grp, method=c("default","leaveOneOut"), fromRoot=FALS
 
 
 
-##############
-## dibas.dist
-##############
+#' @rdname dibas
+#' @export
 dibas.dist <- function(x, grp, method=c("default","leaveOneOut"), ...){
 
     res <- dibas.matrix(as.matrix(x), grp, method)
@@ -395,9 +379,8 @@ dibas.dist <- function(x, grp, method=c("default","leaveOneOut"), ...){
 
 
 
-##############################
-## simulate data with groups
-##############################
+#' @rdname dibas
+#' @export
 simDatGroups <- function(k=2, p=1000, n=10, mu=0, sigma=1){
     ## RECYCLE ARGUMENTS ##
     n <- rep(n, length=k)
