@@ -10,4 +10,4 @@ Imports: phylobase, ape, adegenet
 Description: Multivariate tools to analyze comparative data, i.e. a phylogeny and some traits measured for each taxa.
 License: GPL (>=2)
 LazyLoad: yes
-Collate: utils.R partition.R table.phylo4d.R distances.R proximities.R orthobasis.R ppca.R orthogram.R abouheif.R moran.R dibas.R bullseye.R zzz.R
+Collate: doc.R utils.R partition.R table.phylo4d.R distances.R proximities.R orthobasis.R ppca.R orthogram.R abouheif.R moran.R dibas.R bullseye.R zzz.R

@@ -2,6 +2,128 @@
 ## dibas ('distance-based group assignment')
 #########
 
+
+
+#' DIstance-Based Assignment
+#' 
+#' These functions are under development. Please do not use them unless asked
+#' by the author.
+#' 
+#' @export
+#' 
+#' @aliases dibas dibas.matrix dibas.dist dibas.phylo dibas.vector simDatGroups
+#'
+#' @param x a \code{phylo} object, or a symmetric matrix of pairwise distances
+#' of class \code{matrix} or \code{dist}.
+#' @param grp a \code{factor} indicating the groups of observations.
+#' @param method a character string indicating the method to be used for
+#' estimating the distribution of pairwise distances within groups. The default
+#' method ("default") uses all observations, while the "leaveOneOut" estimates
+#' separate group distributions for each individual, leaving this one out in
+#' the estimation process.
+#' @param metric a character string matching "nNodes", "patristic", "Abouheif",
+#' or "sumDD" indicating the distance measure to be used. See
+#' \code{\link{distTips}} for more information. Note that patristic distances
+#' should be avoided in presence of one or more highly diverse group because of
+#' the 'hand fan' syndrome (see example).
+#' @param fromRoot a logical indicating if distances from the root, rather than
+#' between groups, should be used.
+#' @param n.items a vector of integers of the same length as x, stating how
+#' many times each items in 'x' should be repeated; used to take into account
+#' differences in abundances of the different items (e.g. sequences in multiple
+#' copies).
+#' @param \dots further arguments passed to other methods. Can be used to
+#' provide arguments to \code{\link{table.phylo4d}} in \code{plot} method.
+#' @author Thibaut Jombart \email{tjombart@@imperial.ac.uk}
+#' @keywords multivariate
+#' @examples
+#' 
+#' \dontrun{
+#' if(require(ape)){
+#' #### SIMPLE SIMULATED DATA ####
+#' ## 50 variables, 2 groups, 30 indiv
+#' dat <- simDatGroups(k=2, p=50, n=c(15,15), mu=c(0,1))
+#' names(dat)
+#' 
+#' ## make a tree
+#' tre <- nj(dist(dat$dat))
+#' plot(tre,type="unr", tip.col=c("blue","red")[as.integer(dat$grp)],
+#'    main="simulated data - tree")
+#'  
+#' ## use dibas method
+#' res <- dibas(tre, dat$grp, metric="nNodes")
+#' res
+#' 
+#' barplot(t(res$prob), main="group membership probabilities")
+#' 
+#' 
+#' 
+#' #### NON-PARAMETRIC TEST BASED ON MEAN SUCCESSFUL ASSIGNMENT ####
+#' ## use dibas method
+#' distHo <- replicate(100,
+#'    dibas(tre, sample(dat$grp), metric="patristic")$mean.ok)
+#' pval <- mean(res$mean.ok<=c(distHo,res$mean.ok))
+#' pval
+#' 
+#' hist(c(distHo,res$mean.ok), col="grey",
+#'    main="Mean successful assignement - permuted values")
+#' abline(v=res$mean.ok, col="red")
+#' mtext(side=3, text="Observed value in red")
+#' 
+#' 
+#' 
+#' #### HAND FAN SYNDROME ####
+#' ## 50 variables, 2 groups, 30 indiv
+#' dat <- simDatGroups(k=2, p=50, n=c(15,15), mu=c(0,1), sigma=c(2,4))
+#' names(dat)
+#' 
+#' ## make a tree
+#' tre <- nj(dist(dat$dat))
+#' plot(tre,type="unr", tip.col=c("blue","red")[as.integer(dat$grp)],
+#'    main="simulated data - tree")
+#' mtext(side=3, text="hand-fan syndrome")
+#' 
+#' ## use dibas method
+#' res.patri <- dibas(tre, dat$grp, metric="patristic")
+#' res.patri$grp.tab # poor results
+#' plot(table(res.patri$groups), main="Group assignment - dibas patristic")
+#' 
+#' res <- dibas(tre, dat$grp, metric="nNodes")
+#' res$grp.tab # results OK
+#' plot(table(res$groups), main="Group assignment - dibas nNodes")
+#' 
+#' 
+#' 
+#' 
+#' #### MORE COMPLEX DATASET ####
+#' if(require(adegenet)){
+#' 
+#' dat <- simDatGroups(k=5, p=50, n=c(5,10,10,30,60), mu=sample(1:5, 5,
+#'    replace=TRUE), sigma=sample(1:5)/2)
+#' names(dat)
+#' 
+#' ## make a tree
+#' tre <- nj(dist(dat$dat))
+#' plot(tre,type="unr", tip.col=fac2col(dat$grp),main="simulated data - tree")
+#' 
+#' ## use dibas method
+#' res <- dibas(tre, dat$grp, metric="Abouheif")
+#' res
+#' 
+#' plot(table(res$groups), main="Group assignment - dibas Abouheif")
+#' 
+#' }
+#' }
+#' }
+#' 
+#' 
+#' 
+#' 
+#' 
+#' 
+#' 
+#' 
+#' 
 dibas <- function (x, ...) UseMethod("dibas")
 
 
