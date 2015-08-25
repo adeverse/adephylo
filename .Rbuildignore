@@ -1,0 +1,7 @@
+^\.travis\.yml$
+README.Rmd
+.*.tar.gz$
+cran-comments.Rmd
+cran-comments.md
+^.*\.Rproj$
+^\.Rproj\.user$
