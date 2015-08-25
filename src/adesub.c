@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "adesub.h"
+#include <R.h>
 
 /***********************************************************************/
 double traceXtdLXq (double **X, double **L, double *d, double *q)
@@ -145,7 +146,10 @@ void initvec (double *v1, double r)
 double alea (void)
 {
     double w;
-    w = ((double) rand())/ (double)RAND_MAX;
+    GetRNGstate();
+    /* w = ((double) rand())/ (double)RAND_MAX; */
+    w = unif_rand();
+    PutRNGstate();
     return (w);
 }
 /*************************/
@@ -488,13 +492,14 @@ void getpermutation (int *numero, int repet)
     /*-------------
     * affectation de nombres aleatoires dans alea
     ----------------*/
-    seed = clock();
-    seed = seed + repet;
-    srand(seed);
+    /* seed = clock(); */
+    /* seed = seed + repet; */
+    /* srand(seed); */
+    GetRNGstate();
     for (i=1;i<=n;i++) {
-        alea[i]=rand();
+        alea[i]=unif_rand();
     }
-    
+    PutRNGstate();
     trirapideint (alea , numero, 1, n);
     freeintvec (alea);
 }
@@ -524,73 +529,6 @@ void matcentrage (double **A, double *poili, char *typ)
         return;
     }
 }
-/***********************************************************************/
- void matcentragehi (double **tab, double *poili, int *index, int *assign)
-{
-/*centrage d'un tableau de hill smith
-tab tableau avec quantitatives et qualitatives disjonctifs complets
-poili vecteur poids lignes
-index indique si chaque variables est quali (1) ou quanti (2)
-assign vecteur entier qui donne l'index de la variable pour chaque colonne
-*/
-
-    int l1,c1,i,j,nquant=0,nqual=0,jqual=1,jquant=1;
-    double **tabqual, **tabquant;
-    l1 = tab[0][0];
-    c1 = tab[1][0];
-    for(j=1;j<=c1;j++){
-	if(index[assign[j]]==1){
-		nqual=nqual+1;
-	}
-	else if (index[assign[j]]==2){
-		nquant=nquant+1;
-	}
-    }
-
-    taballoc(&tabqual,l1,nqual);
-    taballoc(&tabquant,l1,nquant);
-
-    for (j=1;j<=c1;j++){
-        if (index[assign[j]]==1) {
-            for (i=1; i<=l1;i++) {
-                tabqual[i][jqual]=tab[i][j];
-		
-                }
-	    jqual=jqual+1;
-        } else if (index[assign[j]]==2){
-            for (i=1; i<=l1;i++) {
-                tabquant[i][jquant]=tab[i][j];
-		
-                }
-	    jquant=jquant+1;
-            }
-     }   
-        
-    
-    matmodifcm (tabqual, poili);
-    matmodifcn (tabquant, poili);
-    jqual=1;
-    jquant=1;
-    
-    for (j=1;j<=c1;j++) {
-	if (index[assign[j]]==1) {
-        	for (i=1;i<=l1;i++) {
-			tab[i][j] = tabqual[i][jqual];
-            	}
-	jqual=jqual+1;	
-        }
-	else if (index[assign[j]]==2) {
-        	for (i=1;i<=l1;i++) {
-			tab[i][j] = tabquant[i][jquant];
-            	}
-	jquant=jquant+1;	
-        }
-    }
-    freetab(tabqual);
-    freetab(tabquant);
-    return;
-}
-
 /***********************************************************************/
 void matmodifcm (double **tab, double *poili)
 /*--------------------------------------------------
@@ -1191,8 +1129,8 @@ void vecpermut (double *A, int *num, double *B)
 /*---------------------------------------
 * A est un vecteur n elements
 * B est une vecteur n elements
-* num est une permutation alÂŽatoire des n premiers entiers
-* B contient en sortie les elements de A permutÂŽes
+* num est une permutation alŽatoire des n premiers entiers
+* B contient en sortie les elements de A permutŽes
 * ---------------------------------------*/
 
     int lig, lig1, lig2, i, k;
