@@ -1,0 +1,54 @@
+\name{sp.tips}
+\alias{sp.tips}
+\title{Find the shortest path between tips of a tree}
+\description{
+  The function \code{sp.tips} finds the shortest path between tips of a
+  tree, identified as \code{tip1} and \code{tip2}.  This function
+  applies to trees with the class \code{\link[ape:read.tree]{phylo}},
+  \linkS4class{phylo4} or \linkS4class{phylo4d}. Several tips can be provided at a time.
+}
+\usage{
+sp.tips(x, tip1, tip2, useTipNames=FALSE, quiet=FALSE, include.mrca=TRUE)
+}
+\arguments{
+  \item{x}{A tree of  class \code{\link[ape:read.tree]{phylo}},
+    \linkS4class{phylo4} or \linkS4class{phylo4d}.}
+  \item{tip1}{A vector of integers identifying tips by their numbers, or
+    a vector of characters identifying tips by their names. Recycled if needed.}
+  \item{tip2}{A vector of integers identifying tips by their numbers, or
+    a vector of characters identifying tips by their names. Recycled if needed.}
+  \item{useTipNames}{a logical stating whether the output must be named
+    using tip names in all cases (TRUE), or not (FALSE). If not, names
+    of \code{tip1} and \code{tip2} will be used.}
+  \item{quiet}{a logical stating whether a warning must be issued when
+    tip1==tip2, or not (see details).}
+  \item{include.mrca}{a logical stating whether the most recent common
+    ancestor shall be included in the returned path (TRUE, default) or not (FALSE).}
+}
+\value{
+  A list whose components are vectors of named nodes forming the
+  shortest path between a couple of tips.
+}
+\details{
+  The function checks if there are cases where tip1 and tip2 are the
+  same. These cases are deleted when detected, issuing a warning (unless
+  \code{quiet} is set to TRUE).
+}
+\author{ Thibaut Jombart \email{tjombart@imperial.ac.uk} }
+\seealso{\code{\link[phylobase]{shortestPath}} which does the same
+  thing as \code{sp.tips}, for any node (internal or tip), but much more
+  slowly. \cr
+}
+\examples{
+\dontrun{
+if(require(ape) & require(phylobase)){
+## make a tree
+x <- as(rtree(20),"phylo4")
+plot(x,show.node=TRUE)
+## get shortest path between tip 1 and all other tips.
+sp.tips(x, "t1", "t2")
+sp.tips(x, 1, 2:20, TRUE)
+}
+}
+}
+\keyword{manip}

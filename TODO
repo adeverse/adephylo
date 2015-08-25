@@ -1,0 +1,58 @@
+#######################
+#
+# adephylo TODO list
+#
+#######################
+#
+# please list here all intended modifications
+# and all detected bugs
+#
+# please add a '-- done' or '-- fixed' tag when
+# you achieved something, and replace the 
+# initial star '*' (to do) with a 'o' (done).
+#
+# Inside a given section, priority goes decreasing.
+#
+# Delete fixed things each new release.
+#
+# T. Jombart, 2008
+#
+######################
+
+
+
+# FOR NEXT STABLE VERSION
+=========================
+=========================
+
+# CODE ISSUES:
+==============
+
+
+# DOCUMENTATION ISSUES:
+=======================
+
+
+
+# NEW IMPLEMENTATIONS:
+=====================
+
+
+
+
+# TESTING:
+==========
+
+
+
+# LOW PRIORITY / MINOR ISSUES
+===========================
+===========================
+* draw a rectangle around legend in table.phylo4d
+
+
+# LONG TERM
+==========================
+==========================
+* write a comprehensive tutorial, going through adephylo, ade4, ape, phylobase, etc.
+

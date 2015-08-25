@@ -1,0 +1,57 @@
+\encoding{latin1}
+\name{ungulates}
+\alias{ungulates}
+\docType{data}
+\title{Phylogeny and quantitative traits of ungulates.}
+\description{
+This data set describes the phylogeny of 18 ungulates as reported by
+Pélabon et al. (1995). It also gives 4 traits corresponding to these 18
+species.
+}
+\usage{data(ungulates)}
+\format{
+\code{fission} is a list containing the 2 following objects : 
+\describe{ 
+   \item{tre}{is a character string giving the phylogenetic tree in Newick format.} 
+   \item{tab}{is a data frame with 18 species and 4 traits}    
+}}
+\details{        
+  Variables of \code{ungulates$tab} are the following ones : \cr
+  
+  - afbw: is a numeric vector that describes the adult female body weight (g) \cr
+  - mnw: is a numeric vector that describes the male neonatal weight (g) \cr
+  - fnw: is a numeric vector that describes the female neonatal weight (g) \cr
+  - ls: is a numeric vector that describes the litter size \cr
+}
+\source{
+Data were obtained from Pélabon, C., Gaillard, J.M., Loison, A. and Portier, A. (1995) 
+Is sex-biased maternal care limited by total maternal expenditure in polygynous ungulates? 
+\emph{Behavioral Ecology and Sociobiology}, \bold{37}, 311--319.
+}
+\note{
+  This dataset replaces the former version in ade4.
+}
+\examples{
+\dontrun{
+if(require(ape) && require(phylobase)){
+## load data
+data(ungulates)
+tre <- read.tree(text=ungulates$tre)
+plot(tre)
+
+## look at two traits
+afbw <- log(ungulates$tab[,1])
+neonatw <- log((ungulates$tab[,2]+ungulates$tab[,3])/2)
+names(afbw) <- tre$tip.label
+names(neonatw) <- tre$tip.label
+plot(afbw, neonatw) # relationship between traits
+lm1 <- lm(neonatw~afbw)
+abline(lm1)
+x <- phylo4d(tre, cbind.data.frame(afbw, neonatw)) # traits on the phylogeny
+
+## test phylogenetic inertia in residuals
+orthogram(residuals(lm1), x) 
+}
+}
+}
+\keyword{datasets}

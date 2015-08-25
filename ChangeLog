@@ -1,0 +1,122 @@
+			CHANGES IN ADEPHYLO VERSION 1.1-7
+
+FIXES
+
+	o sp.tips now returns ordered paths between tips
+
+FRESH BLOOD
+
+	o Anders Ellern Bilgrau has joined the development team!
+
+
+
+
+			CHANGES IN ADEPHYLO VERSION 1.1-5
+
+FIXES
+
+	o the new NAMESPACE selectively imports procedures to avoid
+	conflicts between ape, phylobase, and ade4. Thes packages are no
+	longer attached when loading adephylo
+
+	o most dataset examples have been 'dontrun-ed' to save time during
+	checks of the package on CRAN
+
+
+
+
+			CHANGES IN ADEPHYLO VERSION 1.1-4
+
+
+NEW FEATURES
+
+	o added the function bullseye to plot fan-like phylogenies and
+	associated traits.
+
+	o added new methods for dibas.
+
+
+
+			CHANGES IN ADEPHYLO VERSION 1.1-3
+
+
+NEW FEATURES
+
+	o added dibas, a new (and still under development) method for
+	describing/testing phylogenetic clusters
+
+
+BUG FIXES
+
+	o replaced the use of .First.lib and library.dynam by more
+	up-to-date procedures
+
+	o replaced a call to a C procedure from ade4 to the same procedure
+	in adephylo
+
+	o replaced instances of 'printf' by 'Rprintf' in C procedures
+
+
+
+			CHANGES IN ADEPHYLO VERSION 1.1-1
+
+
+BUG FIXES
+
+	o fixed the citation to be used for adephylo.
+
+
+
+			CHANGES IN ADEPHYLO VERSION 1.1-0
+
+
+NEW FEATURES
+
+	o the phylogenetic Principal Component Analysis (pPCA, Jombart et
+	al. 2010) has been implemented in adephylo. See ?ppca for more
+	information.
+
+	o phylogenetic distances and proximities are now computed using
+	compiled C code, speeding up dramatically computations and making
+	the functions applicable to large trees (thousands of tips).
+
+	o table.phylo4d has now a color mode which allows using colors to
+	represent values of traits; this is usefull for large trees.
+
+
+
+			CHANGES IN ADEPHYLO VERSION 1.0-2
+
+
+BUG FIXES
+
+	o standardization of variables in abouheif.moran is now performed using 
+	uniform weights (instead of marginal phylogenetic weights) 
+
+
+	
+			CHANGES IN ADEPHYLO VERSION 1.0-1
+
+
+NEW FEATURES
+
+	o first release on CRAN, first stable version
+
+	o compatible with the first stable release of the phylobase package
+
+	
+
+			CHANGES IN ADEPHYLO VERSION 1.0-0
+
+
+NEW FEATURES
+
+	o first release of the package with unstable status. Compatible
+	with phylobase (in	development) and ape packages; package
+	only released on R-Forge, not CRAN.
+
+	o re-implements all phylogenetic methods and datasets available in ade4
+
+	o add new features to compute phylogenetic distances/proximities,
+	pPCA, tree walks, ... 
+

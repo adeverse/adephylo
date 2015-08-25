@@ -1,0 +1,66 @@
+\name{distRoot}
+\alias{distRoot}
+\title{Compute the distance of tips to the root}
+\description{
+  The function \code{distRoot} computes the distance of a set of tips to
+  the root. Several distances can be used, defaulting to the sum of
+  branch lengths.
+}
+\usage{
+distRoot(x, tips, method=c("patristic","nNodes","Abouheif","sumDD"))
+}
+\arguments{
+  \item{x}{a tree of  class \code{\link[ape:read.tree]{phylo}},
+    \linkS4class{phylo4} or \linkS4class{phylo4d}.}
+  \item{tips}{A vector of integers identifying tips by their numbers, or
+    a vector of characters identifying tips by their names.}
+  \item{method}{a character string (full or abbreviated without
+    ambiguity) specifying the method used to compute distances ;
+    possible values are:\cr
+    - \code{patristic}: patristic distance, i.e. sum of branch lengths \cr
+    - \code{nNodes}: number of nodes on the path between the nodes \cr
+    - \code{Abouheif}: Abouheif's distance (see details) \cr
+    - \code{sumDD}: sum of direct descendants of all nodes on the path
+    (see details) \cr
+  }
+}
+\value{
+  A numeric vector containing one distance value for each tip.
+}
+\details{
+  \code{Abouheif} distance refers to the phylogenetic distance
+  underlying the test of Abouheif (see references). Let P be the set of
+  all the nodes in the path going from \code{node1} to \code{node2}. Let
+  DDP be the number of direct descendants from each node in P. Then, the
+  so-called 'Abouheif' distance is the product of all terms in DDP.\cr
+
+   \code{sumDD} refers to a phylogenetic distance quite similar to that
+  of Abouheif. We consider the same sets P and DDP. But instead of
+  computing the product of all terms in DDP, this distance computes the
+  sum of all terms in DDP.
+}
+\author{ Thibaut Jombart \email{tjombart@imperial.ac.uk} }
+\references{
+  Pavoine, S.; Ollier, S.; Pontier, D. & Chessel, D. (2008) Testing for
+  phylogenetic signal in life history variable: Abouheif's test
+  revisited. \emph{Theoretical Population Biology}: \bold{73}, 79-91.
+}
+\seealso{\code{\link{distTips}} which computes the same phylogenetic
+  distances, but between tips.
+}
+\examples{
+if(require(ape) & require(phylobase)){
+## make a tree
+x <- as(rtree(50),"phylo4")
+## compute 4 different distances
+met <- c("patristic","nNodes","Abouheif","sumDD")
+D <- lapply(met, function(e) distRoot(x, method=e) )
+names(D) <- met
+D <- as.data.frame(D)
+
+## plot these distances along with the tree
+temp <- phylo4d(x, D)
+table.phylo4d(temp, show.node=FALSE, cex.lab=.6)
+}
+}
+\keyword{manip}
