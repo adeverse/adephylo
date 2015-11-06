@@ -41,7 +41,7 @@ orthobasis.phylo(x=NULL, prox=NULL, method=c("patristic","nNodes",
     - \code{Abouheif}: Abouheif's proximity (see details in \code{\link{proxTips}}) \cr
     - \code{sumDD}: (inversed) sum of direct descendants of all nodes on the path
     (see details in \code{\link{proxTips}}).}
-  \item{a}{the exponent used to compute the proximity (see ?\code{\link{proxTips}}).}
+    \item{f}{a function to change a distance into a proximity.}
 }
 \value{
   An object of class \code{orthobasis}. This is a data.frame with

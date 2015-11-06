@@ -2,7 +2,8 @@
 # orthobasis.phylo
 ###################
 orthobasis.phylo <- function(x=NULL, prox=NULL,
-                             method=c("patristic","nNodes","oriAbouheif","Abouheif","sumDD"), a=1){
+                             method=c("patristic","nNodes","oriAbouheif","Abouheif","sumDD"),
+                             f=function(x) 1/x){
     ## if(!require(phylobase)) stop("phylobase package is not installed")
     ## if(!require(ade4)) stop("ade4 package is not installed")
 
@@ -12,7 +13,7 @@ orthobasis.phylo <- function(x=NULL, prox=NULL,
     if(is.null(prox)){ # have to compute prox
         x <- as(x, "phylo4")
         if (is.character(checkval <- checkPhylo4(x))) stop(checkval)
-        W <- proxTips(x, tips="all", method=method, a=a, normalize="row", symmetric=TRUE)
+        W <- proxTips(x, tips="all", method=method, f=f, normalize="row", symmetric=TRUE)
     } else { # prox is provided
         W <- as.matrix(prox)
         if(!is.matrix(W)) stop("W is not a matrix")

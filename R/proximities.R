@@ -2,8 +2,8 @@
 # proxTips
 ###########
 proxTips <- function(x, tips="all",
-                      method=c("patristic","nNodes","oriAbouheif","Abouheif","sumDD"),
-                     a=1, normalize=c("row","col","none"), symmetric=TRUE, useC=TRUE){
+                     method=c("patristic","nNodes","oriAbouheif","Abouheif","sumDD"),
+                     f=function(x){1/x}, normalize=c("row","col","none"), symmetric=TRUE, useC=TRUE){
 
     ## if(!require(phylobase)) stop("phylobase package is not installed")
 
@@ -28,7 +28,7 @@ proxTips <- function(x, tips="all",
     D <- as.matrix(D)
 
     ## compute proximities
-    res <- (1/D)^a
+    res <- f(D)
     diag(res) <- 0
 
     ## handle Abouheif with diagonal (Abouheif1)

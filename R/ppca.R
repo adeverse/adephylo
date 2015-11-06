@@ -6,7 +6,8 @@
 ################
 # Function ppca
 ################
-ppca <- function(x, prox=NULL, method=c("patristic","nNodes","oriAbouheif","Abouheif","sumDD"), a=1,
+ppca <- function(x, prox=NULL, method=c("patristic","nNodes","oriAbouheif","Abouheif","sumDD"),
+                 f=function(x) {1/x},
                  center=TRUE, scale=TRUE, scannf=TRUE, nfposi=1, nfnega=0){
 
     ## handle arguments
@@ -20,7 +21,7 @@ ppca <- function(x, prox=NULL, method=c("patristic","nNodes","oriAbouheif","Abou
 
     ## proximity matrix
     if(is.null(prox)){ # have to compute prox
-        W <- proxTips(x, tips="all", method=method, a=a, normalize="row", symmetric=TRUE)
+        W <- proxTips(x, tips="all", method=method, f=f, normalize="row", symmetric=TRUE)
     } else { # prox is provided
         W <- as.matrix(prox)
         if(!is.matrix(W)) stop("W is not a matrix")

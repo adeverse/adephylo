@@ -58,7 +58,7 @@ ppca(x, prox=NULL, method=c("patristic","nNodes","oriAbouheif","Abouheif","sumDD
     - \code{Abouheif}: Abouheif's proximity (see details in \code{\link{proxTips}}) \cr
     - \code{sumDD}: (inversed) sum of direct descendants of all nodes on the path
     (see details in \code{\link{proxTips}}).}
-  \item{a}{the exponent used to compute the proximity (see ?\code{\link{proxTips}}).}
+  \item{f}{a function to change a distance into a proximity.}
   \item{center}{a logical indicating whether traits should be centred to
     mean zero (TRUE, default) or not (FALSE).}
   \item{scale}{a logical indicating whether traits should be scaled to

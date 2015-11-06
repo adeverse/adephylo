@@ -55,7 +55,7 @@ proxTips(x, tips, method=c("patristic","nNodes","oriAbouheif","Abouheif","sumDD"
     - \code{sumDD}: (inversed) sum of direct descendants of all nodes on the path
     (see details) \cr
   }
-  \item{a}{the exponent used to compute the proximity}
+  \item{f}{a function to change a distance into a proximity.}
   \item{normalize}{a character string specifying whether the matrix must
   be normalized by row (\code{row}), column (\code{col}), or not
   (\code{none}). Normalization amounts to dividing each row (or column)
