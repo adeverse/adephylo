@@ -1,6 +1,6 @@
 abouheif.moran <- function (x, W=NULL,
                             method=c("oriAbouheif","patristic","nNodes","Abouheif","sumDD"),
-                            a=1, nrepet=999,alter=c("greater", "less", "two-sided")) {
+                            f=function(x){1/x}, nrepet=999,alter=c("greater", "less", "two-sided")) {
 
     ## some checks
     ## if(!require(ade4)) stop("The ade4 package is not installed.")
@@ -16,7 +16,7 @@ abouheif.moran <- function (x, W=NULL,
         if(!inherits(x, "phylo4d")) stop("if W is not provided, x has to be a phylo4d object")
         if (is.character(chk <- checkPhylo4(x))) stop("bad phylo4d object: ",chk)
         ##if (is.character(chk <- checkData(x))) stop("bad phylo4d object: ",chk) no longer needed
-        W <- proxTips(x, method=method, a=a, normalize="row", symmetric=TRUE)
+        W <- proxTips(x, method=method, f=f, normalize="row", symmetric=TRUE)
     }
 
     nobs <- ncol(W)

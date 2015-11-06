@@ -25,7 +25,7 @@
 \usage{
 abouheif.moran(x, W=NULL,
           method=c("oriAbouheif","patristic","nNodes","Abouheif","sumDD"),
-          a=1, nrepet = 999, alter=c("greater", "less", "two-sided"))
+          f=function(x){1/x}, nrepet = 999, alter=c("greater", "less", "two-sided"))
 }
 \arguments{
   \item{x}{a data frame with continuous variables, or a
@@ -39,7 +39,7 @@ abouheif.moran(x, W=NULL,
     specifying the type of proximity to be used. By default, the
     proximity used is that of the original Abouheif's test. See details
     in \code{\link{proxTips}} for information about other methods.}
-  \item{a}{the exponent used to compute the proximity (see \code{\link{proxTips}}).}
+  \item{f}{a function to turn a distance into a proximity (see \code{\link{proxTips}}).}
   \item{nrepet}{number of random permutations of data for the randomization test}
   \item{alter}{a character string specifying the alternative hypothesis,
     must be one of "greater" (default), "less" or "two-sided"}

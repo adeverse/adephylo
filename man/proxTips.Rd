@@ -37,7 +37,7 @@
 }
 \usage{
 proxTips(x, tips, method=c("patristic","nNodes","oriAbouheif","Abouheif","sumDD"),
-         a=1, normalize=c("row","col","none"), symmetric=TRUE, useC=TRUE)
+         f=function(x) {1/x}, normalize=c("row","col","none"), symmetric=TRUE, useC=TRUE)
 }
 \arguments{
   \item{x}{a tree of  class \code{\link[ape:read.tree]{phylo}},

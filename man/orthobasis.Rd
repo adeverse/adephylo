@@ -22,9 +22,9 @@
 }
 \usage{
 me.phylo(x=NULL, prox=NULL, method=c("patristic","nNodes",
-   "oriAbouheif","Abouheif","sumDD"), a=1)
+   "oriAbouheif","Abouheif","sumDD"), f=function(x){1/x})
 orthobasis.phylo(x=NULL, prox=NULL, method=c("patristic","nNodes",
-   "oriAbouheif","Abouheif","sumDD"), a=1)
+   "oriAbouheif","Abouheif","sumDD"), f=function(x){1/x})
 }
 \arguments{
   \item{x}{A tree of  class \code{\link[ape:read.tree]{phylo}},
