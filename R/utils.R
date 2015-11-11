@@ -1,23 +1,39 @@
-##
-## SEVERAL UTILS FUNCTIONS
-## =======================
-##
-## Hidden functions are intended to go fast, and thus make no validity test.
-## >.tipToRoot< is an hidden function return path to the root for a tip
-## >sp.tips< computes the shortest path between two tips
-##
-##
-
-
-#############
-# .tipToRoot
-#############
-##
-## x: a phylo4/phylo4d
-## tip: an integer identifying a tip by its number
-## root: to root node; could be computed inside the function,
-## but will often be computed outside, once and for all.
-##
+#' Low-level auxiliary functions for adephylo
+#' 
+#' These hidden functions are utils for adephylo, used by other functions.
+#' Regular users can use them as well, but no validity checks are performed for
+#' the arguments: speed is here favored over safety.  Most of these functions
+#' handle trees inheriting \linkS4class{phylo4} class.\cr
+#' 
+#' \code{.tipToRoot} finds the set of nodes between a tip and the root of a
+#' tree.\cr
+#' 
+#' 
+#' @rdname miscUtils
+#' @aliases .tipToRoot
+#' @param x A valid tree of class \linkS4class{phylo4}.
+#' @param tip An integer identifying a tip by its numbers.
+#' @param root An integer identifying the root of the tree by its number.
+#' @param include.root a logical stating whether the root must be included as a
+#' node of the path from tip to root (TRUE), or not (FALSE, default).
+#' @return \code{.tipToRoot}: a vector of named integers identifying nodes.\cr
+#' @author Thibaut Jombart \email{tjombart@@imperial.ac.uk}
+#' @keywords manip
+#' @examples
+#' 
+#' if(require(ape) & require(phylobase)){
+#' ## make a tree
+#' x <- as(rtree(20),"phylo4")
+#' plot(x,show.node=TRUE)
+#' 
+#' ## .tipToRoot
+#' root <- rootNode(x)
+#' .tipToRoot(x, 1, root)
+#' lapply(1:nTips(x), function(i) .tipToRoot(x, i, root))
+#' }
+#' 
+#' @import phylobase
+#' @export
 .tipToRoot <- function(x, tip, root, include.root=FALSE){
     E <- x@edge
     path <- NULL
@@ -41,6 +57,54 @@
 ##########
 # sp.tips
 ##########
+
+
+#' Find the shortest path between tips of a tree
+#' 
+#' The function \code{sp.tips} finds the shortest path between tips of a tree,
+#' identified as \code{tip1} and \code{tip2}.  This function applies to trees
+#' with the class \code{\link[ape:read.tree]{phylo}}, \linkS4class{phylo4} or
+#' \linkS4class{phylo4d}. Several tips can be provided at a time.
+#' 
+#' The function checks if there are cases where tip1 and tip2 are the same.
+#' These cases are deleted when detected, issuing a warning (unless
+#' \code{quiet} is set to TRUE).
+#' 
+#' @param x A tree of class \code{\link[ape:read.tree]{phylo}},
+#' \linkS4class{phylo4} or \linkS4class{phylo4d}.
+#' @param tip1 A vector of integers identifying tips by their numbers, or a
+#' vector of characters identifying tips by their names. Recycled if needed.
+#' @param tip2 A vector of integers identifying tips by their numbers, or a
+#' vector of characters identifying tips by their names. Recycled if needed.
+#' @param useTipNames a logical stating whether the output must be named using
+#' tip names in all cases (TRUE), or not (FALSE). If not, names of \code{tip1}
+#' and \code{tip2} will be used.
+#' @param quiet a logical stating whether a warning must be issued when
+#' tip1==tip2, or not (see details).
+#' @param include.mrca a logical stating whether the most recent common
+#' ancestor shall be included in the returned path (TRUE, default) or not
+#' (FALSE).
+#' @return A list whose components are vectors of named nodes forming the
+#' shortest path between a couple of tips.
+#' @author Thibaut Jombart \email{tjombart@@imperial.ac.uk}
+#' @seealso \code{\link[phylobase]{shortestPath}} which does the same thing as
+#' \code{sp.tips}, for any node (internal or tip), but much more slowly. \cr
+#' @keywords manip
+#' @examples
+#' 
+#' \dontrun{
+#' if(require(ape) & require(phylobase)){
+#' ## make a tree
+#' x <- as(rtree(20),"phylo4")
+#' plot(x,show.node=TRUE)
+#' ## get shortest path between tip 1 and all other tips.
+#' sp.tips(x, "t1", "t2")
+#' sp.tips(x, 1, 2:20, TRUE)
+#' }
+#' }
+#' 
+#' @import phylobase
+#' @export sp.tips
 sp.tips <- function(x, tip1, tip2, useTipNames=FALSE, quiet=FALSE, include.mrca=TRUE){
     ## if(!require(phylobase)) stop("phylobase package is not installed")
 
@@ -162,6 +226,39 @@ sp.tips <- function(x, tip1, tip2, useTipNames=FALSE, quiet=FALSE, include.mrca=
 ############
 # listDD
 ############
+
+
+#' List direct descendants for all nodes of a tree
+#' 
+#' The function \code{listDD} lists the direct descendants from each node of a
+#' tree. The tree can be of class \code{\link[ape:read.tree]{phylo}},
+#' \linkS4class{phylo4} or \linkS4class{phylo4d}.
+#' 
+#' 
+#' @param x A tree of class \code{\link[ape:read.tree]{phylo}},
+#' \linkS4class{phylo4} or \linkS4class{phylo4d}.
+#' @param nameBy a character string indicating whether the returned list must
+#' be named by node labels ("label") or by node numbers ("number").
+#' @return A list whose components are vectors of named nodes (or tips) for a
+#' given internal node.
+#' @author Thibaut Jombart \email{tjombart@@imperial.ac.uk}
+#' @seealso \code{\link{listTips}} which lists the tips descending from each
+#' node. \cr
+#' 
+#' \code{\link{treePart}} which defines partitions of tips according to the
+#' tree topology.
+#' @keywords manip
+#' @examples
+#' 
+#' if(require(ape) & require(phylobase)){
+#' ## make a tree
+#' x <- as(rtree(20),"phylo4")
+#' plot(x,show.node=TRUE)
+#' listDD(x)
+#' }
+#' 
+#' @import phylobase
+#' @export listDD
 listDD <- function(x, nameBy=c("label","number")){
     ## if(!require(phylobase)) stop("phylobase package is not installed")
 

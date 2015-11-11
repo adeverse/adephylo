@@ -6,6 +6,226 @@
 ################
 # Function ppca
 ################
+
+
+#' Phylogenetic principal component analysis
+#' 
+#' These functions are designed to perform a phylogenetic principal component
+#' analysis (pPCA, Jombart et al. 2010) and to display the results.
+#' 
+#' \code{ppca} performs the phylogenetic component analysis. Other functions
+#' are:\cr
+#' 
+#' - \code{print.ppca}: prints the ppca content\cr
+#' 
+#' - \code{summary.ppca}: provides useful information about a ppca object,
+#' including the decomposition of eigenvalues of all axes\cr
+#' 
+#' - \code{scatter.ppca}: plot principal components using
+#' \code{\link{table.phylo4d}}\cr
+#' 
+#' - \code{screeplot.ppca}: graphical display of the decomposition of pPCA
+#' eigenvalues\cr
+#' 
+#' - \code{plot.ppca}: several graphics describing a ppca object\cr
+#' 
+#' The phylogenetic Principal Component Analysis (pPCA, Jombart et al., 2010)
+#' is derived from the spatial Principal Component Analysis (spca, Jombart et
+#' al. 2008), implemented in the adegenet package (see
+#' \code{\link[adegenet]{spca}}).\cr
+#' 
+#' pPCA is designed to investigate phylogenetic patterns a set of quantitative
+#' traits. The analysis returns principal components maximizing the product of
+#' variance of the scores and their phylogenetic autocorrelation (Moran's I),
+#' therefore reflecting life histories that are phylogenetically structured.
+#' Large positive and large negative eigenvalues correspond to global and local
+#' structures.\cr
+#' 
+#' @aliases ppca print.ppca summary.ppca scatter.ppca screeplot.ppca plot.ppca
+#' @param x a \linkS4class{phylo4d} object (for \code{ppca}) or a ppca object
+#' (for other methods).
+#' @param prox a marix of phylogenetic proximities as returned by
+#' \code{\link{proxTips}}. If not provided, this matrix will be constructed
+#' using the arguments \code{method} and \code{a}.
+#' @param method a character string (full or abbreviated without ambiguity)
+#' specifying the method used to compute proximities; possible values are:\cr -
+#' \code{patristic}: (inversed sum of) branch lengths \cr - \code{nNodes}:
+#' (inversed) number of nodes on the path between the nodes \cr -
+#' \code{oriAbouheif}: original Abouheif's proximity, with diagonal (see
+#' details in \code{\link{proxTips}}) \cr - \code{Abouheif}: Abouheif's
+#' proximity (see details in \code{\link{proxTips}}) \cr - \code{sumDD}:
+#' (inversed) sum of direct descendants of all nodes on the path (see details
+#' in \code{\link{proxTips}}).
+#' @param f a function to change a distance into a proximity.
+#' @param center a logical indicating whether traits should be centred to mean
+#' zero (TRUE, default) or not (FALSE).
+#' @param scale a logical indicating whether traits should be scaled to unit
+#' variance (TRUE, default) or not (FALSE).
+#' @param scannf a logical stating whether eigenvalues should be chosen
+#' interactively (TRUE, default) or not (FALSE).
+#' @param nfposi an integer giving the number of positive eigenvalues retained
+#' ('global structures').
+#' @param nfnega an integer giving the number of negative eigenvalues retained
+#' ('local structures').
+#' @param \dots further arguments passed to other methods. Can be used to
+#' provide arguments to \code{\link{table.phylo4d}} in \code{plot} method.
+#' @param object a \code{ppca} object.
+#' @param printres a logical stating whether results should be printed on the
+#' screen (TRUE, default) or not (FALSE).
+#' @param axes the index of the principal components to be represented.
+#' @param useLag a logical stating whether the lagged components (\code{x\$ls})
+#' should be used instead of the components (\code{x\$li}).
+#' @param main a title for the screeplot; if NULL, a default one is used.
+#' @return The class \code{ppca} are given to lists with the following
+#' components:\cr \item{eig}{a numeric vector of eigenvalues.} \item{nfposi}{an
+#' integer giving the number of global structures retained.} \item{nfnega}{an
+#' integer giving the number of local structures retained.} \item{c1}{a
+#' data.frame of loadings of traits for each axis.} \item{li}{a data.frame of
+#' coordinates of taxa onto the ppca axes (i.e., principal components).}
+#' \item{ls}{a data.frame of lagged prinpal components; useful to represent of
+#' global scores.} \item{as}{a data.frame giving the coordinates of the axes of
+#' an 'ordinary' PCA onto the ppca axes.} \item{call}{the matched call.}
+#' \item{tre}{a phylogenetic tre with class \linkS4class{phylo4}.}
+#' \item{prox}{a matrix of phylogenetic proximities.}
+#' 
+#' Other functions have different outputs:\cr
+#' 
+#' - \code{scatter.ppca} returns the matched call.\cr
+#' @author Thibaut Jombart \email{tjombart@@imperial.ac.uk}
+#' @seealso The implementation of \code{\link[adegenet]{spca}} in the adegenet
+#' package (\code{\link[adegenet]{adegenet}}) \cr
+#' @references Jombart, T.; Pavoine, S.; Dufour, A. & Pontier, D. (2010, in
+#' press) Exploring phylogeny as a source of ecological variation: a
+#' methodological approach. doi:10.1016/j.jtbi.2010.03.038
+#' 
+#' Jombart, T., Devillard, S., Dufour, A.-B. and Pontier, D. (2008) Revealing
+#' cryptic phylogenetic patterns in genetic variability by a new multivariate
+#' method. \emph{Heredity}, \bold{101}, 92--103.
+#' @keywords multivariate
+#' @examples
+#' 
+#' data(lizards)
+#' 
+#' if(require(ape) && require(phylobase)){
+#' 
+#' #### ORIGINAL EXAMPLE FROM JOMBART ET AL 2010 ####
+#' 
+#' 
+#' ## BUILD A TREE AND A PHYLO4D OBJECT
+#' liz.tre <- read.tree(tex=lizards$hprA)
+#' liz.4d <- phylo4d(liz.tre, lizards$traits)
+#' par(mar=rep(.1,4))
+#' table.phylo4d(liz.4d,var.lab=c(names(lizards$traits),
+#'    "ACP 1\n(\"size effect\")"),show.node=FALSE, cex.lab=1.2)
+#' 
+#' 
+#' ## REMOVE DUPLICATED POPULATIONS
+#' liz.4d <- prune(liz.4d, c(7,14))
+#' table.phylo4d(liz.4d)
+#' 
+#' 
+#' ## CORRECT LABELS
+#' lab <- c("Pa", "Ph", "Ll", "Lmca", "Lmcy", "Phha", "Pha",
+#'    "Pb", "Pm", "Ae", "Tt", "Ts", "Lviv", "La", "Ls", "Lvir")
+#' tipLabels(liz.4d) <- lab
+#' 
+#' 
+#' ## REMOVE SIZE EFFECT
+#' dat <- tdata(liz.4d, type="tip")
+#' dat <- log(dat)
+#' newdat <- data.frame(lapply(dat, function(v) residuals(lm(v~dat$mean.L))))
+#' rownames(newdat) <- rownames(dat)
+#' tdata(liz.4d, type="tip") <- newdat[,-1] # replace data in the phylo4d object
+#' 
+#' 
+#' ## pPCA
+#' liz.ppca <- ppca(liz.4d,scale=FALSE,scannf=FALSE,nfposi=1,nfnega=1, method="Abouheif")
+#' liz.ppca
+#' tempcol <- rep("grey",7)
+#' tempcol[c(1,7)] <- "black"
+#' barplot(liz.ppca$eig,main='pPCA eigenvalues',cex.main=1.8,col=tempcol)
+#' 
+#' par(mar=rep(.1,4))
+#' plot(liz.ppca,ratio.tree=.7)
+#' 
+#' 
+#' ## CONTRIBUTIONS TO PC (LOADINGS) (viewed as dotcharts)
+#' dotchart(liz.ppca$c1[,1],lab=rownames(liz.ppca$c1),main="Global principal
+#' component 1")
+#' abline(v=0,lty=2)
+#' 
+#' dotchart(liz.ppca$c1[,2],lab=rownames(liz.ppca$c1),main="Local principal
+#' component 1")
+#' abline(v=0,lty=2)
+#' 
+#' 
+#' ## REPRODUCE FIGURES FROM THE PAPER
+#' obj.ppca <- liz.4d
+#' tdata(obj.ppca, type="tip") <- liz.ppca$li
+#' myLab <- paste(" ",rownames(liz.ppca$li), sep="")
+#' 
+#' ## FIGURE 1
+#' par(mar=c(.1,2.4,2.1,1))
+#' table.phylo4d(obj.ppca, ratio=.7, var.lab=c("1st global PC", "1st local
+#'    PC"), tip.label=myLab,box=FALSE,cex.lab=1.4, cex.sym=1.2, show.node.label=TRUE)
+#' add.scatter.eig(liz.ppca$eig,1,1,1,csub=1.2, posi="topleft", ratio=.23)
+#' 
+#' 
+#' ## FIGURE 2
+#' s.arrow(liz.ppca$c1,xlim=c(-1,1),clab=1.3,cgrid=1.3)
+#' 
+#' 
+#' 
+#' #### ANOTHER EXAMPLE - INCLUDING NA REPLACEMENT ####
+#' ## LOAD THE DATA
+#' data(maples)
+#' tre <- read.tree(text=maples$tre)
+#' x <- phylo4d(tre, maples$tab)
+#' omar <- par("mar")
+#' par(mar=rep(.1,4))
+#' table.phylo4d(x, cex.lab=.5, cex.sym=.6, ratio=.1) # note NAs in last trait ('x')
+#' 
+#' ## FUNCTION TO REPLACE NAS
+#' f1 <- function(vec){
+#' if(any(is.na(vec))){
+#' m <- mean(vec, na.rm=TRUE)
+#' vec[is.na(vec)] <- m
+#' }
+#' return(vec)
+#' }
+#' 
+#' 
+#' ## PERFORM THE PPCA
+#' dat <- apply(maples$tab,2,f1) # replace NAs
+#' x.noNA <- phylo4d(tre, as.data.frame(dat))
+#' map.ppca <- ppca(x.noNA, scannf=FALSE, method="Abouheif")
+#' map.ppca
+#' 
+#' 
+#' ## SOME GRAPHICS
+#' screeplot(map.ppca)
+#' scatter(map.ppca, useLag=TRUE)
+#' plot(map.ppca, useLag=TRUE)
+#' 
+#' 
+#' ## MOST STRUCTURED TRAITS
+#' a <- map.ppca$c1[,1] # loadings on PC 1
+#' names(a) <- row.names(map.ppca$c1)
+#' highContrib <- a[a< quantile(a,0.1) | a>quantile(a,0.9)]
+#' datSel <- cbind.data.frame(dat[, names(highContrib)], map.ppca$li)
+#' temp <- phylo4d(tre, datSel)
+#' table.phylo4d(temp) # plot of most structured traits
+#' 
+#' 
+#' ## PHYLOGENETIC AUTOCORRELATION TESTS FOR THESE TRAITS
+#' prox <- proxTips(tre, method="Abouheif")
+#' abouheif.moran(dat[, names(highContrib)], prox)
+#' 
+#' }
+#' 
+#' @import phylobase methods
+#' @importFrom stats screeplot
+#' @export ppca
 ppca <- function(x, prox=NULL, method=c("patristic","nNodes","oriAbouheif","Abouheif","sumDD"),
                  f=function(x) {1/x},
                  center=TRUE, scale=TRUE, scannf=TRUE, nfposi=1, nfnega=0){
@@ -147,6 +367,8 @@ ppca <- function(x, prox=NULL, method=c("patristic","nNodes","oriAbouheif","Abou
 #####################
 # Function scatter.ppca
 #####################
+#' @rdname ppca
+#' @export
 scatter.ppca <- function(x, axes=1:ncol(x$li), useLag=FALSE, ...){
     if(useLag){
         df <- as.data.frame(x$ls)
@@ -175,6 +397,8 @@ scatter.ppca <- function(x, axes=1:ncol(x$li), useLag=FALSE, ...){
 ######################
 # Function print.ppca
 ######################
+#' @rdname ppca
+#' @export
 print.ppca <- function(x, ...){
   cat("\t#############################################\n")
   cat("\t# phylogenetic Principal Component Analysis #\n")
@@ -231,6 +455,8 @@ print.ppca <- function(x, ...){
 ###############
 # summary.ppca
 ###############
+#' @rdname ppca
+#' @export
 summary.ppca <- function (object, ..., printres=TRUE) {
 
     ## some checks
@@ -326,6 +552,8 @@ summary.ppca <- function (object, ..., printres=TRUE) {
 #################
 # screeplot.ppca
 #################
+#' @rdname ppca
+#' @export
 screeplot.ppca <- function(x,...,main=NULL){
 
   opar <- par("las")
@@ -367,6 +595,8 @@ screeplot.ppca <- function(x,...,main=NULL){
 ############
 # plot.ppca
 ############
+#' @rdname ppca
+#' @export
 plot.ppca <- function(x, axes = 1:ncol(x$li), useLag=FALSE, ...){
 
     ## some checks

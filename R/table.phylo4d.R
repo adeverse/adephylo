@@ -1,6 +1,120 @@
 #############
 ## table.phylo4d
 #############
+
+
+#' Graphical display of phylogeny and traits
+#' 
+#' This function represents traits onto the tips of a phylogeny. Plotted
+#' objects must be valid \linkS4class{phylo4d} objects (implemented by the
+#' \code{phylobase} package). Current version allows plotting of a tree and one
+#' or more quantitative traits (possibly containing missing data, represented
+#' by an 'x').\cr
+#' 
+#' The plot of phylogenies is performed by a call to
+#' \code{\link[ape]{plot.phylo}} from the \code{ape} package. Hence, many of
+#' the arguments of \code{\link[ape]{plot.phylo}} can be passed to
+#' \code{table.phylo4d}, through the \dots{} argument, but their names must be
+#' complete.
+#' 
+#' For large trees, consider using \code{\link{bullseye}}.
+#' 
+#' The function \code{table.phylo4d} is based on former plot method for
+#' \linkS4class{phylo4d} objects from the \code{phylobase} package.  It
+#' replaces the deprecated \code{ade4} functions
+#' \code{\link[ade4]{symbols.phylog}} and \code{\link[ade4]{table.phylog}}.
+#' 
+#' @param x a \linkS4class{phylo4d} object
+#' @param treetype the type of tree to be plotted ("phylogram" or "cladogram")
+#' @param symbol the type of symbol used to represent data ("circles",
+#' "squares", or "colors")
+#' @param repVar the numerical index of variables to be plotted
+#' @param center a logical stating whether variables should be centred (TRUE,
+#' default) or not (FALSE)
+#' @param scale a logical stating whether variables should be scaled (TRUE,
+#' default) or not (FALSE)
+#' @param legend a logical stating whether a legend should be added to the plot
+#' (TRUE) or not (FALSE, default)
+#' @param grid a logical stating whether a grid should be added to the plot
+#' (TRUE, default) or not (FALSE)
+#' @param box a logical stating whether a box should be added around the plot
+#' (TRUE, default) or not (FALSE)
+#' @param show.tip.label a logical stating whether tip labels should be printed
+#' (TRUE, default) or not (FALSE)
+#' @param show.node.label a logical stating whether node labels should be
+#' printed (TRUE, default) or not (FALSE)
+#' @param show.var.label a logical stating whether labels of variables should
+#' be printed (TRUE, default) or not (FALSE)
+#' @param ratio.tree the proportion of width of the figure occupied by the tree
+#' @param font an integer specifying the type of font for the labels: 1 (plain
+#' text), 2 (bold), 3 (italic, default), or 4 (bold italic).
+#' @param tip.label a character vector giving the tip labels
+#' @param var.label a character vector giving the labels of variables
+#' @param cex.symbol a numeric giving the factor scaling the symbols
+#' @param cex.label a numeric giving the factor scaling all labels
+#' @param cex.legend a numeric giving the factor scaling the legend
+#' @param pch is \code{symbol} is set to 'colors', a number indicating the type
+#' of point to be plotted (see ?points)
+#' @param col is \code{symbol} is set to 'colors', a vector of colors to be
+#' used to represent the data
+#' @param coord.legend an optional list with two components 'x' and 'y'
+#' indicating the lower-left position of the legend. Can be set to
+#' \code{locator(1) to position the legend interactively.}
+#' @param \dots further arguments to be passed to plot methods from \code{ape}.
+#' See \code{\link[ape]{plot.phylo}}.
+#' @author Thibaut Jombart \email{tjombart@@imperial.ac.uk}
+#' @seealso The \linkS4class{phylo4d} class for storing
+#' \code{phylogeny+data}.\cr
+#' 
+#' For large trees, consider using \code{\link{bullseye}}.
+#' 
+#' \code{\link[ape]{plot.phylo}} from the \code{ape} package.\cr
+#' 
+#' An alternative (deprecated) representation is available from
+#' \code{\link[ade4]{dotchart.phylog}}.
+#' @keywords hplot multivariate
+#' @examples
+#' 
+#' if(require(ape) & require(phylobase) & require(ade4)){
+#' 
+#' ## simulated data
+#' tr <- rtree(20)
+#' dat <- data.frame(a = rnorm(20), b = scale(1:20), c=runif(20,-2,2) )
+#' dat[3:6, 2] <- NA # introduce some NAs
+#' obj <- phylo4d(tr, dat) # build a phylo4d object
+#' table.phylo4d(obj) # default scatterplot
+#' table.phylo4d(obj,cex.leg=.6, use.edge.length=FALSE) # customized
+#' table.phylo4d(obj,treetype="clad", show.node=FALSE, cex.leg=.6,
+#' use.edge.length=FALSE, edge.color="blue", edge.width=3) # more customized
+#' 
+#' 
+#' ## teleost fishes data
+#' data(mjrochet)
+#' temp <- read.tree(text=mjrochet$tre) # make a tree
+#' mjr <- phylo4d(x=temp,tip.data=mjrochet$tab) # male a phylo4d object
+#' table.phylo4d(mjr,cex.lab=.5,show.node=FALSE,symb="square")
+#' 
+#' 
+#' ## lizards data
+#' data(lizards)
+#' liz.tr <- read.tree(tex=lizards$hprA) # make a tree
+#' liz <- phylo4d(liz.tr, lizards$traits) # make a phylo4d object
+#' table.phylo4d(liz)
+#' 
+#' 
+#' ## plotting principal components
+#' liz.pca1 <- dudi.pca(lizards$traits, scannf=FALSE, nf=2) # PCA of traits
+#' myPC <- phylo4d(liz.tr, liz.pca1$li) # store PC in a phylo4d object
+#' varlab <- paste("Principal \ncomponent", 1:2) # make labels for PCs
+#' table.phylo4d(myPC, ratio=.8, var.lab=varlab) # plot the PCs
+#' add.scatter.eig(liz.pca1$eig,2,1,2,posi="topleft", inset=c(0,.15))
+#' title("Phylogeny and the principal components")
+#' 
+#' }
+#' 
+#' @import phylobase
+#' @importFrom ape plot.phylo
+#' @export table.phylo4d
 table.phylo4d <- function(x, treetype=c("phylogram","cladogram"), symbol=c("circles", "squares", "colors"),
                           repVar=1:ncol(tdata(x, type="tip")), center=TRUE, scale=TRUE, legend=TRUE, grid=TRUE, box=TRUE,
                           show.tip.label=TRUE, show.node.label=TRUE, show.var.label=TRUE,
@@ -35,7 +149,7 @@ table.phylo4d <- function(x, treetype=c("phylogram","cladogram"), symbol=c("circ
     ##tre$node.label <- x@node.label # this should be done by the as(x,"phylo")
     ## plot only tree if no tip data
     if(ncol(tdata(x,type="tip")) == 0) {
-        plot.phylo(tre, type=treetype, direction="rightwards", show.tip.label=show.tip.label,
+        plot(tre, type=treetype, direction="rightwards", show.tip.label=show.tip.label,
                    show.node.label=show.node.label, cex=cex.label,
                    no.margin=FALSE, x.lim=NULL, y.lim=NULL, ...)
         return(invisible())
@@ -75,7 +189,7 @@ table.phylo4d <- function(x, treetype=c("phylogram","cladogram"), symbol=c("circ
 
 #### plot the tree
     par(plt = plotreg)
-    plotres <- plot.phylo(tre, type=treetype, direction="rightwards", show.tip.label=FALSE,
+    plotres <- plot(tre, type=treetype, direction="rightwards", show.tip.label=FALSE,
                           show.node.label=show.node.label, cex=cex.label,
                           no.margin=FALSE, x.lim=NULL, y.lim=NULL, ...)
 

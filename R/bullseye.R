@@ -9,6 +9,76 @@
 ############
 ## bullseye
 ############
+
+
+#' Fan-like phylogeny with possible representation of traits on tips
+#' 
+#' This function represents a phylogeny as a fan, using circles to provide a
+#' legend for distances and optionally colored symbols to represent traits
+#' associated to the tips of the tree. This function uses and is compatible
+#' with ape's \code{\link[ape]{plot.phylo}}.
+#' 
+#' 
+#' @param phy a tree in \code{phylo}, \linkS4class{phylo4} or
+#' \linkS4class{phylo4d} format.
+#' @param traits an optional data.frame of traits.
+#' @param col.tips.by an optional vector used to define colors for tip labels;
+#' if unamed, must be ordered in the same order as \code{phy$tip.label}.
+#' @param col.pal a function generating colors according to a given palette;
+#' several palettes can be provided as a list, in the case of several traits;
+#' the first palette is always reserved for the tip colors; this argument is
+#' recycled.
+#' @param circ.n the number of circles for the distance annotations.
+#' @param circ.bg the color of the circles.
+#' @param circ.unit the unit of the circles; if NULL, determined automatically
+#' from the data.
+#' @param legend a logical specifying whether a legend should be plotted; only
+#' one legend is displayed, with priority to tip colors first, and then to the
+#' first trait.
+#' @param leg.posi,leg.title,leg.bg position, title and background for the
+#' legend.
+#' @param traits.inset inset for positioning the traits; 1 corresponds to the
+#' circle crossing the furthest tip, 0 to the center of the plot.
+#' @param traits.space a coefficient indicating the spacing between traits.
+#' @param traits.pch,traits.cex type and size of the symbols used for the
+#' traits; recycled if needed.
+#' @param alpha alpha value to be used for the color transparency, between 0
+#' (invisible) and 1 (plain).
+#' @param axis a logical indicating whether an axis should be displayed.
+#' @param \dots further arguments to be passed to plot methods from \code{ape}.
+#' See \code{\link[ape]{plot.phylo}}.
+#' @author Thibaut Jombart \email{tjombart@@imperial.ac.uk}
+#' @seealso \code{\link{table.phylo4d}} for non-radial plots.\cr
+#' 
+#' The \linkS4class{phylo4d} class for storing \code{phylogeny+data}.\cr
+#' 
+#' \code{\link[ape]{plot.phylo}} from the \code{ape} package.\cr
+#' 
+#' \code{\link[ade4]{dotchart.phylog}}.
+#' @keywords hplot multivariate
+#' @examples
+#' 
+#' if(require(ape) && require(phylobase) && require(adegenet)){
+#' 
+#' data(lizards)
+#' tre <- read.tree(text=lizards$hprA) # make a tree
+#' 
+#' ## basic plots
+#' bullseye(tre)
+#' bullseye(tre, lizards$traits)
+#' 
+#' ## customized
+#' par(mar=c(6,6,6,6))
+#' bullseye(tre, lizards$traits, traits.cex=sqrt(1:7), alpha=.7,
+#'          legend=FALSE, circ.unit=10, circ.bg=transp("black",.1),
+#'          edge.width=2)
+#' 
+#' }
+#' 
+#' @importFrom adegenet spectral transp any2col
+#' @importFrom ape .PlotPhyloEnv
+#' @import phylobase
+#' @export bullseye
 bullseye <- function(phy, traits=NULL, col.tips.by=NULL, col.pal=spectral,
                      circ.n=6, circ.bg=transp("royalblue",.1), circ.unit=NULL,
                      legend=TRUE, leg.posi="bottomleft", leg.title="", leg.bg="white",

@@ -10,6 +10,36 @@
 ############
 # listTips
 ############
+
+
+#' List tips descendings from all nodes of a tree
+#' 
+#' The function \code{listTips} lists the tips descending from each node of a
+#' tree. The tree can be of class \code{\link[ape:read.tree]{phylo}},
+#' \linkS4class{phylo4} or \linkS4class{phylo4d}.
+#' 
+#' 
+#' @param x A tree of class \code{\link[ape:read.tree]{phylo}},
+#' \linkS4class{phylo4} or \linkS4class{phylo4d}.
+#' @return A list whose components are vectors of named tips for a given node.
+#' @author Thibaut Jombart \email{tjombart@@imperial.ac.uk}
+#' @seealso \code{\link{listDD}} which lists the direct descendants for each
+#' node. \cr
+#' 
+#' \code{\link{treePart}} which defines partitions of tips according to the
+#' tree topology.
+#' @keywords manip
+#' @examples
+#' 
+#' if(require(ape) & require(phylobase)){
+#' ## make a tree
+#' x <- as(rtree(20),"phylo4")
+#' plot(x,show.node=TRUE)
+#' listTips(x)
+#' }
+#' 
+#' @import phylobase
+#' @export listTips
 listTips <- function(x){
     ## if(!require(phylobase)) stop("phylobase package is not installed")
 
@@ -36,6 +66,56 @@ listTips <- function(x){
 ###########
 # treePart
 ###########
+
+
+#' Define partitions of tips according from a tree
+#' 
+#' The function \code{treePart} defines partitions of tips reflecting the
+#' topology of a tree. There are two possible outputs (handled by the argument
+#' \code{result}):\cr - \code{basis} mode: each node but the root is translated
+#' into a dummy vector having one value for each tip: this value is '1' if the
+#' tip descends from this node, and '0' otherwise.\cr - \code{orthobasis}: in
+#' this mode, an orthonormal basis is derived from the basis previously
+#' mentionned. This orthobasis was proposed in the orthogram (Ollier \emph{et
+#' al.} 2006).
+#' 
+#' Orthobasis produced by this function are identical to those stored in the
+#' \$Bscores component of deprecated \link[ade4]{phylog} objects, from the ade4
+#' package.
+#' 
+#' @param x a tree of class \code{\link[ape:read.tree]{phylo}},
+#' \linkS4class{phylo4} or \linkS4class{phylo4d}.
+#' @param result a character string specifying the type of result: either a
+#' basis of dummy vectors (\code{dummy}), or an orthobasis derived from these
+#' dummy vectors (\code{orthobasis}).
+#' @return A matrix of numeric vectors (in columns) having one value for each
+#' tip (rows).
+#' @author Thibaut Jombart \email{tjombart@@imperial.ac.uk}
+#' @seealso - \code{\link{listDD}} which is called by \code{treePart}.\cr -
+#' \code{\link{orthogram}}, which uses by default the orthobasis produced by
+#' \code{treePart}.\cr
+#' @references Ollier, S., Chessel, D. and Couteron, P. (2005) Orthonormal
+#' Transform to Decompose the Variance of a Life-History Trait across a
+#' Phylogenetic Tree. \emph{Biometrics}, \bold{62}, 471--477.
+#' @keywords manip
+#' @examples
+#' 
+#' \dontrun{
+#' 
+#' if(require(ape) & require(phylobase)){
+#' ## make a tree
+#' x <- as(rtree(10),"phylo4")
+#' partition <- treePart(x)
+#' partition
+#' 
+#' ## plot the dummy vectors with the tree
+#' temp <- phylo4d(x, partition)
+#' table.phylo4d(temp, cent=FALSE, scale=FALSE)
+#' }
+#' }
+#' 
+#' @import phylobase
+#' @export treePart
 treePart <- function(x, result=c("dummy", "orthobasis")){
     ## if(!require(phylobase)) stop("phylobase package is not installed")
 
