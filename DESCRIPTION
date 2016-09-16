@@ -16,4 +16,4 @@ Description: Multivariate tools to analyze comparative data, i.e. a phylogeny
     and some traits measured for each taxa.
 License: GPL (>=2)
 LazyLoad: yes
-RoxygenNote: 5.0.0.9000
+RoxygenNote: 5.0.1
