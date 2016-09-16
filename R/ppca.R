@@ -1,13 +1,3 @@
-####
-#### Phylogenetic ordination tools
-####
-#### Thibaut Jombart 2008 (tjombart@imperial.ac.uk)
-
-################
-# Function ppca
-################
-
-
 #' Phylogenetic principal component analysis
 #' 
 #' These functions are designed to perform a phylogenetic principal component
@@ -398,6 +388,7 @@ scatter.ppca <- function(x, axes=1:ncol(x$li), useLag=FALSE, ...){
 # Function print.ppca
 ######################
 #' @rdname ppca
+#' @method print ppca
 #' @export
 print.ppca <- function(x, ...){
   cat("\t#############################################\n")
@@ -456,6 +447,7 @@ print.ppca <- function(x, ...){
 # summary.ppca
 ###############
 #' @rdname ppca
+#' @method summary ppca
 #' @export
 summary.ppca <- function (object, ..., printres=TRUE) {
 
