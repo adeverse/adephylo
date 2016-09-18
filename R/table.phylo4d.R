@@ -5,73 +5,73 @@
 
 #' Graphical display of phylogeny and traits
 #' 
-#' This function represents traits onto the tips of a phylogeny. Plotted
-#' objects must be valid \linkS4class{phylo4d} objects (implemented by the
-#' \code{phylobase} package). Current version allows plotting of a tree and one
-#' or more quantitative traits (possibly containing missing data, represented
-#' by an 'x').\cr
+#' This function represents traits onto the tips of a phylogeny. Plotted objects
+#' must be valid \linkS4class{phylo4d} objects (implemented by the 
+#' \code{phylobase} package). Current version allows plotting of a tree and one 
+#' or more quantitative traits (possibly containing missing data, represented by
+#' an 'x').\cr
 #' 
-#' The plot of phylogenies is performed by a call to
-#' \code{\link[ape]{plot.phylo}} from the \code{ape} package. Hence, many of
-#' the arguments of \code{\link[ape]{plot.phylo}} can be passed to
-#' \code{table.phylo4d}, through the \dots{} argument, but their names must be
+#' The plot of phylogenies is performed by a call to 
+#' \code{\link[ape]{plot.phylo}} from the \code{ape} package. Hence, many of the
+#' arguments of \code{\link[ape]{plot.phylo}} can be passed to 
+#' \code{table.phylo4d}, through the \dots{} argument, but their names must be 
 #' complete.
 #' 
 #' For large trees, consider using \code{\link{bullseye}}.
 #' 
-#' The function \code{table.phylo4d} is based on former plot method for
-#' \linkS4class{phylo4d} objects from the \code{phylobase} package.  It
-#' replaces the deprecated \code{ade4} functions
-#' \code{\link[ade4]{symbols.phylog}} and \code{\link[ade4]{table.phylog}}.
+#' The function \code{table.phylo4d} is based on former plot method for 
+#' \linkS4class{phylo4d} objects from the \code{phylobase} package.  It replaces
+#' the deprecated \code{ade4} functions \code{\link[ade4]{symbols.phylog}} and
+#' \code{\link[ade4]{table.phylog}}.
 #' 
 #' @param x a \linkS4class{phylo4d} object
 #' @param treetype the type of tree to be plotted ("phylogram" or "cladogram")
-#' @param symbol the type of symbol used to represent data ("circles",
-#' "squares", or "colors")
+#' @param symbol the type of symbol used to represent data ("circles", 
+#'   "squares", or "colors")
 #' @param repVar the numerical index of variables to be plotted
-#' @param center a logical stating whether variables should be centred (TRUE,
-#' default) or not (FALSE)
-#' @param scale a logical stating whether variables should be scaled (TRUE,
-#' default) or not (FALSE)
-#' @param legend a logical stating whether a legend should be added to the plot
-#' (TRUE) or not (FALSE, default)
-#' @param grid a logical stating whether a grid should be added to the plot
-#' (TRUE, default) or not (FALSE)
-#' @param box a logical stating whether a box should be added around the plot
-#' (TRUE, default) or not (FALSE)
-#' @param show.tip.label a logical stating whether tip labels should be printed
-#' (TRUE, default) or not (FALSE)
-#' @param show.node.label a logical stating whether node labels should be
-#' printed (TRUE, default) or not (FALSE)
-#' @param show.var.label a logical stating whether labels of variables should
-#' be printed (TRUE, default) or not (FALSE)
+#' @param center a logical stating whether variables should be centred (TRUE, 
+#'   default) or not (FALSE)
+#' @param scale a logical stating whether variables should be scaled (TRUE, 
+#'   default) or not (FALSE)
+#' @param legend a logical stating whether a legend should be added to the plot 
+#'   (TRUE) or not (FALSE, default)
+#' @param grid a logical stating whether a grid should be added to the plot 
+#'   (TRUE, default) or not (FALSE)
+#' @param box a logical stating whether a box should be added around the plot 
+#'   (TRUE, default) or not (FALSE)
+#' @param show.tip.label a logical stating whether tip labels should be printed 
+#'   (TRUE, default) or not (FALSE)
+#' @param show.node.label a logical stating whether node labels should be 
+#'   printed (TRUE, default) or not (FALSE)
+#' @param show.var.label a logical stating whether labels of variables should be
+#'   printed (TRUE, default) or not (FALSE)
 #' @param ratio.tree the proportion of width of the figure occupied by the tree
-#' @param font an integer specifying the type of font for the labels: 1 (plain
-#' text), 2 (bold), 3 (italic, default), or 4 (bold italic).
+#' @param font an integer specifying the type of font for the labels: 1 (plain 
+#'   text), 2 (bold), 3 (italic, default), or 4 (bold italic).
 #' @param tip.label a character vector giving the tip labels
 #' @param var.label a character vector giving the labels of variables
 #' @param cex.symbol a numeric giving the factor scaling the symbols
 #' @param cex.label a numeric giving the factor scaling all labels
 #' @param cex.legend a numeric giving the factor scaling the legend
-#' @param pch is \code{symbol} is set to 'colors', a number indicating the type
-#' of point to be plotted (see ?points)
-#' @param col is \code{symbol} is set to 'colors', a vector of colors to be
-#' used to represent the data
-#' @param coord.legend an optional list with two components 'x' and 'y'
-#' indicating the lower-left position of the legend. Can be set to
-#' \code{locator(1) to position the legend interactively.}
-#' @param \dots further arguments to be passed to plot methods from \code{ape}.
-#' See \code{\link[ape]{plot.phylo}}.
+#' @param pch is \code{symbol} is set to 'colors', a number indicating the type 
+#'   of point to be plotted (see ?points)
+#' @param col is \code{symbol} is set to 'colors', a vector of colors to be used
+#'   to represent the data
+#' @param coord.legend an optional list with two components 'x' and 'y' 
+#'   indicating the lower-left position of the legend. Can be set to 
+#'   \code{locator(1) to position the legend interactively.}
+#' @param \dots further arguments to be passed to plot methods from \code{ape}. 
+#'   See \code{\link[ape]{plot.phylo}}.
 #' @author Thibaut Jombart \email{tjombart@@imperial.ac.uk}
-#' @seealso The \linkS4class{phylo4d} class for storing
-#' \code{phylogeny+data}.\cr
-#' 
-#' For large trees, consider using \code{\link{bullseye}}.
-#' 
-#' \code{\link[ape]{plot.phylo}} from the \code{ape} package.\cr
-#' 
-#' An alternative (deprecated) representation is available from
-#' \code{\link[ade4]{dotchart.phylog}}.
+#' @seealso The \linkS4class{phylo4d} class for storing 
+#'   \code{phylogeny+data}.\cr
+#'   
+#'   For large trees, consider using \code{\link{bullseye}}.
+#'   
+#'   \code{\link[ape]{plot.phylo}} from the \code{ape} package.\cr
+#'   
+#'   An alternative (deprecated) representation is available from 
+#'   \code{\link[ade4]{dotchart.phylog}}.
 #' @keywords hplot multivariate
 #' @examples
 #' 
@@ -114,6 +114,8 @@
 #' 
 #' @import phylobase
 #' @importFrom ape plot.phylo
+#' @importFrom graphics par strwidth segments symbols points text strheight
+#' @importFrom grDevices heat.colors
 #' @export table.phylo4d
 table.phylo4d <- function(x, treetype=c("phylogram","cladogram"), symbol=c("circles", "squares", "colors"),
                           repVar=1:ncol(tdata(x, type="tip")), center=TRUE, scale=TRUE, legend=TRUE, grid=TRUE, box=TRUE,

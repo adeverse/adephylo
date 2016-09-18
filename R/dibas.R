@@ -6,32 +6,32 @@
 
 #' DIstance-Based Assignment
 #' 
-#' These functions are under development. Please do not use them unless asked
-#' by the author.
+#' These functions are under development. Please do not use them unless asked by
+#' the author.
 #' 
 #' 
 #' @aliases dibas dibas.matrix dibas.dist dibas.phylo dibas.vector simDatGroups
-#' @param x a \code{phylo} object, or a symmetric matrix of pairwise distances
-#' of class \code{matrix} or \code{dist}.
+#' @param x a \code{phylo} object, or a symmetric matrix of pairwise distances 
+#'   of class \code{matrix} or \code{dist}.
 #' @param grp a \code{factor} indicating the groups of observations.
-#' @param method a character string indicating the method to be used for
-#' estimating the distribution of pairwise distances within groups. The default
-#' method ("default") uses all observations, while the "leaveOneOut" estimates
-#' separate group distributions for each individual, leaving this one out in
-#' the estimation process.
-#' @param metric a character string matching "nNodes", "patristic", "Abouheif",
-#' or "sumDD" indicating the distance measure to be used. See
-#' \code{\link{distTips}} for more information. Note that patristic distances
-#' should be avoided in presence of one or more highly diverse group because of
-#' the 'hand fan' syndrome (see example).
-#' @param fromRoot a logical indicating if distances from the root, rather than
-#' between groups, should be used.
-#' @param n.items a vector of integers of the same length as x, stating how
-#' many times each items in 'x' should be repeated; used to take into account
-#' differences in abundances of the different items (e.g. sequences in multiple
-#' copies).
-#' @param \dots further arguments passed to other methods. Can be used to
-#' provide arguments to \code{\link{table.phylo4d}} in \code{plot} method.
+#' @param method a character string indicating the method to be used for 
+#'   estimating the distribution of pairwise distances within groups. The
+#'   default method ("default") uses all observations, while the "leaveOneOut"
+#'   estimates separate group distributions for each individual, leaving this
+#'   one out in the estimation process.
+#' @param metric a character string matching "nNodes", "patristic", "Abouheif", 
+#'   or "sumDD" indicating the distance measure to be used. See 
+#'   \code{\link{distTips}} for more information. Note that patristic distances 
+#'   should be avoided in presence of one or more highly diverse group because
+#'   of the 'hand fan' syndrome (see example).
+#' @param fromRoot a logical indicating if distances from the root, rather than 
+#'   between groups, should be used.
+#' @param n.items a vector of integers of the same length as x, stating how many
+#'   times each items in 'x' should be repeated; used to take into account 
+#'   differences in abundances of the different items (e.g. sequences in
+#'   multiple copies).
+#' @param \dots further arguments passed to other methods. Can be used to 
+#'   provide arguments to \code{\link{table.phylo4d}} in \code{plot} method.
 #' @author Thibaut Jombart \email{tjombart@@imperial.ac.uk}
 #' @keywords multivariate
 #' @examples
@@ -120,8 +120,8 @@
 #' 
 #' 
 #' 
-#' 
-#' 
+#' @importFrom stats dnorm sd rnorm
+#'   
 #' @export dibas
 dibas <- function (x, ...) UseMethod("dibas")
 

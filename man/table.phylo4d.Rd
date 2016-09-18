@@ -18,38 +18,38 @@ table.phylo4d(x, treetype = c("phylogram", "cladogram"),
 
 \item{treetype}{the type of tree to be plotted ("phylogram" or "cladogram")}
 
-\item{symbol}{the type of symbol used to represent data ("circles",
+\item{symbol}{the type of symbol used to represent data ("circles", 
 "squares", or "colors")}
 
 \item{repVar}{the numerical index of variables to be plotted}
 
-\item{center}{a logical stating whether variables should be centred (TRUE,
+\item{center}{a logical stating whether variables should be centred (TRUE, 
 default) or not (FALSE)}
 
-\item{scale}{a logical stating whether variables should be scaled (TRUE,
+\item{scale}{a logical stating whether variables should be scaled (TRUE, 
 default) or not (FALSE)}
 
-\item{legend}{a logical stating whether a legend should be added to the plot
+\item{legend}{a logical stating whether a legend should be added to the plot 
 (TRUE) or not (FALSE, default)}
 
-\item{grid}{a logical stating whether a grid should be added to the plot
+\item{grid}{a logical stating whether a grid should be added to the plot 
 (TRUE, default) or not (FALSE)}
 
-\item{box}{a logical stating whether a box should be added around the plot
+\item{box}{a logical stating whether a box should be added around the plot 
 (TRUE, default) or not (FALSE)}
 
-\item{show.tip.label}{a logical stating whether tip labels should be printed
+\item{show.tip.label}{a logical stating whether tip labels should be printed 
 (TRUE, default) or not (FALSE)}
 
-\item{show.node.label}{a logical stating whether node labels should be
+\item{show.node.label}{a logical stating whether node labels should be 
 printed (TRUE, default) or not (FALSE)}
 
-\item{show.var.label}{a logical stating whether labels of variables should
-be printed (TRUE, default) or not (FALSE)}
+\item{show.var.label}{a logical stating whether labels of variables should be
+printed (TRUE, default) or not (FALSE)}
 
 \item{ratio.tree}{the proportion of width of the figure occupied by the tree}
 
-\item{font}{an integer specifying the type of font for the labels: 1 (plain
+\item{font}{an integer specifying the type of font for the labels: 1 (plain 
 text), 2 (bold), 3 (italic, default), or 4 (bold italic).}
 
 \item{tip.label}{a character vector giving the tip labels}
@@ -62,39 +62,39 @@ text), 2 (bold), 3 (italic, default), or 4 (bold italic).}
 
 \item{cex.legend}{a numeric giving the factor scaling the legend}
 
-\item{pch}{is \code{symbol} is set to 'colors', a number indicating the type
+\item{pch}{is \code{symbol} is set to 'colors', a number indicating the type 
 of point to be plotted (see ?points)}
 
-\item{col}{is \code{symbol} is set to 'colors', a vector of colors to be
-used to represent the data}
+\item{col}{is \code{symbol} is set to 'colors', a vector of colors to be used
+to represent the data}
 
-\item{coord.legend}{an optional list with two components 'x' and 'y'
-indicating the lower-left position of the legend. Can be set to
+\item{coord.legend}{an optional list with two components 'x' and 'y' 
+indicating the lower-left position of the legend. Can be set to 
 \code{locator(1) to position the legend interactively.}}
 
-\item{\dots}{further arguments to be passed to plot methods from \code{ape}.
+\item{\dots}{further arguments to be passed to plot methods from \code{ape}. 
 See \code{\link[ape]{plot.phylo}}.}
 }
 \description{
-This function represents traits onto the tips of a phylogeny. Plotted
-objects must be valid \linkS4class{phylo4d} objects (implemented by the
-\code{phylobase} package). Current version allows plotting of a tree and one
-or more quantitative traits (possibly containing missing data, represented
-by an 'x').\cr
+This function represents traits onto the tips of a phylogeny. Plotted objects
+must be valid \linkS4class{phylo4d} objects (implemented by the 
+\code{phylobase} package). Current version allows plotting of a tree and one 
+or more quantitative traits (possibly containing missing data, represented by
+an 'x').\cr
 }
 \details{
-The plot of phylogenies is performed by a call to
-\code{\link[ape]{plot.phylo}} from the \code{ape} package. Hence, many of
-the arguments of \code{\link[ape]{plot.phylo}} can be passed to
-\code{table.phylo4d}, through the \dots{} argument, but their names must be
+The plot of phylogenies is performed by a call to 
+\code{\link[ape]{plot.phylo}} from the \code{ape} package. Hence, many of the
+arguments of \code{\link[ape]{plot.phylo}} can be passed to 
+\code{table.phylo4d}, through the \dots{} argument, but their names must be 
 complete.
 
 For large trees, consider using \code{\link{bullseye}}.
 
-The function \code{table.phylo4d} is based on former plot method for
-\linkS4class{phylo4d} objects from the \code{phylobase} package.  It
-replaces the deprecated \code{ade4} functions
-\code{\link[ade4]{symbols.phylog}} and \code{\link[ade4]{table.phylog}}.
+The function \code{table.phylo4d} is based on former plot method for 
+\linkS4class{phylo4d} objects from the \code{phylobase} package.  It replaces
+the deprecated \code{ade4} functions \code{\link[ade4]{symbols.phylog}} and
+\code{\link[ade4]{table.phylog}}.
 }
 \examples{
 
@@ -140,15 +140,15 @@ title("Phylogeny and the principal components")
 Thibaut Jombart \email{tjombart@imperial.ac.uk}
 }
 \seealso{
-The \linkS4class{phylo4d} class for storing
-\code{phylogeny+data}.\cr
-
-For large trees, consider using \code{\link{bullseye}}.
-
-\code{\link[ape]{plot.phylo}} from the \code{ape} package.\cr
-
-An alternative (deprecated) representation is available from
-\code{\link[ade4]{dotchart.phylog}}.
+The \linkS4class{phylo4d} class for storing 
+  \code{phylogeny+data}.\cr
+  
+  For large trees, consider using \code{\link{bullseye}}.
+  
+  \code{\link[ape]{plot.phylo}} from the \code{ape} package.\cr
+  
+  An alternative (deprecated) representation is available from 
+  \code{\link[ade4]{dotchart.phylog}}.
 }
 \keyword{hplot}
 \keyword{multivariate}

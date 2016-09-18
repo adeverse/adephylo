@@ -23,37 +23,37 @@ dibas(x, ...)
 \method{dibas}{dist}(x, grp, method = c("default", "leaveOneOut"), ...)
 }
 \arguments{
-\item{x}{a \code{phylo} object, or a symmetric matrix of pairwise distances
+\item{x}{a \code{phylo} object, or a symmetric matrix of pairwise distances 
 of class \code{matrix} or \code{dist}.}
 
 \item{grp}{a \code{factor} indicating the groups of observations.}
 
-\item{method}{a character string indicating the method to be used for
-estimating the distribution of pairwise distances within groups. The default
-method ("default") uses all observations, while the "leaveOneOut" estimates
-separate group distributions for each individual, leaving this one out in
-the estimation process.}
+\item{method}{a character string indicating the method to be used for 
+estimating the distribution of pairwise distances within groups. The
+default method ("default") uses all observations, while the "leaveOneOut"
+estimates separate group distributions for each individual, leaving this
+one out in the estimation process.}
 
-\item{n.items}{a vector of integers of the same length as x, stating how
-many times each items in 'x' should be repeated; used to take into account
-differences in abundances of the different items (e.g. sequences in multiple
-copies).}
+\item{n.items}{a vector of integers of the same length as x, stating how many
+times each items in 'x' should be repeated; used to take into account 
+differences in abundances of the different items (e.g. sequences in
+multiple copies).}
 
-\item{fromRoot}{a logical indicating if distances from the root, rather than
+\item{fromRoot}{a logical indicating if distances from the root, rather than 
 between groups, should be used.}
 
-\item{metric}{a character string matching "nNodes", "patristic", "Abouheif",
-or "sumDD" indicating the distance measure to be used. See
-\code{\link{distTips}} for more information. Note that patristic distances
-should be avoided in presence of one or more highly diverse group because of
-the 'hand fan' syndrome (see example).}
+\item{metric}{a character string matching "nNodes", "patristic", "Abouheif", 
+or "sumDD" indicating the distance measure to be used. See 
+\code{\link{distTips}} for more information. Note that patristic distances 
+should be avoided in presence of one or more highly diverse group because
+of the 'hand fan' syndrome (see example).}
 
-\item{\dots}{further arguments passed to other methods. Can be used to
+\item{\dots}{further arguments passed to other methods. Can be used to 
 provide arguments to \code{\link{table.phylo4d}} in \code{plot} method.}
 }
 \description{
-These functions are under development. Please do not use them unless asked
-by the author.
+These functions are under development. Please do not use them unless asked by
+the author.
 }
 \examples{
 
@@ -134,8 +134,6 @@ plot(table(res$groups), main="Group assignment - dibas Abouheif")
 }
 }
 }
-
-
 
 
 

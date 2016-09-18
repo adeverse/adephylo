@@ -1,96 +1,96 @@
 #' Phylogenetic principal component analysis
 #' 
-#' These functions are designed to perform a phylogenetic principal component
+#' These functions are designed to perform a phylogenetic principal component 
 #' analysis (pPCA, Jombart et al. 2010) and to display the results.
 #' 
-#' \code{ppca} performs the phylogenetic component analysis. Other functions
+#' \code{ppca} performs the phylogenetic component analysis. Other functions 
 #' are:\cr
 #' 
 #' - \code{print.ppca}: prints the ppca content\cr
 #' 
-#' - \code{summary.ppca}: provides useful information about a ppca object,
+#' - \code{summary.ppca}: provides useful information about a ppca object, 
 #' including the decomposition of eigenvalues of all axes\cr
 #' 
-#' - \code{scatter.ppca}: plot principal components using
+#' - \code{scatter.ppca}: plot principal components using 
 #' \code{\link{table.phylo4d}}\cr
 #' 
-#' - \code{screeplot.ppca}: graphical display of the decomposition of pPCA
+#' - \code{screeplot.ppca}: graphical display of the decomposition of pPCA 
 #' eigenvalues\cr
 #' 
 #' - \code{plot.ppca}: several graphics describing a ppca object\cr
 #' 
-#' The phylogenetic Principal Component Analysis (pPCA, Jombart et al., 2010)
-#' is derived from the spatial Principal Component Analysis (spca, Jombart et
-#' al. 2008), implemented in the adegenet package (see
+#' The phylogenetic Principal Component Analysis (pPCA, Jombart et al., 2010) is
+#' derived from the spatial Principal Component Analysis (spca, Jombart et al.
+#' 2008), implemented in the adegenet package (see 
 #' \code{\link[adegenet]{spca}}).\cr
 #' 
-#' pPCA is designed to investigate phylogenetic patterns a set of quantitative
-#' traits. The analysis returns principal components maximizing the product of
-#' variance of the scores and their phylogenetic autocorrelation (Moran's I),
-#' therefore reflecting life histories that are phylogenetically structured.
-#' Large positive and large negative eigenvalues correspond to global and local
+#' pPCA is designed to investigate phylogenetic patterns a set of quantitative 
+#' traits. The analysis returns principal components maximizing the product of 
+#' variance of the scores and their phylogenetic autocorrelation (Moran's I), 
+#' therefore reflecting life histories that are phylogenetically structured. 
+#' Large positive and large negative eigenvalues correspond to global and local 
 #' structures.\cr
 #' 
 #' @aliases ppca print.ppca summary.ppca scatter.ppca screeplot.ppca plot.ppca
-#' @param x a \linkS4class{phylo4d} object (for \code{ppca}) or a ppca object
-#' (for other methods).
-#' @param prox a marix of phylogenetic proximities as returned by
-#' \code{\link{proxTips}}. If not provided, this matrix will be constructed
-#' using the arguments \code{method} and \code{a}.
-#' @param method a character string (full or abbreviated without ambiguity)
-#' specifying the method used to compute proximities; possible values are:\cr -
-#' \code{patristic}: (inversed sum of) branch lengths \cr - \code{nNodes}:
-#' (inversed) number of nodes on the path between the nodes \cr -
-#' \code{oriAbouheif}: original Abouheif's proximity, with diagonal (see
-#' details in \code{\link{proxTips}}) \cr - \code{Abouheif}: Abouheif's
-#' proximity (see details in \code{\link{proxTips}}) \cr - \code{sumDD}:
-#' (inversed) sum of direct descendants of all nodes on the path (see details
-#' in \code{\link{proxTips}}).
+#' @param x a \linkS4class{phylo4d} object (for \code{ppca}) or a ppca object 
+#'   (for other methods).
+#' @param prox a marix of phylogenetic proximities as returned by 
+#'   \code{\link{proxTips}}. If not provided, this matrix will be constructed 
+#'   using the arguments \code{method} and \code{a}.
+#' @param method a character string (full or abbreviated without ambiguity) 
+#'   specifying the method used to compute proximities; possible values are:\cr
+#'   - \code{patristic}: (inversed sum of) branch lengths \cr - \code{nNodes}: 
+#'   (inversed) number of nodes on the path between the nodes \cr - 
+#'   \code{oriAbouheif}: original Abouheif's proximity, with diagonal (see 
+#'   details in \code{\link{proxTips}}) \cr - \code{Abouheif}: Abouheif's 
+#'   proximity (see details in \code{\link{proxTips}}) \cr - \code{sumDD}: 
+#'   (inversed) sum of direct descendants of all nodes on the path (see details 
+#'   in \code{\link{proxTips}}).
 #' @param f a function to change a distance into a proximity.
-#' @param center a logical indicating whether traits should be centred to mean
-#' zero (TRUE, default) or not (FALSE).
-#' @param scale a logical indicating whether traits should be scaled to unit
-#' variance (TRUE, default) or not (FALSE).
-#' @param scannf a logical stating whether eigenvalues should be chosen
-#' interactively (TRUE, default) or not (FALSE).
-#' @param nfposi an integer giving the number of positive eigenvalues retained
-#' ('global structures').
-#' @param nfnega an integer giving the number of negative eigenvalues retained
-#' ('local structures').
-#' @param \dots further arguments passed to other methods. Can be used to
-#' provide arguments to \code{\link{table.phylo4d}} in \code{plot} method.
+#' @param center a logical indicating whether traits should be centred to mean 
+#'   zero (TRUE, default) or not (FALSE).
+#' @param scale a logical indicating whether traits should be scaled to unit 
+#'   variance (TRUE, default) or not (FALSE).
+#' @param scannf a logical stating whether eigenvalues should be chosen 
+#'   interactively (TRUE, default) or not (FALSE).
+#' @param nfposi an integer giving the number of positive eigenvalues retained 
+#'   ('global structures').
+#' @param nfnega an integer giving the number of negative eigenvalues retained 
+#'   ('local structures').
+#' @param \dots further arguments passed to other methods. Can be used to 
+#'   provide arguments to \code{\link{table.phylo4d}} in \code{plot} method.
 #' @param object a \code{ppca} object.
-#' @param printres a logical stating whether results should be printed on the
-#' screen (TRUE, default) or not (FALSE).
+#' @param printres a logical stating whether results should be printed on the 
+#'   screen (TRUE, default) or not (FALSE).
 #' @param axes the index of the principal components to be represented.
-#' @param useLag a logical stating whether the lagged components (\code{x\$ls})
-#' should be used instead of the components (\code{x\$li}).
+#' @param useLag a logical stating whether the lagged components (\code{x\$ls}) 
+#'   should be used instead of the components (\code{x\$li}).
 #' @param main a title for the screeplot; if NULL, a default one is used.
-#' @return The class \code{ppca} are given to lists with the following
-#' components:\cr \item{eig}{a numeric vector of eigenvalues.} \item{nfposi}{an
-#' integer giving the number of global structures retained.} \item{nfnega}{an
-#' integer giving the number of local structures retained.} \item{c1}{a
-#' data.frame of loadings of traits for each axis.} \item{li}{a data.frame of
-#' coordinates of taxa onto the ppca axes (i.e., principal components).}
-#' \item{ls}{a data.frame of lagged prinpal components; useful to represent of
-#' global scores.} \item{as}{a data.frame giving the coordinates of the axes of
-#' an 'ordinary' PCA onto the ppca axes.} \item{call}{the matched call.}
-#' \item{tre}{a phylogenetic tre with class \linkS4class{phylo4}.}
-#' \item{prox}{a matrix of phylogenetic proximities.}
-#' 
-#' Other functions have different outputs:\cr
-#' 
-#' - \code{scatter.ppca} returns the matched call.\cr
+#' @return The class \code{ppca} are given to lists with the following 
+#'   components:\cr \item{eig}{a numeric vector of eigenvalues.}
+#'   \item{nfposi}{an integer giving the number of global structures retained.}
+#'   \item{nfnega}{an integer giving the number of local structures retained.}
+#'   \item{c1}{a data.frame of loadings of traits for each axis.} \item{li}{a
+#'   data.frame of coordinates of taxa onto the ppca axes (i.e., principal
+#'   components).} \item{ls}{a data.frame of lagged prinpal components; useful
+#'   to represent of global scores.} \item{as}{a data.frame giving the
+#'   coordinates of the axes of an 'ordinary' PCA onto the ppca axes.}
+#'   \item{call}{the matched call.} \item{tre}{a phylogenetic tre with class
+#'   \linkS4class{phylo4}.} \item{prox}{a matrix of phylogenetic proximities.}
+#'   
+#'   Other functions have different outputs:\cr
+#'   
+#'   - \code{scatter.ppca} returns the matched call.\cr
 #' @author Thibaut Jombart \email{tjombart@@imperial.ac.uk}
-#' @seealso The implementation of \code{\link[adegenet]{spca}} in the adegenet
-#' package (\code{\link[adegenet]{adegenet}}) \cr
-#' @references Jombart, T.; Pavoine, S.; Dufour, A. & Pontier, D. (2010, in
-#' press) Exploring phylogeny as a source of ecological variation: a
-#' methodological approach. doi:10.1016/j.jtbi.2010.03.038
-#' 
-#' Jombart, T., Devillard, S., Dufour, A.-B. and Pontier, D. (2008) Revealing
-#' cryptic phylogenetic patterns in genetic variability by a new multivariate
-#' method. \emph{Heredity}, \bold{101}, 92--103.
+#' @seealso The implementation of \code{\link[adegenet]{spca}} in the adegenet 
+#'   package (\code{\link[adegenet]{adegenet}}) \cr
+#' @references Jombart, T.; Pavoine, S.; Dufour, A. & Pontier, D. (2010, in 
+#'   press) Exploring phylogeny as a source of ecological variation: a 
+#'   methodological approach. doi:10.1016/j.jtbi.2010.03.038
+#'   
+#'   Jombart, T., Devillard, S., Dufour, A.-B. and Pontier, D. (2008) Revealing 
+#'   cryptic phylogenetic patterns in genetic variability by a new multivariate 
+#'   method. \emph{Heredity}, \bold{101}, 92--103.
 #' @keywords multivariate
 #' @examples
 #' 
@@ -215,6 +215,9 @@
 #' 
 #' @import phylobase methods
 #' @importFrom stats screeplot
+#' @importFrom graphics par layout barplot title box dotchart abline rect text
+#'   axis segments
+#' @importFrom stats median
 #' @export ppca
 ppca <- function(x, prox=NULL, method=c("patristic","nNodes","oriAbouheif","Abouheif","sumDD"),
                  f=function(x) {1/x},
@@ -588,6 +591,7 @@ screeplot.ppca <- function(x,...,main=NULL){
 # plot.ppca
 ############
 #' @rdname ppca
+#' @method plot ppca
 #' @export
 plot.ppca <- function(x, axes = 1:ncol(x$li), useLag=FALSE, ...){
 

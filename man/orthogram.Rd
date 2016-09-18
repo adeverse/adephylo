@@ -11,22 +11,22 @@ orthogram(x, tre = NULL, orthobas = NULL, prox = NULL, nrepet = 999,
 \arguments{
 \item{x}{a numeric vector corresponding to the quantitative variable}
 
-\item{tre}{a tree of class \code{\link[ape:read.tree]{phylo}},
+\item{tre}{a tree of class \code{\link[ape:read.tree]{phylo}}, 
 \linkS4class{phylo4} or \linkS4class{phylo4d}.}
 
 \item{orthobas}{an object of class \code{'orthobasis'}}
 
-\item{prox}{a matrix of phylogenetic proximities as returned by
+\item{prox}{a matrix of phylogenetic proximities as returned by 
 \code{\link{proxTips}}.}
 
 \item{nrepet}{an integer giving the number of permutations}
 
-\item{posinega}{a parameter for the ratio test. If posinega > 0, the
-function computes the ratio test.}
+\item{posinega}{a parameter for the ratio test. If posinega > 0, the function
+computes the ratio test.}
 
 \item{tol}{a tolerance threshold for orthonormality condition}
 
-\item{cdot}{a character size for points on the cumulative decomposition
+\item{cdot}{a character size for points on the cumulative decomposition 
 display}
 
 \item{cfont.main}{a character size for titles}
@@ -35,71 +35,70 @@ display}
 
 \item{nclass}{a single number giving the number of cells for the histogram}
 
-\item{high.scores}{a single number giving the number of vectors to return.
-If > 0, the function returns labels of vectors that explains the larger part
+\item{high.scores}{a single number giving the number of vectors to return. If
+> 0, the function returns labels of vectors that explains the larger part 
 of variance.}
 
-\item{alter}{a character string specifying the alternative hypothesis, must
+\item{alter}{a character string specifying the alternative hypothesis, must 
 be one of "greater" (default), "less" or "two-sided"}
 }
 \value{
-If (high.scores = 0), returns an object of class \code{'krandtest'}
-(randomization tests) corresponding to the five non parametric tests. \cr
-\cr If (high.scores > 0), returns a list containg : \item{w}{: an object of
-class \code{'krandtest'} (randomization tests)} \item{scores.order}{: a
-vector which terms give labels of vectors that explain the larger part of
-variance}
+If (high.scores = 0), returns an object of class \code{'krandtest'} 
+  (randomization tests) corresponding to the five non parametric tests. \cr 
+  \cr If (high.scores > 0), returns a list containg : \item{w}{: an object of
+  class \code{'krandtest'} (randomization tests)} \item{scores.order}{: a 
+  vector which terms give labels of vectors that explain the larger part of 
+  variance}
 }
 \description{
-This function performs the orthonormal decomposition of variance of a
-quantitative variable on an orthonormal basis. It also returns the results
-of five non parametric tests associated to the variance decomposition.  It
-thus provides tools (graphical displays and test) for analysing
-phylogenetic, pattern in one quantitative trait. This implementation replace
-the (deprecated) version from the \code{ade4} package.\cr
+This function performs the orthonormal decomposition of variance of a 
+quantitative variable on an orthonormal basis. It also returns the results of
+five non parametric tests associated to the variance decomposition.  It thus
+provides tools (graphical displays and test) for analysing phylogenetic,
+pattern in one quantitative trait. This implementation replace the
+(deprecated) version from the \code{ade4} package.\cr
 }
 \details{
-Several orthonormal bases can be used. By default, basis is constructed from
-a partition of tips according to tree topology (as returned by
-\code{\link{treePart}}); for this, the argument \code{tre} must be provided.
-Alternatively, one can provide an orthonormal basis as returned by
-\code{\link{orthobasis.phylo}}/\code{\link{me.phylo}} (argument
-\code{orthobas}), or provide a proximity matrix from which an orthobasis
+Several orthonormal bases can be used. By default, basis is constructed from 
+a partition of tips according to tree topology (as returned by 
+\code{\link{treePart}}); for this, the argument \code{tre} must be provided. 
+Alternatively, one can provide an orthonormal basis as returned by 
+\code{\link{orthobasis.phylo}}/\code{\link{me.phylo}} (argument 
+\code{orthobas}), or provide a proximity matrix from which an orthobasis 
 based on Moran's eigenvectors will be constructed (argument \code{prox}).
 
-The function computes the variance decomposition of a quantitative vector x
-on an orthonormal basis B. The variable is normalized given the uniform
-weight to eliminate problem of scales.  It plots the squared correlations
-\eqn{R^{2}}{R^2} between x and vectors of B (variance decomposition) and the
-cumulated squared correlations \eqn{SR^{2}}{SR^2} (cumulative
-decomposition).  The function also provides five non parametric tests to
-test the existence of autocorrelation. The tests derive from the five
-following statistics :
+The function computes the variance decomposition of a quantitative vector x 
+on an orthonormal basis B. The variable is normalized given the uniform 
+weight to eliminate problem of scales.  It plots the squared correlations 
+\eqn{R^{2}}{R^2} between x and vectors of B (variance decomposition) and the 
+cumulated squared correlations \eqn{SR^{2}}{SR^2} (cumulative decomposition).
+The function also provides five non parametric tests to test the existence of
+autocorrelation. The tests derive from the five following statistics :
 
-- R2Max=\eqn{\max(R^{2})}{max(R^2)}. It takes high value when a high part of
-the variability is explained by one score.\cr -
-SkR2k=\eqn{\sum_{i=1}^{n-1}(iR^{2}_i)}{sum_i^(n-1) i*(R^2)_i}. It compares
-the part of variance explained by internal nodes to the one explained by end
-nodes.\cr - Dmax=\eqn{\max_{m=1,...,n-1}(\sum_{j=1}^{m}R^{2}_j -
-}{max_(m=1,...,n-1)(sum_(j=1)^m(R^2_j) - (m/n-1))}\eqn{
-\frac{m}{n-1})}{max_(m=1,...,n-1)(sum_(j=1)^m(R^2_j) - (m/n-1))}. It
-examines the accumulation of variance for a sequence of scores.\cr -
-SCE=\eqn{\sum_{m=1}^{n-1} (\sum_{j=1}^{m}R^{2}_j -
-}{sum_(m=1)^(n-1)(sum_(j=1)^m(R^2_j) - (m/n-1))^2}\eqn{
-\frac{m}{n-1})^{2}}{sum_(m=1)^(n-1)(sum_(j=1)^m(R^2_j) - (m/n-1))^2}. It
-examines also the accumulation of variance for a sequence of scores.\cr -
-ratio: depends of the parameter posinega. If posinega > 0, the statistic
-ratio exists and equals \eqn{\sum_{i=1}^{posinega}R^{2}_i}{sum_i (R^2)_i
-with i < posinega + 1}. It compares the part of variance explained by
-internal nodes to the one explained by end nodes when we can define how many
-vectors correspond to internal nodes.
+- R2Max=\eqn{\max(R^{2})}{max(R^2)}. It takes high value when a high part of 
+the variability is explained by one score.\cr - 
+SkR2k=\eqn{\sum_{i=1}^{n-1}(iR^{2}_i)}{sum_i^(n-1) i*(R^2)_i}. It compares 
+the part of variance explained by internal nodes to the one explained by end 
+nodes.\cr - Dmax=\eqn{\max_{m=1,...,n-1}(\sum_{j=1}^{m}R^{2}_j - 
+}{max_(m=1,...,n-1)(sum_(j=1)^m(R^2_j) - (m/n-1))}\eqn{ 
+\frac{m}{n-1})}{max_(m=1,...,n-1)(sum_(j=1)^m(R^2_j) - (m/n-1))}. It examines
+the accumulation of variance for a sequence of scores.\cr - 
+SCE=\eqn{\sum_{m=1}^{n-1} (\sum_{j=1}^{m}R^{2}_j - 
+}{sum_(m=1)^(n-1)(sum_(j=1)^m(R^2_j) - (m/n-1))^2}\eqn{ 
+\frac{m}{n-1})^{2}}{sum_(m=1)^(n-1)(sum_(j=1)^m(R^2_j) - (m/n-1))^2}. It 
+examines also the accumulation of variance for a sequence of scores.\cr - 
+ratio: depends of the parameter posinega. If posinega > 0, the statistic 
+ratio exists and equals \eqn{\sum_{i=1}^{posinega}R^{2}_i}{sum_i (R^2)_i with
+i < posinega + 1}. It compares the part of variance explained by internal
+nodes to the one explained by end nodes when we can define how many vectors
+correspond to internal nodes.
 }
 \note{
-This function replaces the former version from the ade4 package, which
-is deprecated. Note that if ade4 is not loaded BEFORE adephylo, then the
-version from ade4 will erase that of adephylo, which will still be available
-from adephylo::orthogram. In practice, though, this should never happen,
-since ade4 is loaded as a dependence by adephylo.
+This function replaces the former version from the ade4 package, which 
+  is deprecated. Note that if ade4 is not loaded BEFORE adephylo, then the 
+  version from ade4 will erase that of adephylo, which will still be
+  available from adephylo::orthogram. In practice, though, this should never
+  happen, since ade4 is loaded as a dependence by adephylo.
 }
 \examples{
 
@@ -141,13 +140,13 @@ abouheif.moran(resid, W)
 }
 \author{
 Original code: Sebastien Ollier and Daniel Chessel.\cr
-
-Current maintainer: Stephane Dray <stephane.dray@univ-lyon1.fr>
+  
+  Current maintainer: Stephane Dray <stephane.dray@univ-lyon1.fr>
 }
 \references{
-Ollier, S., Chessel, D. and Couteron, P. (2005) Orthonormal
-Transform to Decompose the Variance of a Life-History Trait across a
-Phylogenetic Tree. \emph{Biometrics}, \bold{62}, 471--477.
+Ollier, S., Chessel, D. and Couteron, P. (2005) Orthonormal 
+  Transform to Decompose the Variance of a Life-History Trait across a 
+  Phylogenetic Tree. \emph{Biometrics}, \bold{62}, 471--477.
 }
 \seealso{
 \code{\link{orthobasis.phylo}}
