@@ -1,4 +1,6 @@
 [![Travis-CI Build Status](https://travis-ci.org/thibautjombart/adephylo.svg?branch=master)](https://travis-ci.org/thibautjombart/adephylo)
+[![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/i8j1ojmbl7x977n0?svg=true)](https://ci.appveyor.com/project/sdray/adephylo)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/adephylo)](http://cran.r-project.org/package=adephylo)
 
 
 # adephylo
