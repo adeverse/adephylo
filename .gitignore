@@ -8,3 +8,4 @@ vignettes/apex.md
 .apex.Rproj
 *.o
 *.so
+*.Rproj
