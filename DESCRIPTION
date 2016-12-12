@@ -1,10 +1,10 @@
 Package: adephylo
-Version: 1.1-8
-Date: 2016/09/16
+Version: 1.1-9
+Date: 2016/12/12
 Title: adephylo: exploratory analyses for the phylogenetic comparative method
-Author: Thibaut Jombart <t.jombart@imperial.ac.uk>, Stephane Dray
+Author: Thibaut Jombart <t.jombart@imperial.ac.uk>, Stéphane Dray
     <stephane.dray@univ-lyon1.fr>, Anders Ellern Bilgrau <abilgrau@math.aau.dk>
-Maintainer: Thibaut Jombart <t.jombart@imperial.ac.uk>
+Maintainer: Stéphane Dray <stephane.dray@univ-lyon1.fr>
 Depends:
     methods,
     ade4
@@ -17,3 +17,4 @@ Description: Multivariate tools to analyze comparative data, i.e. a phylogeny
 License: GPL (>=2)
 LazyLoad: yes
 RoxygenNote: 5.0.1
+Encoding: UTF-8
