@@ -7,22 +7,6 @@
 \format{\code{mjrochet} is a list containing the 2 following objects :
 \describe{ \item{tre}{is a character string giving the phylogenetic tree in
 Newick format.} \item{tab}{is a data frame with 49 rows and 7 traits.} }}
-\source{
-Data taken from: \cr Summary of data - Clupeiformes :
-\url{http://www.ifremer.fr/maerha/clupe.html} \cr Summary of data -
-Argentiniformes : \url{http://www.ifremer.fr/maerha/argentin.html} \cr
-Summary of data - Salmoniformes :
-\url{http://www.ifremer.fr/maerha/salmon.html} \cr Summary of data -
-Gadiformes : \url{http://www.ifremer.fr/maerha/gadi.html} \cr Summary of
-data - Lophiiformes : \url{http://www.ifremer.fr/maerha/loph.html} \cr
-Summary of data - Atheriniformes :
-\url{http://www.ifremer.fr/maerha/ather.html} \cr Summary of data -
-Perciformes : \url{http://www.ifremer.fr/maerha/perci.html} \cr Summary of
-data - Pleuronectiformes : \url{http://www.ifremer.fr/maerha/pleuro.html}
-\cr Summary of data - Scorpaeniformes :
-\url{http://www.ifremer.fr/maerha/scorpa.html} \cr Phylogenetic tree :
-\url{http://www.ifremer.fr/maerha/life_history.html}
-}
 \description{
 This data set describes the phylogeny of 49 teleos fishes as reported by
 Rochet et al. (2000). It also gives life-history traits corresponding to

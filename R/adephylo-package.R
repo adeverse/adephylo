@@ -242,7 +242,7 @@ NULL
 #' life-history traits in lacertid lizards: a comparative study.
 #' \emph{American Naturalist}, \bold{149}, 91--111.
 #' 
-#' See a data description at \url{http://pbil.univ-lyon1.fr/R/pps/pps063.pdf}
+#' See a data description at \url{http://pbil.univ-lyon1.fr/R/pdf/pps063.pdf}
 #' (in French).
 #' @keywords datasets
 #' @examples
@@ -303,9 +303,6 @@ NULL
 #' @references Ackerly, D. D. and Donoghue, M.J. (1998) Leaf size, sappling
 #' allometry, and Corner's rules: phylogeny and correlated evolution in Maples
 #' (Acer). \emph{American Naturalist}, \bold{152}, 767--791.
-#' @source Data were obtained from the URL
-#' \url{http://www.stanford.edu/~dackerly/acerdata.html} (no longer
-#' maintained).
 #' @keywords datasets
 #' @examples
 #' 
@@ -370,20 +367,6 @@ NULL
 #' @references Rochet, M. J., Cornillon, P-A., Sabatier, R. and Pontier, D.
 #' (2000) Comparative analysis of phylogenic and fishing effects in life
 #' history patterns of teleos fishes.  \emph{Oikos}, \bold{91}, 255--270.
-#' @source Data taken from: \cr Summary of data - Clupeiformes :
-#' \url{http://www.ifremer.fr/maerha/clupe.html} \cr Summary of data -
-#' Argentiniformes : \url{http://www.ifremer.fr/maerha/argentin.html} \cr
-#' Summary of data - Salmoniformes :
-#' \url{http://www.ifremer.fr/maerha/salmon.html} \cr Summary of data -
-#' Gadiformes : \url{http://www.ifremer.fr/maerha/gadi.html} \cr Summary of
-#' data - Lophiiformes : \url{http://www.ifremer.fr/maerha/loph.html} \cr
-#' Summary of data - Atheriniformes :
-#' \url{http://www.ifremer.fr/maerha/ather.html} \cr Summary of data -
-#' Perciformes : \url{http://www.ifremer.fr/maerha/perci.html} \cr Summary of
-#' data - Pleuronectiformes : \url{http://www.ifremer.fr/maerha/pleuro.html}
-#' \cr Summary of data - Scorpaeniformes :
-#' \url{http://www.ifremer.fr/maerha/scorpa.html} \cr Phylogenetic tree :
-#' \url{http://www.ifremer.fr/maerha/life_history.html}
 #' @keywords datasets
 #' @examples
 #' 
@@ -502,7 +485,7 @@ NULL
 #' monogamus birds: a re-examination of the Procellariiformes. \emph{Animal
 #' Behaviour}, \bold{65}, 235--246.
 #' 
-#' See a data description at \url{http://pbil.univ-lyon1.fr/R/pps/pps037.pdf}
+#' See a data description at \url{http://pbil.univ-lyon1.fr/R/pdf/pps037.pdf}
 #' (in French).
 #' @keywords datasets
 #' @examples
