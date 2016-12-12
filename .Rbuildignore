@@ -1,8 +1,11 @@
 ^\.travis\.yml$
-README.Rmd
+^README\.md$
+^README\.Rmd$
+^README-.*\.png$
 .*.tar.gz$
 cran-comments.Rmd
 cran-comments.md
 ^.*\.Rproj$
 ^\.Rproj\.user$
 appveyor.yml
+TODO
