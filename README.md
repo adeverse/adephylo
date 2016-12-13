@@ -39,8 +39,8 @@ Development team
 ### Authors/developers
 *adephylo* is developed by:
 * [Thibaut Jombart](https://sites.google.com/site/thibautjombart/)
-* Stéphane Dray
+* [Stéphane Dray](http://pbil.univ-lyon1.fr/members/dray/)
 * Anders Ellern Bilgrau
 
 ### Maintainer
-* [Thibaut Jombart](https://sites.google.com/site/thibautjombart/)
+* [Stéphane Dray](http://pbil.univ-lyon1.fr/members/dray/)
