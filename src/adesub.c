@@ -41,7 +41,7 @@ double traceXtdLXq (double **X, double **L, double *d, double *q)
         trace = trace + A[i][i] * q[i];
     }
     
-    /* Libération des réservations locales */
+    /* Lib?ration des r?servations locales */
     freetab (auxi);
     freetab (A);
     return(trace);
@@ -156,7 +156,7 @@ double alea (void)
 void aleapermutmat (double **a)
 {
     /* permute au hasard les lignes du tableau a
-    Manly p. 42 le tableau est modifié */
+    Manly p. 42 le tableau est modifi? */
     int lig, i,j, col, n, k;
     double z;
 
@@ -177,8 +177,8 @@ void aleapermutmat (double **a)
 /*************************/
 void aleapermutvec (double *a)
 {
-    /* permute au hasard les ÚlÚments du vecteur a
-    Manly p. 42 Le vecteur est modifié
+    /* permute au hasard les ?l?ments du vecteur a
+    Manly p. 42 Le vecteur est modifi?
     from Knuth 1981 p. 139*/
     int lig, i,j, k;
     double z;
@@ -466,9 +466,9 @@ void freevec (double *vec)
 /***********************************************************************/
 void getpermutation (int *numero, int repet)
 /*----------------------
-* affectation d'une permutation alÚatoire des n premiers entiers 
+* affectation d'une permutation al?atoire des n premiers entiers 
 * dans dans un vecteur d'entiers de dimension n
-* vecintalloc prÚalable exigÚ
+* vecintalloc pr?alable exig?
 * *numero est un vecteur d'entier
 * repet est un entier qui peut prendre une valeur arbitraire
 * utilise dans le germe du generateur de nb pseudo-aleatoires
@@ -497,7 +497,7 @@ void getpermutation (int *numero, int repet)
     /* srand(seed); */
     GetRNGstate();
     for (i=1;i<=n;i++) {
-        alea[i]=unif_rand();
+        alea[i]= (int) (unif_rand() * RAND_MAX);
     }
     PutRNGstate();
     trirapideint (alea , numero, 1, n);
@@ -777,8 +777,8 @@ void matpermut (double **A, int *num, double **B)
 /*---------------------------------------
 * A est une matrice n-p
 * B est une matrice n-p
-* num est une permutation aléatoire des n premiers entiers
-* B contient en sortie les lignes de A permutÚes
+* num est une permutation al?atoire des n premiers entiers
+* B contient en sortie les lignes de A permut?es
 * ---------------------------------------*/
 
     int lig, col,lig1, col1, lig2, i, j, k;
@@ -916,7 +916,7 @@ void prodmatAAtB (double **a, double **b)
 void prodmatAtBrandomC (double **a, double **b, double **c, int*permut)
 /*--------------------------------------------------
 * Produit matriciel AtB
-* les lignes de B sont permutÚes par la permutation permut
+* les lignes de B sont permut?es par la permutation permut
 --------------------------------------------------*/
 {
     int j, k, i, i0, lig, col, col2;
@@ -1129,8 +1129,8 @@ void vecpermut (double *A, int *num, double *B)
 /*---------------------------------------
 * A est un vecteur n elements
 * B est une vecteur n elements
-* num est une permutation alatoire des n premiers entiers
-* B contient en sortie les elements de A permutes
+* num est une permutation al?atoire des n premiers entiers
+* B contient en sortie les elements de A permut?es
 * ---------------------------------------*/
 
     int lig, lig1, lig2, i, k;
