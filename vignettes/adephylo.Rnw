@@ -21,6 +21,7 @@
 
 
 \begin{document}
+\SweaveOpts{concordance=TRUE}
 
 
 
@@ -142,22 +143,6 @@ library(adephylo)
 search()
 @
 
-Note that possibly conflicting, deprecated functions or datasets from \code{ade4} are masked by
-\code{adephylo}.  In case the converse would occur (i.e. deprecated function masking a function of
-\code{adephylo}), one can refer to the `good' version of a function by adding the prefix
-\code{adephylo::} to the function.  Hence, it is possible to coerce the version of a masked
-function, using a kludge like:
-<<kludge>>=
-cat("\n=== Old - deprecated- version ===\n")
-orthogram <- ade4::orthogram
-args(orthogram)
-cat("\n=== New version === \n")
-orthogram <- adephylo::orthogram
-args(orthogram)
-@
-
-Luckily, this should not be required as long as one is not playing
-with loading and unloading \code{ade4} once \code{adephylo} is loaded.
 
 
 %%%%%%%%%%%%%%%%%%%%%
