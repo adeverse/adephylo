@@ -50,9 +50,6 @@ table.phylo4d(temp, cent=FALSE, scale=FALSE)
 }
 
 }
-\author{
-Thibaut Jombart \email{tjombart@imperial.ac.uk}
-}
 \references{
 Ollier, S., Chessel, D. and Couteron, P. (2005) Orthonormal
 Transform to Decompose the Variance of a Life-History Trait across a
@@ -63,5 +60,7 @@ Phylogenetic Tree. \emph{Biometrics}, \bold{62}, 471--477.
 \code{\link{orthogram}}, which uses by default the orthobasis produced by
 \code{treePart}.\cr
 }
+\author{
+Thibaut Jombart \email{tjombart@imperial.ac.uk}
+}
 \keyword{manip}
-

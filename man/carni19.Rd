@@ -34,4 +34,3 @@ table.phylo4d(x, ratio=.5, center=FALSE)
 
 }
 \keyword{datasets}
-

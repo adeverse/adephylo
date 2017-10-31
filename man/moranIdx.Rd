@@ -55,9 +55,6 @@ abline(v=sim[1], col="red", lwd=3)
 
 }
 }
-\author{
-Thibaut Jombart \email{tjombart@imperial.ac.uk}
-}
 \references{
 Moran, P.A.P. (1948) The interpretation of statistical maps.
 \emph{Journal of the Royal Statistical Society, B} \bold{10}, 243--251.
@@ -72,5 +69,7 @@ Moran's I and Geary's c. \emph{Geographical Analysis}, \bold{16}, 17--24.
 \code{\link{proxTips}} which computes phylogenetic proximities
 between tips of a phylogeny.
 }
+\author{
+Thibaut Jombart \email{tjombart@imperial.ac.uk}
+}
 \keyword{manip}
-

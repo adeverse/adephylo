@@ -2,11 +2,15 @@
 % Please edit documentation in R/dibas.R
 \name{dibas}
 \alias{dibas}
-\alias{dibas.dist}
 \alias{dibas.matrix}
+\alias{dibas.dist}
 \alias{dibas.phylo}
 \alias{dibas.vector}
 \alias{simDatGroups}
+\alias{dibas.matrix}
+\alias{dibas.vector}
+\alias{dibas.phylo}
+\alias{dibas.dist}
 \title{DIstance-Based Assignment}
 \usage{
 dibas(x, ...)
@@ -25,6 +29,9 @@ dibas(x, ...)
 \arguments{
 \item{x}{a \code{phylo} object, or a symmetric matrix of pairwise distances 
 of class \code{matrix} or \code{dist}.}
+
+\item{\dots}{further arguments passed to other methods. Can be used to 
+provide arguments to \code{\link{table.phylo4d}} in \code{plot} method.}
 
 \item{grp}{a \code{factor} indicating the groups of observations.}
 
@@ -47,9 +54,6 @@ or "sumDD" indicating the distance measure to be used. See
 \code{\link{distTips}} for more information. Note that patristic distances 
 should be avoided in presence of one or more highly diverse group because
 of the 'hand fan' syndrome (see example).}
-
-\item{\dots}{further arguments passed to other methods. Can be used to 
-provide arguments to \code{\link{table.phylo4d}} in \code{plot} method.}
 }
 \description{
 These functions are under development. Please do not use them unless asked by
@@ -146,4 +150,3 @@ plot(table(res$groups), main="Group assignment - dibas Abouheif")
 Thibaut Jombart \email{tjombart@imperial.ac.uk}
 }
 \keyword{multivariate}
-

@@ -57,12 +57,11 @@ sp.tips(x, 1, 2:20, TRUE)
 }
 
 }
-\author{
-Thibaut Jombart \email{tjombart@imperial.ac.uk}
-}
 \seealso{
 \code{\link[phylobase]{shortestPath}} which does the same thing as
 \code{sp.tips}, for any node (internal or tip), but much more slowly. \cr
 }
+\author{
+Thibaut Jombart \email{tjombart@imperial.ac.uk}
+}
 \keyword{manip}
-

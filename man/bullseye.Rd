@@ -80,9 +80,6 @@ bullseye(tre, lizards$traits, traits.cex=sqrt(1:7), alpha=.7,
 }
 
 }
-\author{
-Thibaut Jombart \email{tjombart@imperial.ac.uk}
-}
 \seealso{
 \code{\link{table.phylo4d}} for non-radial plots.\cr
 
@@ -92,6 +89,8 @@ The \linkS4class{phylo4d} class for storing \code{phylogeny+data}.\cr
 
 \code{\link[ade4]{dotchart.phylog}}.
 }
+\author{
+Thibaut Jombart \email{tjombart@imperial.ac.uk}
+}
 \keyword{hplot}
 \keyword{multivariate}
-

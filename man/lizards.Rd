@@ -72,4 +72,3 @@ See a data description at \url{http://pbil.univ-lyon1.fr/R/pdf/pps063.pdf}
 (in French).
 }
 \keyword{datasets}
-

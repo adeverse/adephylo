@@ -136,9 +136,6 @@ title("Phylogeny and the principal components")
 }
 
 }
-\author{
-Thibaut Jombart \email{tjombart@imperial.ac.uk}
-}
 \seealso{
 The \linkS4class{phylo4d} class for storing 
   \code{phylogeny+data}.\cr
@@ -150,6 +147,8 @@ The \linkS4class{phylo4d} class for storing
   An alternative (deprecated) representation is available from 
   \code{\link[ade4]{dotchart.phylog}}.
 }
+\author{
+Thibaut Jombart \email{tjombart@imperial.ac.uk}
+}
 \keyword{hplot}
 \keyword{multivariate}
-

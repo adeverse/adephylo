@@ -138,11 +138,6 @@ abouheif.moran(resid, W)
 }
 
 }
-\author{
-Original code: Sebastien Ollier and Daniel Chessel.\cr
-  
-  Current maintainer: Stephane Dray <stephane.dray@univ-lyon1.fr>
-}
 \references{
 Ollier, S., Chessel, D. and Couteron, P. (2005) Orthonormal 
   Transform to Decompose the Variance of a Life-History Trait across a 
@@ -151,4 +146,8 @@ Ollier, S., Chessel, D. and Couteron, P. (2005) Orthonormal
 \seealso{
 \code{\link{orthobasis.phylo}}
 }
-
+\author{
+Original code: Sebastien Ollier and Daniel Chessel.\cr
+  
+  Current maintainer: Stephane Dray <stephane.dray@univ-lyon1.fr>
+}

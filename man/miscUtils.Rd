@@ -47,4 +47,3 @@ lapply(1:nTips(x), function(i) .tipToRoot(x, i, root))
 Thibaut Jombart \email{tjombart@imperial.ac.uk}
 }
 \keyword{manip}
-

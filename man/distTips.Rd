@@ -84,9 +84,6 @@ tim1[c(1,3)]/tim2[c(1,3)] # C is about a thousand time faster in this case
 }
 
 }
-\author{
-Thibaut Jombart \email{tjombart@imperial.ac.uk}
-}
 \references{
 Pavoine, S.; Ollier, S.; Pontier, D. & Chessel, D. (2008)
 Testing for phylogenetic signal in life history variable: Abouheif's test
@@ -96,5 +93,7 @@ revisited. \emph{Theoretical Population Biology}: \bold{73}, 79-91.
 \code{\link{distTips}} which computes several phylogenetic
 distances between tips.
 }
+\author{
+Thibaut Jombart \email{tjombart@imperial.ac.uk}
+}
 \keyword{manip}
-

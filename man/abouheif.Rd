@@ -98,10 +98,6 @@ moran.idx(dom,W2)
 }
 
 }
-\author{
-Original code from ade4 (gearymoran function) by Sebastien Ollier\cr
-Adapted and maintained by Thibaut Jombart <tjombart@imperial.ac.uk>.
-}
 \references{
 Thioulouse, J., Chessel, D. and Champely, S. (1995) Multivariate analysis of
 spatial patterns: a unified approach to local and global structures.
@@ -112,4 +108,7 @@ spatial patterns: a unified approach to local and global structures.
 \code{\link[ape]{Moran.I}} from the ape package for the classical Moran's I
 test. \cr
 }
-
+\author{
+Original code from ade4 (gearymoran function) by Sebastien Ollier\cr
+Adapted and maintained by Thibaut Jombart <tjombart@imperial.ac.uk>.
+}

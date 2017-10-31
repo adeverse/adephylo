@@ -32,9 +32,6 @@ listDD(x)
 }
 
 }
-\author{
-Thibaut Jombart \email{tjombart@imperial.ac.uk}
-}
 \seealso{
 \code{\link{listTips}} which lists the tips descending from each
 node. \cr
@@ -42,5 +39,7 @@ node. \cr
 \code{\link{treePart}} which defines partitions of tips according to the
 tree topology.
 }
+\author{
+Thibaut Jombart \email{tjombart@imperial.ac.uk}
+}
 \keyword{manip}
-

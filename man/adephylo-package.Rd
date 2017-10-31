@@ -2,8 +2,8 @@
 % Please edit documentation in R/adephylo-package.R
 \docType{package}
 \name{adephylo-package}
-\alias{adephylo}
 \alias{adephylo-package}
+\alias{adephylo}
 \title{The adephylo package}
 \description{
 This package is devoted to exploratory analysis of phylogenetic comparative
@@ -118,15 +118,14 @@ To cite adephylo, please use the reference given by
 \tabular{ll}{ Package: \tab adephylo\cr Type: \tab Package\cr Version: \tab
 1.1-7\cr Date: \tab 2014-11-10 \cr License: \tab GPL (>=2) }
 }
+\seealso{
+The \code{ade4} package for multivariate analysis.
+}
 \author{
 Thibaut Jombart <tjombart@imperial.ac.uk>\cr with contributions
 Stephane Dray <stephane.dray@univ-lyon1.fr> and Anders Ellern Bilgrau
 <abilgrau@math.aau.dk>. \cr Parts of former code from \code{ade4} by Daniel
 Chessel and Sebastien Ollier.
 }
-\seealso{
-The \code{ade4} package for multivariate analysis.
-}
 \keyword{manip}
 \keyword{multivariate}
-

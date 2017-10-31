@@ -58,9 +58,6 @@ table.phylo4d(temp, show.node=FALSE, cex.lab=.6)
 }
 
 }
-\author{
-Thibaut Jombart \email{tjombart@imperial.ac.uk}
-}
 \references{
 Pavoine, S.; Ollier, S.; Pontier, D. & Chessel, D. (2008)
 Testing for phylogenetic signal in life history variable: Abouheif's test
@@ -70,5 +67,7 @@ revisited. \emph{Theoretical Population Biology}: \bold{73}, 79-91.
 \code{\link{distTips}} which computes the same phylogenetic
 distances, but between tips.
 }
+\author{
+Thibaut Jombart \email{tjombart@imperial.ac.uk}
+}
 \keyword{manip}
-

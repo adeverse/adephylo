@@ -58,4 +58,3 @@ table.phylo4d(x)
 
 }
 \keyword{datasets}
-

@@ -53,4 +53,3 @@ allometry, and Corner's rules: phylogeny and correlated evolution in Maples
 (Acer). \emph{American Naturalist}, \bold{152}, 767--791.
 }
 \keyword{datasets}
-

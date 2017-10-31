@@ -55,4 +55,3 @@ orthogram(residuals(lm1), x)
 
 }
 \keyword{datasets}
-

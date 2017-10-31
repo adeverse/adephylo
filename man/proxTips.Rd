@@ -115,9 +115,6 @@ table.phylo4d(obj,symbol="sq")
 }
 
 }
-\author{
-Thibaut Jombart \email{tjombart@imperial.ac.uk}
-}
 \references{
 == About Moran's index with various proximities == \cr Pavoine,
 S.; Ollier, S.; Pontier, D.; Chessel, D. (2008) Testing for phylogenetic
@@ -144,5 +141,7 @@ the assumption of phylogenetic independence in comparative data.
 \code{\link{distTips}} which computes several phylogenetic
 distances between tips.
 }
+\author{
+Thibaut Jombart \email{tjombart@imperial.ac.uk}
+}
 \keyword{manip}
-
