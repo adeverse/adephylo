@@ -1,13 +1,13 @@
 Package: adephylo
-Version: 1.1-10
-Date: 2016-12-12
+Version: 1.1-11
+Date: 2017-12-18
 Title: Exploratory Analyses for the Phylogenetic Comparative Method
 Author: Thibaut Jombart <t.jombart@imperial.ac.uk>, Stéphane Dray
     <stephane.dray@univ-lyon1.fr>, Anders Ellern Bilgrau <abilgrau@math.aau.dk>
 Maintainer: Stéphane Dray <stephane.dray@univ-lyon1.fr>
 Depends:
     methods,
-    ade4
+    ade4 (>= 1.7-10)
 Imports:
     phylobase,
     ape,
