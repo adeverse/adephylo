@@ -80,7 +80,7 @@ listTips <- function(x){
 #' al.} 2006).
 #' 
 #' Orthobasis produced by this function are identical to those stored in the
-#' \$Bscores component of deprecated \link[ade4]{phylog} objects, from the ade4
+#' Bscores component of deprecated \link[ade4]{phylog} objects, from the ade4
 #' package.
 #' 
 #' @param x a tree of class \code{\link[ape:read.tree]{phylo}},
