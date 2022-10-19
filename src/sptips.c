@@ -174,7 +174,7 @@ void intersectInt(int *a, int *b, int lengthA, int lengthB, int *res, int *resSi
    - N is the number of edges in the tree, i.e. number of rows of $edge
 */
 void pathTipToRoot(int tip, int *ances, int *desc, int N, int *res, int *resSize){
-	int i, curNode=0, keepOn=1, nextNodeId;
+	int curNode=0, keepOn=1, nextNodeId;
 
 	curNode = tip;
 	*resSize = 0;
