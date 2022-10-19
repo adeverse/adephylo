@@ -4,11 +4,13 @@
 \name{carni70}
 \alias{carni70}
 \title{Phylogeny and quantitative traits of carnivora}
-\format{\code{carni70} is a list containing the 2 following objects:
+\format{
+\code{carni70} is a list containing the 2 following objects:
 \describe{ \item{tre}{is a character string giving the phylogenetic tree in
 Newick format.  Branch lengths are expressed as divergence times (millions
 of years)} \item{tab}{is a data frame with 70 species and two traits: size
-(body size (kg)) ; range (geographic range size (km)).} }}
+(body size (kg)) ; range (geographic range size (km)).} }
+}
 \source{
 Diniz-Filho, J. A. F., and N. M. Torres. (2002) Phylogenetic
 comparative methods and the geographic range size-body size relationship in

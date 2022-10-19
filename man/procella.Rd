@@ -4,10 +4,12 @@
 \name{procella}
 \alias{procella}
 \title{Phylogeny and quantitative traits of birds}
-\format{\code{procella} is a list containing the 2 following objects:
+\format{
+\code{procella} is a list containing the 2 following objects:
 \describe{ \item{tre}{is a character string giving the phylogenetic tree in
 Newick format.} \item{traits}{is a data frame with 19 species and 6 traits}
-}}
+}
+}
 \description{
 This data set describes the phylogeny of 19 birds as reported by Bried et
 al. (2002). It also gives 6 traits corresponding to these 19 species.

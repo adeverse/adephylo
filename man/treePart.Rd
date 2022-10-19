@@ -30,7 +30,7 @@ al.} 2006).
 }
 \details{
 Orthobasis produced by this function are identical to those stored in the
-\$Bscores component of deprecated \link[ade4]{phylog} objects, from the ade4
+Bscores component of deprecated \link[ade4]{phylog} objects, from the ade4
 package.
 }
 \examples{

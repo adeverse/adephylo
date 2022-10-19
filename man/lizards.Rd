@@ -4,13 +4,15 @@
 \name{lizards}
 \alias{lizards}
 \title{Phylogeny and quantitative traits of lizards}
-\format{\code{lizards} is a list containing the 3 following objects :
+\format{
+\code{lizards} is a list containing the 3 following objects :
 \describe{ \item{traits}{is a data frame with 18 species and 8 traits.}
 \item{hprA}{is a character string giving the phylogenetic tree (hypothesized
 phylogenetic relationships based on immunological distances) in Newick
 format.} \item{hprB}{is a character string giving the phylogenetic tree
 (hypothesized phylogenetic relationships based on morphological
-characteristics) in Newick format.} }}
+characteristics) in Newick format.} }
+}
 \description{
 This data set describes the phylogeny of 18 lizards as reported by Bauwens
 and D\'iaz-Uriarte (1997). It also gives life-history traits corresponding
@@ -42,7 +44,7 @@ if(require(ade4)){
 liz.pca1 <- dudi.pca(lizards$traits, cent=TRUE,
    scale=TRUE, scannf=FALSE, nf=2) # PCA of traits
 myPC <- phylo4d(liz.tr, liz.pca1$li) # store PC in a phylo4d object
-varlab <- paste("Principal \\ncomponent", 1:2) # make labels for PCs
+varlab <- paste("Principal \ncomponent", 1:2) # make labels for PCs
 table.phylo4d(myPC, ratio=.8, var.lab=varlab) # plot the PCs
 add.scatter.eig(liz.pca1$eig,2,1,2,posi="topleft", inset=c(0,.15))
 title("Phylogeny and the principal components")

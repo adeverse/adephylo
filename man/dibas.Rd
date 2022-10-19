@@ -7,22 +7,23 @@
 \alias{dibas.phylo}
 \alias{dibas.vector}
 \alias{simDatGroups}
-\alias{dibas.matrix}
-\alias{dibas.vector}
-\alias{dibas.phylo}
-\alias{dibas.dist}
 \title{DIstance-Based Assignment}
 \usage{
 dibas(x, ...)
 
 \method{dibas}{matrix}(x, grp, method = c("default", "leaveOneOut"), ...)
 
-\method{dibas}{vector}(x, grp, method = c("default", "leaveOneOut"),
-  n.items = NULL, ...)
+\method{dibas}{vector}(x, grp, method = c("default", "leaveOneOut"), n.items = NULL, ...)
 
-\method{dibas}{phylo}(x, grp, method = c("default", "leaveOneOut"),
-  fromRoot = FALSE, metric = c("Abouheif", "nNodes", "patristic", "sumDD"),
-  n.items = NULL, ...)
+\method{dibas}{phylo}(
+  x,
+  grp,
+  method = c("default", "leaveOneOut"),
+  fromRoot = FALSE,
+  metric = c("Abouheif", "nNodes", "patristic", "sumDD"),
+  n.items = NULL,
+  ...
+)
 
 \method{dibas}{dist}(x, grp, method = c("default", "leaveOneOut"), ...)
 }

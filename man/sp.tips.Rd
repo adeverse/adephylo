@@ -4,8 +4,7 @@
 \alias{sp.tips}
 \title{Find the shortest path between tips of a tree}
 \usage{
-sp.tips(x, tip1, tip2, useTipNames = FALSE, quiet = FALSE,
-  include.mrca = TRUE)
+sp.tips(x, tip1, tip2, useTipNames = FALSE, quiet = FALSE, include.mrca = TRUE)
 }
 \arguments{
 \item{x}{A tree of class \code{\link[ape:read.tree]{phylo}},

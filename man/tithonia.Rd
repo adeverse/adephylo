@@ -4,10 +4,12 @@
 \name{tithonia}
 \alias{tithonia}
 \title{Phylogeny and quantitative traits of flowers}
-\format{\code{tithonia} is a list containing the 2 following objects :
+\format{
+\code{tithonia} is a list containing the 2 following objects :
 \describe{ \item{tre}{is a character string giving the phylogenetic tree in
 Newick format.} \item{tab}{is a data frame with 11 species and 14 traits (6
-morphologic traits and 8 demographic).} }}
+morphologic traits and 8 demographic).} }
+}
 \source{
 Data were obtained from Morales, E. (2000) Estimating phylogenetic
 inertia in Tithonia (Asteraceae) : a comparative approach. \emph{Evolution},

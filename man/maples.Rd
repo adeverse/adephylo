@@ -4,9 +4,11 @@
 \name{maples}
 \alias{maples}
 \title{Phylogeny and quantitative traits of flowers}
-\format{\code{tithonia} is a list containing the 2 following objects : -
+\format{
+\code{tithonia} is a list containing the 2 following objects : -
 tre: a character string giving the phylogenetic tree in Newick format.\cr -
-tab: a data frame with 17 species and 31 traits.\cr}
+tab: a data frame with 17 species and 31 traits.\cr
+}
 \description{
 This data set describes the phylogeny of 17 flowers as reported by Ackerly
 and Donoghue (1998). It also gives 31 traits corresponding to these 17

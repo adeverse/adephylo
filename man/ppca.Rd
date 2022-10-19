@@ -7,16 +7,21 @@
 \alias{scatter.ppca}
 \alias{screeplot.ppca}
 \alias{plot.ppca}
-\alias{scatter.ppca}
-\alias{print.ppca}
-\alias{summary.ppca}
-\alias{screeplot.ppca}
-\alias{plot.ppca}
 \title{Phylogenetic principal component analysis}
 \usage{
-ppca(x, prox = NULL, method = c("patristic", "nNodes", "oriAbouheif",
-  "Abouheif", "sumDD"), f = function(x) {     1/x }, center = TRUE,
-  scale = TRUE, scannf = TRUE, nfposi = 1, nfnega = 0)
+ppca(
+  x,
+  prox = NULL,
+  method = c("patristic", "nNodes", "oriAbouheif", "Abouheif", "sumDD"),
+  f = function(x) {
+     1/x
+ },
+  center = TRUE,
+  scale = TRUE,
+  scannf = TRUE,
+  nfposi = 1,
+  nfnega = 0
+)
 
 \method{scatter}{ppca}(x, axes = 1:ncol(x$li), useLag = FALSE, ...)
 
@@ -142,7 +147,7 @@ liz.tre <- read.tree(tex=lizards$hprA)
 liz.4d <- phylo4d(liz.tre, lizards$traits)
 par(mar=rep(.1,4))
 table.phylo4d(liz.4d,var.lab=c(names(lizards$traits),
-   "ACP 1\\n(\\"size effect\\")"),show.node=FALSE, cex.lab=1.2)
+   "ACP 1\n(\"size effect\")"),show.node=FALSE, cex.lab=1.2)
 
 
 ## REMOVE DUPLICATED POPULATIONS

@@ -4,9 +4,16 @@
 \alias{abouheif.moran}
 \title{Abouheif's test based on Moran's I}
 \usage{
-abouheif.moran(x, W = NULL, method = c("oriAbouheif", "patristic", "nNodes",
-  "Abouheif", "sumDD"), f = function(x) {     1/x }, nrepet = 999,
-  alter = c("greater", "less", "two-sided"))
+abouheif.moran(
+  x,
+  W = NULL,
+  method = c("oriAbouheif", "patristic", "nNodes", "Abouheif", "sumDD"),
+  f = function(x) {
+     1/x
+ },
+  nrepet = 999,
+  alter = c("greater", "less", "two-sided")
+)
 }
 \arguments{
 \item{x}{a data frame with continuous variables, or a \linkS4class{phylo4d}

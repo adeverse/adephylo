@@ -4,11 +4,26 @@
 \alias{bullseye}
 \title{Fan-like phylogeny with possible representation of traits on tips}
 \usage{
-bullseye(phy, traits = NULL, col.tips.by = NULL, col.pal = spectral,
-  circ.n = 6, circ.bg = transp("royalblue", 0.1), circ.unit = NULL,
-  legend = TRUE, leg.posi = "bottomleft", leg.title = "",
-  leg.bg = "white", traits.inset = 1.1, traits.space = 0.05,
-  traits.pch = 19, traits.cex = 1, alpha = 1, axis = TRUE, ...)
+bullseye(
+  phy,
+  traits = NULL,
+  col.tips.by = NULL,
+  col.pal = spectral,
+  circ.n = 6,
+  circ.bg = transp("royalblue", 0.1),
+  circ.unit = NULL,
+  legend = TRUE,
+  leg.posi = "bottomleft",
+  leg.title = "",
+  leg.bg = "white",
+  traits.inset = 1.1,
+  traits.space = 0.05,
+  traits.pch = 19,
+  traits.cex = 1,
+  alpha = 1,
+  axis = TRUE,
+  ...
+)
 }
 \arguments{
 \item{phy}{a tree in \code{phylo}, \linkS4class{phylo4} or

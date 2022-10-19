@@ -4,9 +4,11 @@
 \name{ungulates}
 \alias{ungulates}
 \title{Phylogeny and quantitative traits of ungulates.}
-\format{\code{fission} is a list containing the 2 following objects :
+\format{
+\code{fission} is a list containing the 2 following objects :
 \describe{ \item{tre}{is a character string giving the phylogenetic tree in
-Newick format.} \item{tab}{is a data frame with 18 species and 4 traits} }}
+Newick format.} \item{tab}{is a data frame with 18 species and 4 traits} }
+}
 \source{
 Data were obtained from Pelabon, C., Gaillard, J.M., Loison, A. and
 Portier, A. (1995) Is sex-biased maternal care limited by total maternal

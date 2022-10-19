@@ -5,8 +5,14 @@
 \alias{me.phylo}
 \title{Computes Moran's eigenvectors from a tree or a phylogenetic proximity matrix}
 \usage{
-orthobasis.phylo(x = NULL, prox = NULL, method = c("patristic", "nNodes",
-  "oriAbouheif", "Abouheif", "sumDD"), f = function(x) {     1/x })
+orthobasis.phylo(
+  x = NULL,
+  prox = NULL,
+  method = c("patristic", "nNodes", "oriAbouheif", "Abouheif", "sumDD"),
+  f = function(x) {
+     1/x
+ }
+)
 }
 \arguments{
 \item{x}{A tree of class \code{\link[ape:read.tree]{phylo}},
@@ -103,11 +109,11 @@ Peres-Neto, P. (2006) A unified strategy for estimating and
 controlling spatial, temporal and phylogenetic autocorrelation in ecological
 models \emph{Oecologica Brasiliensis} \bold{10}: 105-119.\cr
 
-Dray, S.; Legendre, P. \& Peres-Neto, P. (2006) Spatial modelling: a
+Dray, S.; Legendre, P. and Peres-Neto, P. (2006) Spatial modelling: a
 comprehensive framework for principal coordinate analysis of neighbours
 matrices (PCNM) \emph{Ecological Modelling} \bold{196}: 483-493.\cr
 
-Griffith, D. \& Peres-Neto, P. (2006) Spatial modeling in ecology: the
+Griffith, D. and Peres-Neto, P. (2006) Spatial modeling in ecology: the
 flexibility of eigenfunction spatial analyses \emph{Ecology} \bold{87}:
 2603-2613.\cr
 }

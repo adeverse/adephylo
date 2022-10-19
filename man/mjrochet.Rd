@@ -4,9 +4,11 @@
 \name{mjrochet}
 \alias{mjrochet}
 \title{Phylogeny and quantitative traits of teleos fishes}
-\format{\code{mjrochet} is a list containing the 2 following objects :
+\format{
+\code{mjrochet} is a list containing the 2 following objects :
 \describe{ \item{tre}{is a character string giving the phylogenetic tree in
-Newick format.} \item{tab}{is a data frame with 49 rows and 7 traits.} }}
+Newick format.} \item{tab}{is a data frame with 49 rows and 7 traits.} }
+}
 \description{
 This data set describes the phylogeny of 49 teleos fishes as reported by
 Rochet et al. (2000). It also gives life-history traits corresponding to

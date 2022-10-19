@@ -4,9 +4,21 @@
 \alias{orthogram}
 \title{Orthonormal decomposition of variance}
 \usage{
-orthogram(x, tre = NULL, orthobas = NULL, prox = NULL, nrepet = 999,
-  posinega = 0, tol = 1e-07, cdot = 1.5, cfont.main = 1.5, lwd = 2,
-  nclass, high.scores = 0, alter = c("greater", "less", "two-sided"))
+orthogram(
+  x,
+  tre = NULL,
+  orthobas = NULL,
+  prox = NULL,
+  nrepet = 999,
+  posinega = 0,
+  tol = 1e-07,
+  cdot = 1.5,
+  cfont.main = 1.5,
+  lwd = 2,
+  nclass,
+  high.scores = 0,
+  alter = c("greater", "less", "two-sided")
+)
 }
 \arguments{
 \item{x}{a numeric vector corresponding to the quantitative variable}

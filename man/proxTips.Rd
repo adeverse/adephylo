@@ -4,9 +4,17 @@
 \alias{proxTips}
 \title{Compute some phylogenetic proximities between tips}
 \usage{
-proxTips(x, tips = "all", method = c("patristic", "nNodes", "oriAbouheif",
-  "Abouheif", "sumDD"), f = function(x) {     1/x }, normalize = c("row",
-  "col", "none"), symmetric = TRUE, useC = TRUE)
+proxTips(
+  x,
+  tips = "all",
+  method = c("patristic", "nNodes", "oriAbouheif", "Abouheif", "sumDD"),
+  f = function(x) {
+     1/x
+ },
+  normalize = c("row", "col", "none"),
+  symmetric = TRUE,
+  useC = TRUE
+)
 }
 \arguments{
 \item{x}{a tree of class \code{\link[ape:read.tree]{phylo}},

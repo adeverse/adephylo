@@ -4,10 +4,12 @@
 \name{palm}
 \alias{palm}
 \title{Phylogenetic and quantitative traits of amazonian palm trees}
-\format{\code{palm} is a list containing the 2 following objects: \describe{
+\format{
+\code{palm} is a list containing the 2 following objects: \describe{
 \item{tre}{is a character string giving the phylogenetic tree in Newick
 format.} \item{traits}{is a data frame with 66 species (rows) and 7 traits
-(columns).} }}
+(columns).} }
+}
 \source{
 This data set was obtained by Clementine Gimaret-Carpentier.
 }

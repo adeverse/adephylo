@@ -4,8 +4,12 @@
 \alias{distTips}
 \title{Compute some phylogenetic distance between tips}
 \usage{
-distTips(x, tips = "all", method = c("patristic", "nNodes", "Abouheif",
-  "sumDD"), useC = TRUE)
+distTips(
+  x,
+  tips = "all",
+  method = c("patristic", "nNodes", "Abouheif", "sumDD"),
+  useC = TRUE
+)
 }
 \arguments{
 \item{x}{a tree of class \code{\link[ape:read.tree]{phylo}},

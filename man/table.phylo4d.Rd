@@ -4,14 +4,31 @@
 \alias{table.phylo4d}
 \title{Graphical display of phylogeny and traits}
 \usage{
-table.phylo4d(x, treetype = c("phylogram", "cladogram"),
-  symbol = c("circles", "squares", "colors"), repVar = 1:ncol(tdata(x, type
-  = "tip")), center = TRUE, scale = TRUE, legend = TRUE, grid = TRUE,
-  box = TRUE, show.tip.label = TRUE, show.node.label = TRUE,
-  show.var.label = TRUE, ratio.tree = 1/3, font = 3,
-  tip.label = tipLabels(x), var.label = colnames(tdata(x, type = "tip")),
-  cex.symbol = 1, cex.label = 1, cex.legend = 1, pch = 20,
-  col = heat.colors(100), coord.legend = NULL, ...)
+table.phylo4d(
+  x,
+  treetype = c("phylogram", "cladogram"),
+  symbol = c("circles", "squares", "colors"),
+  repVar = 1:ncol(tdata(x, type = "tip")),
+  center = TRUE,
+  scale = TRUE,
+  legend = TRUE,
+  grid = TRUE,
+  box = TRUE,
+  show.tip.label = TRUE,
+  show.node.label = TRUE,
+  show.var.label = TRUE,
+  ratio.tree = 1/3,
+  font = 3,
+  tip.label = tipLabels(x),
+  var.label = colnames(tdata(x, type = "tip")),
+  cex.symbol = 1,
+  cex.label = 1,
+  cex.legend = 1,
+  pch = 20,
+  col = heat.colors(100),
+  coord.legend = NULL,
+  ...
+)
 }
 \arguments{
 \item{x}{a \linkS4class{phylo4d} object}
@@ -128,7 +145,7 @@ table.phylo4d(liz)
 ## plotting principal components
 liz.pca1 <- dudi.pca(lizards$traits, scannf=FALSE, nf=2) # PCA of traits
 myPC <- phylo4d(liz.tr, liz.pca1$li) # store PC in a phylo4d object
-varlab <- paste("Principal \\ncomponent", 1:2) # make labels for PCs
+varlab <- paste("Principal \ncomponent", 1:2) # make labels for PCs
 table.phylo4d(myPC, ratio=.8, var.lab=varlab) # plot the PCs
 add.scatter.eig(liz.pca1$eig,2,1,2,posi="topleft", inset=c(0,.15))
 title("Phylogeny and the principal components")

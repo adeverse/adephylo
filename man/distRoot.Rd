@@ -4,8 +4,11 @@
 \alias{distRoot}
 \title{Compute the distance of tips to the root}
 \usage{
-distRoot(x, tips = "all", method = c("patristic", "nNodes", "Abouheif",
-  "sumDD"))
+distRoot(
+  x,
+  tips = "all",
+  method = c("patristic", "nNodes", "Abouheif", "sumDD")
+)
 }
 \arguments{
 \item{x}{a tree of class \code{\link[ape:read.tree]{phylo}},
