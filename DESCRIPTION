@@ -4,7 +4,7 @@ Date: 2022-10-19
 Title: Exploratory Analyses for the Phylogenetic Comparative Method
 Author: Thibaut Jombart <t.jombart@imperial.ac.uk>, Stéphane Dray
     <stephane.dray@univ-lyon1.fr>, Anders Ellern Bilgrau <abilgrau@math.aau.dk>
-Maintainer: Stéphane Dray <stephane.dray@univ-lyon1.fr>
+Maintainer: Aurélie Siberchicot <aurelie.siberchicot@univ-lyon1.fr>
 Depends:
     methods,
     ade4 (>= 1.7-10)
