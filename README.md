@@ -16,7 +16,7 @@ To install the development version from github:
 
 ```r
 library(devtools)
-install_github("thibautjombart/adephylo")
+install_github("aursiber/adephylo")
 ```
 
 The stable version can be installed from CRAN using:

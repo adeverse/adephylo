@@ -110,8 +110,7 @@
 #' To cite adephylo, please use the reference given by
 #' \code{citation("adephylo")}.
 #' 
-#' \tabular{ll}{ Package: \tab adephylo\cr Type: \tab Package\cr Version: \tab
-#' 1.1-7\cr Date: \tab 2014-11-10 \cr License: \tab GPL (>=2) }
+#' \tabular{ll}{ Package: \tab adephylo\cr Type: \tab Package\cr License: \tab GPL (>=2) }
 #' 
 #' @name adephylo-package
 #' @aliases adephylo-package adephylo

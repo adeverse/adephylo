@@ -115,8 +115,7 @@ Here is a list of available datasets: \code{\link{carni19}},
 To cite adephylo, please use the reference given by
 \code{citation("adephylo")}.
 
-\tabular{ll}{ Package: \tab adephylo\cr Type: \tab Package\cr Version: \tab
-1.1-7\cr Date: \tab 2014-11-10 \cr License: \tab GPL (>=2) }
+\tabular{ll}{ Package: \tab adephylo\cr Type: \tab Package\cr License: \tab GPL (>=2) }
 }
 \seealso{
 The \code{ade4} package for multivariate analysis.
