@@ -30,7 +30,7 @@ This dataset replaces the former version in ade4.
 }
 \examples{
 
-\dontrun{
+
 if(require(ape) && require(phylobase)){
 
 ## see data
@@ -62,7 +62,7 @@ plot(ppca1)
 
 }
 }
-}
+
 
 }
 \references{

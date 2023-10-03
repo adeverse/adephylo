@@ -42,7 +42,7 @@ This dataset replaces the former version in ade4.
 }
 \examples{
 
-\dontrun{
+
 if(require(ape) && require(phylobase)){
 
 data(tithonia)
@@ -52,11 +52,11 @@ rownames(traits) <- gsub("_", ".", rownames(traits))
 
 ## build a phylo4d object
 x <- phylo4d(tre, traits)
-par(mar=rep(.1,4))
+oldpar <- par(mar=rep(.1,4))
 table.phylo4d(x)
+par(oldpar)
+}
 
-}
-}
 
 }
 \keyword{datasets}

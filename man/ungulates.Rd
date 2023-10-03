@@ -33,7 +33,7 @@ This dataset replaces the former version in ade4.
 }
 \examples{
 
-\dontrun{
+
 if(require(ape) && require(phylobase)){
 ## load data
 data(ungulates)
@@ -53,7 +53,7 @@ x <- phylo4d(tre, cbind.data.frame(afbw, neonatw)) # traits on the phylogeny
 ## test phylogenetic inertia in residuals
 orthogram(residuals(lm1), x) 
 }
-}
+
 
 }
 \keyword{datasets}

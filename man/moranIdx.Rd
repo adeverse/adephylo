@@ -26,10 +26,11 @@ variable and a matrix of proximities among observations.
 }
 \examples{
 
-\dontrun{
+
 ## use maples dataset
+if(require(ape) && require(phylobase)){
 data(maples)
-tre <- read.tree(text=maples$tre)
+tre <- ape::read.tree(text=maples$tre)
 dom <- maples$tab$Dom
 bif <- maples$tab$Bif
 
@@ -52,8 +53,8 @@ pval
 hist(sim, col="grey", main="Moran's I Monte Carlo test for 'bif'") # plot
 mtext("Histogram of permutations and observation (in red)")
 abline(v=sim[1], col="red", lwd=3)
-
 }
+
 }
 \references{
 Moran, P.A.P. (1948) The interpretation of statistical maps.

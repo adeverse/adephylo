@@ -27,7 +27,7 @@ This dataset replaces the former version in ade4.
 }
 \examples{
 
-\dontrun{
+
 if(require(ape) && require(phylobase)){
 
 data(carni70)
@@ -36,7 +36,7 @@ tre <- read.tree(text=carni70$tre)
 x <- phylo4d(tre, carni70$tab)
 table.phylo4d(x)
 
-par(mar=rep(.1,4))
+oldpar <- par(mar=rep(.1,4))
 table.phylo4d(x,cex.lab=.5, show.n=FALSE, ratio=.5)
 
 
@@ -49,8 +49,10 @@ orthogram(size, tre)
 yrange <- scale(carni70$tab)[,2]
 names(yrange) <- row.names(carni70$tab)
 orthogram(yrange, tre)
+
+par(oldpar)
 }
-}
+
 
 }
 \keyword{datasets}

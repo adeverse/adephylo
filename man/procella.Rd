@@ -28,17 +28,18 @@ This dataset replaces the former version in ade4.
 }
 \examples{
 
-\dontrun{
+
 if(require(ape) && require(phylobase)){
 
 ## load data, make tree and phylo4d object
 data(procella)
 tre <- read.tree(text=procella$tre)
 x <- phylo4d(tre, procella$traits)
-par(mar=rep(.1,4))
+oldpar <- par(mar=rep(.1,4))
 table.phylo4d(x,cex.lab=.7)
+par(oldpar)
 }
-}
+
 
 }
 \references{

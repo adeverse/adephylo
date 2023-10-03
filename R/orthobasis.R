@@ -69,7 +69,7 @@
 #' table.phylo4d(obj, cex.sym=.7, cex.lab=.7)
 #' 
 #' 
-#' \dontrun{
+#' 
 #' ## REMOVING PHYLOGENETIC AUTOCORRELATION IN A MODEL ##
 #' ## use example in ungulates dataset
 #' data(ungulates)
@@ -98,7 +98,7 @@
 #' ## see the difference
 #' table.phylo4d(phylo4d(tre, cbind.data.frame(resid1, resid2)))
 #' }
-#' }
+#' 
 #' 
 #' @rdname orthobasis
 #' @import phylobase ade4

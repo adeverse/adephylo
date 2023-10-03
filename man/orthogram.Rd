@@ -114,7 +114,7 @@ This function replaces the former version from the ade4 package, which
 }
 \examples{
 
-\dontrun{
+
 if(require(ape) && require(phylobase)){
 
 ## a phylogenetic example
@@ -147,7 +147,7 @@ orthogram(resid, ortho=myOrthoBasis) # significant phylog. signal
 W <- proxTips(tre, method="oriAbouheif") # proximity matrix
 abouheif.moran(resid, W)
 }
-}
+
 
 }
 \references{

@@ -19,7 +19,7 @@ This dataset replaces the former version in ade4.
 }
 \examples{
 
-\dontrun{
+
 if(require(ape) && require(phylobase)){
 
 data(maples)
@@ -46,7 +46,7 @@ pic.bif <- pic(bif, tre)
 pic.dom <- pic(dom, tre)
 cor.test(pic.bif, pic.dom) # correlation is no longer significant
 }
-}
+
 
 }
 \references{

@@ -33,7 +33,7 @@ This dataset replaces the former version in ade4.
 }
 \examples{
 
-\dontrun{
+
 if(require(ape) && require(phylobase)){
 
 ## load data, make a tree and a phylo4d object
@@ -44,7 +44,7 @@ traits <- data.frame(rord, palm$traits[,-1])
 x <- phylo4d(tre, traits)
 
 ## plot data
-par(mar=rep(.1,4))
+oldpar <- par(mar=rep(.1,4))
 table.phylo4d(x, cex.lab=.6)
 
 ## test phylogenetic autocorrelation
@@ -53,8 +53,9 @@ prox <- proxTips(x, method="sumDD")
 phylAutoTests <- gearymoran(prox, traits[,-3], nrep=499)
 plot(phylAutoTests)
 }
+par(oldpar)
 }
-}
+
 
 }
 \keyword{datasets}

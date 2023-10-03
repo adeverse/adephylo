@@ -69,6 +69,15 @@ traits; recycled if needed.}
 \item{\dots}{further arguments to be passed to plot methods from \code{ape}.
 See \code{\link[ape]{plot.phylo}}.}
 }
+\value{
+No return value, function produces only a plot. 
+
+The \linkS4class{phylo4d} class for storing \code{phylogeny+data}.\cr
+
+\code{\link[ape]{plot.phylo}} from the \code{ape} package.\cr
+
+\code{\link[ade4]{dotchart.phylog}}.
+}
 \description{
 This function represents a phylogeny as a fan, using circles to provide a
 legend for distances and optionally colored symbols to represent traits
@@ -87,22 +96,16 @@ bullseye(tre)
 bullseye(tre, lizards$traits)
 
 ## customized
-par(mar=c(6,6,6,6))
+oldpar <- par(mar=c(6,6,6,6))
 bullseye(tre, lizards$traits, traits.cex=sqrt(1:7), alpha=.7,
          legend=FALSE, circ.unit=10, circ.bg=transp("black",.1),
          edge.width=2)
-
+par(oldpar)
 }
 
 }
 \seealso{
 \code{\link{table.phylo4d}} for non-radial plots.\cr
-
-The \linkS4class{phylo4d} class for storing \code{phylogeny+data}.\cr
-
-\code{\link[ape]{plot.phylo}} from the \code{ape} package.\cr
-
-\code{\link[ade4]{dotchart.phylog}}.
 }
 \author{
 Thibaut Jombart \email{tjombart@imperial.ac.uk}

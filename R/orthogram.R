@@ -81,7 +81,7 @@
 #'   Phylogenetic Tree. \emph{Biometrics}, \bold{62}, 471--477.
 #' @examples
 #' 
-#' \dontrun{
+#' 
 #' if(require(ape) && require(phylobase)){
 #' 
 #' ## a phylogenetic example
@@ -114,7 +114,7 @@
 #' W <- proxTips(tre, method="oriAbouheif") # proximity matrix
 #' abouheif.moran(resid, W)
 #' }
-#' }
+#' 
 #' 
 #' @import phylobase
 #' @import ade4

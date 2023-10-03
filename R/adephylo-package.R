@@ -146,7 +146,7 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' \dontrun{
+#' 
 #' if(require(ape) && require(phylobase)){
 #' 
 #' data(carni19)
@@ -154,7 +154,7 @@ NULL
 #' x <- phylo4d(tre, data.frame(carni19$bm))
 #' table.phylo4d(x, ratio=.5, center=FALSE)
 #' }
-#' }
+#' 
 #' 
 NULL
 
@@ -184,7 +184,7 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' \dontrun{
+#' 
 #' if(require(ape) && require(phylobase)){
 #' 
 #' data(carni70)
@@ -209,7 +209,7 @@ NULL
 #' 
 #' par(oldpar)
 #' }
-#' }
+#' 
 #' 
 NULL
 
@@ -248,7 +248,7 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' \dontrun{
+#' 
 #' if(require(ape) && require(phylobase)){
 #' 
 #' ## see data
@@ -280,7 +280,7 @@ NULL
 #' 
 #' }
 #' }
-#' }
+#' 
 #' 
 NULL
 
@@ -307,7 +307,7 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' \dontrun{
+#' 
 #' if(require(ape) && require(phylobase)){
 #' 
 #' data(maples)
@@ -334,7 +334,7 @@ NULL
 #' pic.dom <- pic(dom, tre)
 #' cor.test(pic.bif, pic.dom) # correlation is no longer significant
 #' }
-#' }
+#' 
 #' 
 NULL
 
@@ -371,7 +371,7 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' \dontrun{
+#' 
 #' if(require(ape) && require(phylobase)){
 #' 
 #' data(mjrochet)
@@ -388,7 +388,7 @@ NULL
 #' mjr.tests <- abouheif.moran(mjr, nrep=499)
 #' mjr.tests
 #' 
-#' }
+#' 
 #' }
 #' 
 NULL
@@ -433,7 +433,7 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' \dontrun{
+#' 
 #' if(require(ape) && require(phylobase)){
 #' 
 #' ## load data, make a tree and a phylo4d object
@@ -455,7 +455,7 @@ NULL
 #' }
 #' par(oldpar)
 #' }
-#' }
+#' 
 #' 
 NULL
 
@@ -492,7 +492,7 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' \dontrun{
+#' 
 #' if(require(ape) && require(phylobase)){
 #' 
 #' ## load data, make tree and phylo4d object
@@ -503,7 +503,7 @@ NULL
 #' table.phylo4d(x,cex.lab=.7)
 #' par(oldpar)
 #' }
-#' }
+#' 
 #' 
 NULL
 
@@ -546,7 +546,7 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' \dontrun{
+#' 
 #' if(require(ape) && require(phylobase)){
 #' 
 #' data(tithonia)
@@ -560,7 +560,7 @@ NULL
 #' table.phylo4d(x)
 #' par(oldpar)
 #' }
-#' }
+#' 
 #' 
 NULL
 
@@ -594,7 +594,7 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' \dontrun{
+#' 
 #' if(require(ape) && require(phylobase)){
 #' ## load data
 #' data(ungulates)
@@ -614,7 +614,7 @@ NULL
 #' ## test phylogenetic inertia in residuals
 #' orthogram(residuals(lm1), x) 
 #' }
-#' }
+#' 
 #' 
 NULL
 

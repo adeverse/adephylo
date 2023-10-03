@@ -92,6 +92,9 @@ indicating the lower-left position of the legend. Can be set to
 \item{\dots}{further arguments to be passed to plot methods from \code{ape}. 
 See \code{\link[ape]{plot.phylo}}.}
 }
+\value{
+No return value, function produces only a plot.
+}
 \description{
 This function represents traits onto the tips of a phylogeny. Plotted objects
 must be valid \linkS4class{phylo4d} objects (implemented by the 

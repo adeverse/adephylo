@@ -27,10 +27,11 @@
 #' @keywords manip
 #' @examples
 #' 
-#' \dontrun{
+#' 
 #' ## use maples dataset
+#' if(require(ape) && require(phylobase)){
 #' data(maples)
-#' tre <- read.tree(text=maples$tre)
+#' tre <- ape::read.tree(text=maples$tre)
 #' dom <- maples$tab$Dom
 #' bif <- maples$tab$Bif
 #' 
@@ -53,8 +54,8 @@
 #' hist(sim, col="grey", main="Moran's I Monte Carlo test for 'bif'") # plot
 #' mtext("Histogram of permutations and observation (in red)")
 #' abline(v=sim[1], col="red", lwd=3)
-#' 
 #' }
+#' 
 #' @rdname moranIdx
 #' @export 
 moran.idx <- function(x, prox, addInfo=FALSE){

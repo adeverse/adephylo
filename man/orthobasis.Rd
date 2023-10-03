@@ -72,7 +72,7 @@ obj <- phylo4d(x, as.data.frame(ME[,1:10]))
 table.phylo4d(obj, cex.sym=.7, cex.lab=.7)
 
 
-\dontrun{
+
 ## REMOVING PHYLOGENETIC AUTOCORRELATION IN A MODEL ##
 ## use example in ungulates dataset
 data(ungulates)
@@ -101,7 +101,7 @@ orthogram(resid2, tre) # there is no longer phylogenetic autocorrelation
 ## see the difference
 table.phylo4d(phylo4d(tre, cbind.data.frame(resid1, resid2)))
 }
-}
+
 
 }
 \references{

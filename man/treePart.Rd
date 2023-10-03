@@ -35,7 +35,7 @@ package.
 }
 \examples{
 
-\dontrun{
+
 
 if(require(ape) & require(phylobase)){
 ## make a tree
@@ -47,7 +47,7 @@ partition
 temp <- phylo4d(x, partition)
 table.phylo4d(temp, cent=FALSE, scale=FALSE)
 }
-}
+
 
 }
 \references{
