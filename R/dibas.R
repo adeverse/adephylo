@@ -122,7 +122,6 @@
 #' 
 #' @importFrom stats dnorm sd rnorm
 #'   
-#' @export dibas
 dibas <- function (x, ...) UseMethod("dibas")
 
 
@@ -133,7 +132,6 @@ dibas <- function (x, ...) UseMethod("dibas")
 ## dibas.matrix
 ################
 #' @rdname dibas
-#' @export
 dibas.matrix <- function(x, grp, method=c("default","leaveOneOut"), ...){
     method <- match.arg(method)
     ## DECLARE SOME VARIABLES, HANDLE ARGUMENTS ##
@@ -269,7 +267,6 @@ dibas.matrix <- function(x, grp, method=c("default","leaveOneOut"), ...){
 ##
 
 #' @rdname dibas
-#' @export
 dibas.vector <- function(x, grp, method=c("default","leaveOneOut"), n.items=NULL, ...){
     method <- match.arg(method)
 
@@ -363,7 +360,6 @@ dibas.vector <- function(x, grp, method=c("default","leaveOneOut"), n.items=NULL
 ## dibas.phylo
 ###############
 #' @rdname dibas
-#' @export
 dibas.phylo <- function(x, grp, method=c("default","leaveOneOut"), fromRoot=FALSE, metric=c("Abouheif", "nNodes", "patristic", "sumDD"),
                         n.items=NULL, ...){
     ## if(!require(ape)) stop("ape package is required")
@@ -389,7 +385,6 @@ dibas.phylo <- function(x, grp, method=c("default","leaveOneOut"), fromRoot=FALS
 ## dibas.dist
 ##############
 #' @rdname dibas
-#' @export
 dibas.dist <- function(x, grp, method=c("default","leaveOneOut"), ...){
 
     res <- dibas.matrix(as.matrix(x), grp, method)
