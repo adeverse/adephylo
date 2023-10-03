@@ -1,9 +1,12 @@
 Package: adephylo
 Version: 1.1-14
 Title: Exploratory Analyses for the Phylogenetic Comparative Method
-Author: Thibaut Jombart <t.jombart@imperial.ac.uk>, Stéphane Dray
-    <stephane.dray@univ-lyon1.fr>, Anders Ellern Bilgrau <abilgrau@math.aau.dk>
-Maintainer: Aurélie Siberchicot <aurelie.siberchicot@univ-lyon1.fr>
+Authors@R: c(
+   person("Stéphane", "Dray", email = "stephane.dray@univ-lyon1.fr", role = "aut", comment = c(ORCID = "0000-0003-0153-1105")),
+   person("Thibaut", "Jombart", role = "aut", email = "t.jombart@imperial.ac.uk"),
+   person("Anders Ellern", "Bilgrau", role = "aut", email = "abilgrau@math.aau.dk"),
+   person("Aurélie", "Siberchicot", role = c("ctb", "cre"), email = "aurelie.siberchicot@univ-lyon1.fr", comment = c(ORCID = "0000-0002-7638-8318"))
+	)
 Depends:
     methods,
     ade4 (>= 1.7-10)
