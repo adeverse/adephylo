@@ -4,7 +4,7 @@ Title: Exploratory Analyses for the Phylogenetic Comparative Method
 Authors@R: c(
    person("Stéphane", "Dray", email = "stephane.dray@univ-lyon1.fr", role = "aut", comment = c(ORCID = "0000-0003-0153-1105")),
    person("Thibaut", "Jombart", role = "aut", email = "t.jombart@imperial.ac.uk"),
-   person("Anders Ellern", "Bilgrau", role = "aut", email = "abilgrau@math.aau.dk"),
+   person("Anders Ellern", "Bilgrau", role = "ctb", email = "abilgrau@math.aau.dk"),
    person("Aurélie", "Siberchicot", role = c("ctb", "cre"), email = "aurelie.siberchicot@univ-lyon1.fr", comment = c(ORCID = "0000-0002-7638-8318"))
 	)
 Depends:
@@ -14,7 +14,7 @@ Imports:
     phylobase,
     ape,
     adegenet
-Description: Multivariate tools to analyze comparative data, i.e. a phylogeny and some traits measured for each taxa.
+Description: Multivariate tools to analyze comparative data, i.e. a phylogeny and some traits measured for each taxa. The package contains functions to represent comparative data, compute phylogenetic proximities, perform multivariate analysis with phylogenetic constraints and test for the presence of phylogenetic autocorrelation. The package is described in Jombart et al (2010) <doi:10.1093/bioinformatics/btq292>.
 License: GPL (>=2)
 LazyLoad: yes
 RoxygenNote: 7.2.3
