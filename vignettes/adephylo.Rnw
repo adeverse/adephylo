@@ -160,14 +160,6 @@ of \code{adephylo}; this is accessible by typing:
 help("adephylo", package="adephylo", html=TRUE)
 @
 
-To revert help back to text mode, simply type:
-<<eval=FALSE>>=
-options(htmlhelp = FALSE)
-@
-
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%
 \subsection{Putting data into shape}
