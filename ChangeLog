@@ -1,4 +1,12 @@
-			CHANGES IN ADEPHYLO VERSION 1.1-7
+			CHANGES IN ADEPHYLO VERSION 1.1-15
+
+FIXES
+
+	o Update authors, description of tha spackage and add references
+	o remove dontrun as required by CRAN
+	
+	
+	        CHANGES IN ADEPHYLO VERSION 1.1-7
 
 FIXES
 
