@@ -39,6 +39,13 @@ jobs:
           r-version: ${{ matrix.config.r }}
           http-user-agent: ${{ matrix.config.http-user-agent }}
           use-public-rspm: true
+          
+      - uses: r-lib/actions/setup-tinytex@v2
+      
+      - name: Install libraries for Linux
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get install texlive texlive-latex-extra
       
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
