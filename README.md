@@ -1,11 +1,10 @@
-[![Travis-CI Build Status](https://travis-ci.org/thibautjombart/adephylo.svg?branch=master)](https://travis-ci.org/thibautjombart/adephylo)
-[![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/i8j1ojmbl7x977n0?svg=true)](https://ci.appveyor.com/project/sdray/adephylo)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/adephylo)](http://cran.r-project.org/package=adephylo)
+[![CRAN_Release_Badge](http://www.r-pkg.org/badges/version-ago/adephylo)](http://cran.r-project.org/package=adephylo)
 [![CRAN Downloads](https://cranlogs.r-pkg.org/badges/adephylo)](https://cran.r-project.org/package=adephylo)
+[![R-CMD-check](https://github.com/aursiber/adephylo/workflows/R-CMD-check/badge.svg)](https://github.com/aursiber/adephylo/actions)
 
 
 # adephylo
-exploratory analyses for the phylogenetic comparative method
+Exploratory Analyses for the Phylogenetic Comparative Method
 
 Welcome to *adephylo*'s page!
 
