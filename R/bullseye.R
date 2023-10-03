@@ -50,6 +50,8 @@
 #' @author Thibaut Jombart \email{tjombart@@imperial.ac.uk}
 #' @seealso \code{\link{table.phylo4d}} for non-radial plots.\cr
 #' 
+#' @returns No return value, function produces only a plot. 
+#' 
 #' The \linkS4class{phylo4d} class for storing \code{phylogeny+data}.\cr
 #' 
 #' \code{\link[ape]{plot.phylo}} from the \code{ape} package.\cr
@@ -68,11 +70,11 @@
 #' bullseye(tre, lizards$traits)
 #' 
 #' ## customized
-#' par(mar=c(6,6,6,6))
+#' oldpar <- par(mar=c(6,6,6,6))
 #' bullseye(tre, lizards$traits, traits.cex=sqrt(1:7), alpha=.7,
 #'          legend=FALSE, circ.unit=10, circ.bg=transp("black",.1),
 #'          edge.width=2)
-#' 
+#' par(oldpar)
 #' }
 #' 
 #' @importFrom adegenet spectral transp any2col

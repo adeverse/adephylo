@@ -193,7 +193,7 @@ NULL
 #' x <- phylo4d(tre, carni70$tab)
 #' table.phylo4d(x)
 #' 
-#' par(mar=rep(.1,4))
+#' oldpar <- par(mar=rep(.1,4))
 #' table.phylo4d(x,cex.lab=.5, show.n=FALSE, ratio=.5)
 #' 
 #' 
@@ -206,6 +206,8 @@ NULL
 #' yrange <- scale(carni70$tab)[,2]
 #' names(yrange) <- row.names(carni70$tab)
 #' orthogram(yrange, tre)
+#' 
+#' par(oldpar)
 #' }
 #' }
 #' 
@@ -442,7 +444,7 @@ NULL
 #' x <- phylo4d(tre, traits)
 #' 
 #' ## plot data
-#' par(mar=rep(.1,4))
+#' oldpar <- par(mar=rep(.1,4))
 #' table.phylo4d(x, cex.lab=.6)
 #' 
 #' ## test phylogenetic autocorrelation
@@ -451,6 +453,7 @@ NULL
 #' phylAutoTests <- gearymoran(prox, traits[,-3], nrep=499)
 #' plot(phylAutoTests)
 #' }
+#' par(oldpar)
 #' }
 #' }
 #' 
@@ -496,8 +499,9 @@ NULL
 #' data(procella)
 #' tre <- read.tree(text=procella$tre)
 #' x <- phylo4d(tre, procella$traits)
-#' par(mar=rep(.1,4))
+#' oldpar <- par(mar=rep(.1,4))
 #' table.phylo4d(x,cex.lab=.7)
+#' par(oldpar)
 #' }
 #' }
 #' 
@@ -552,9 +556,9 @@ NULL
 #' 
 #' ## build a phylo4d object
 #' x <- phylo4d(tre, traits)
-#' par(mar=rep(.1,4))
+#' oldpar <- par(mar=rep(.1,4))
 #' table.phylo4d(x)
-#' 
+#' par(oldpar)
 #' }
 #' }
 #' 

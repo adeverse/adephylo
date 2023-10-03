@@ -104,7 +104,7 @@
 #' ## BUILD A TREE AND A PHYLO4D OBJECT
 #' liz.tre <- read.tree(tex=lizards$hprA)
 #' liz.4d <- phylo4d(liz.tre, lizards$traits)
-#' par(mar=rep(.1,4))
+#' oldpar <- par(mar=rep(.1,4))
 #' table.phylo4d(liz.4d,var.lab=c(names(lizards$traits),
 #'    "ACP 1\n(\"size effect\")"),show.node=FALSE, cex.lab=1.2)
 #' 
@@ -210,6 +210,7 @@
 #' ## PHYLOGENETIC AUTOCORRELATION TESTS FOR THESE TRAITS
 #' prox <- proxTips(tre, method="Abouheif")
 #' abouheif.moran(dat[, names(highContrib)], prox)
+#' par(oldpar)
 #' 
 #' }
 #' 

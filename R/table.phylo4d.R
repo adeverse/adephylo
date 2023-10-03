@@ -72,6 +72,9 @@
 #'   
 #'   An alternative (deprecated) representation is available from 
 #'   \code{\link[ade4]{dotchart.phylog}}.
+#'   
+#' @returns No return value, function produces only a plot. 
+#' 
 #' @keywords hplot multivariate
 #' @examples
 #' 
