@@ -1,14 +1,25 @@
+# adephylo
+
 [![CRAN_Release_Badge](http://www.r-pkg.org/badges/version-ago/adephylo)](http://cran.r-project.org/package=adephylo)
 [![CRAN Downloads](https://cranlogs.r-pkg.org/badges/adephylo)](https://cran.r-project.org/package=adephylo)
 [![R-CMD-check](https://github.com/adeverse/adephylo/workflows/R-CMD-check/badge.svg)](https://github.com/adeverse/adephylo/actions)
 
-
-# adephylo
 Exploratory Analyses for the Phylogenetic Comparative Method
 
-Welcome to *adephylo*'s page!
+---------------------------
 
-**Please note! Since January 2024, this repository has belonged to the *adeverse* organization**
+**Please note! Since January 2024, this repository has belonged to the *adeverse* organization.**
+To avoid confusion, we strongly recommend updating any existing local clones to point to the new 
+repository URL. You can do this by using `git remote` on the command line:
+
+`git remote set-url origin git@github.com:adeverse/adephylo.git`
+
+or 
+
+`git remote set-url origin https://github.com/adeverse/adephylo.git`
+
+---------------------------
+
 
 Installing *adephylo*
 -------------
