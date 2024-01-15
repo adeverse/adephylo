@@ -8,6 +8,7 @@ Exploratory Analyses for the Phylogenetic Comparative Method
 
 Welcome to *adephylo*'s page!
 
+**Please note! Since January 2024, this repository has belonged to the adeverse organization**
 
 Installing *adephylo*
 -------------
