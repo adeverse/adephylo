@@ -19,3 +19,5 @@ License: GPL (>=2)
 LazyLoad: yes
 RoxygenNote: 7.2.3
 Encoding: UTF-8
+URL: https://github.com/adeverse/adephylo
+BugReports: https://github.com/adeverse/adephylo/issues
