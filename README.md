@@ -1,6 +1,6 @@
 # adephylo
 
-[![CRAN_Release_Badge](http://www.r-pkg.org/badges/version-ago/adephylo)](http://cran.r-project.org/package=adephylo)
+[![CRAN_Release_Badge](https://www.r-pkg.org/badges/version-ago/adephylo)](http://cran.r-project.org/package=adephylo)
 [![CRAN Downloads](https://cranlogs.r-pkg.org/badges/adephylo)](https://cran.r-project.org/package=adephylo)
 [![R-CMD-check](https://github.com/adeverse/adephylo/workflows/R-CMD-check/badge.svg)](https://github.com/adeverse/adephylo/actions)
 
