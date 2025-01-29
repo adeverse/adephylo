@@ -43,7 +43,7 @@
 #' 
 #' @param x a numeric vector corresponding to the quantitative variable
 #' @param tre a tree of class \code{\link[ape:read.tree]{phylo}}, 
-#'   \linkS4class{phylo4} or \linkS4class{phylo4d}.
+#'   \code{\link[phylobase]{phylo4-class}} or \code{\link[phylobase]{phylo4d-class}}.
 #' @param orthobas an object of class \code{'orthobasis'}
 #' @param prox a matrix of phylogenetic proximities as returned by 
 #'   \code{\link{proxTips}}.

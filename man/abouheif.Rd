@@ -16,7 +16,7 @@ abouheif.moran(
 )
 }
 \arguments{
-\item{x}{a data frame with continuous variables, or a \linkS4class{phylo4d}
+\item{x}{a data frame with continuous variables, or a \code{\link[phylobase]{phylo4d-class}}
 object (i.e. containing both a tree, and tip data). In the latter case,
 \code{method} argument is used to determine which proximity should be used.}
 
@@ -56,7 +56,7 @@ al.} 1995).\cr
 
 \code{abouheif.moran} can be used in two ways:\cr - providing a data.frame
 of traits (\code{x}) and a matrix of phylogenetic proximities (\code{W})\cr
-- providing a \linkS4class{phylo4d} object (\code{x}) and specifying the
+- providing a \code{\link[phylobase]{phylo4d-class}} object (\code{x}) and specifying the
 type of proximity to be used (\code{method}).
 
 \code{W} is a squared symmetric matrix whose terms are all positive or

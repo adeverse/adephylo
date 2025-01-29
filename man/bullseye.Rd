@@ -26,8 +26,8 @@ bullseye(
 )
 }
 \arguments{
-\item{phy}{a tree in \code{phylo}, \linkS4class{phylo4} or
-\linkS4class{phylo4d} format.}
+\item{phy}{a tree in \code{phylo}, \code{\link[phylobase]{phylo4-class}} or
+\code{\link[phylobase]{phylo4d-class}} format.}
 
 \item{traits}{an optional data.frame of traits.}
 
@@ -72,7 +72,7 @@ See \code{\link[ape]{plot.phylo}}.}
 \value{
 No return value, function produces only a plot. 
 
-The \linkS4class{phylo4d} class for storing \code{phylogeny+data}.\cr
+The \code{\link[phylobase]{phylo4d-class}} class for storing \code{phylogeny+data}.\cr
 
 \code{\link[ape]{plot.phylo}} from the \code{ape} package.\cr
 

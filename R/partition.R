@@ -16,11 +16,11 @@
 #' 
 #' The function \code{listTips} lists the tips descending from each node of a
 #' tree. The tree can be of class \code{\link[ape:read.tree]{phylo}},
-#' \linkS4class{phylo4} or \linkS4class{phylo4d}.
+#' \code{\link[phylobase]{phylo4-class}} or \code{\link[phylobase]{phylo4d-class}}.
 #' 
 #' 
 #' @param x A tree of class \code{\link[ape:read.tree]{phylo}},
-#' \linkS4class{phylo4} or \linkS4class{phylo4d}.
+#' \code{\link[phylobase]{phylo4-class}} or \code{\link[phylobase]{phylo4d-class}}.
 #' @return A list whose components are vectors of named tips for a given node.
 #' @author Thibaut Jombart \email{tjombart@@imperial.ac.uk}
 #' @seealso \code{\link{listDD}} which lists the direct descendants for each
@@ -84,7 +84,7 @@ listTips <- function(x){
 #' package.
 #' 
 #' @param x a tree of class \code{\link[ape:read.tree]{phylo}},
-#' \linkS4class{phylo4} or \linkS4class{phylo4d}.
+#' \code{\link[phylobase]{phylo4-class}} or \code{\link[phylobase]{phylo4d-class}}.
 #' @param result a character string specifying the type of result: either a
 #' basis of dummy vectors (\code{dummy}), or an orthobasis derived from these
 #' dummy vectors (\code{orthobasis}).

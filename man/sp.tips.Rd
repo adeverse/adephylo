@@ -8,7 +8,7 @@ sp.tips(x, tip1, tip2, useTipNames = FALSE, quiet = FALSE, include.mrca = TRUE)
 }
 \arguments{
 \item{x}{A tree of class \code{\link[ape:read.tree]{phylo}},
-\linkS4class{phylo4} or \linkS4class{phylo4d}.}
+\code{\link[phylobase]{phylo4-class}} or \code{\link[phylobase]{phylo4d-class}}.}
 
 \item{tip1}{A vector of integers identifying tips by their numbers, or a
 vector of characters identifying tips by their names. Recycled if needed.}
@@ -34,8 +34,8 @@ shortest path between a couple of tips.
 \description{
 The function \code{sp.tips} finds the shortest path between tips of a tree,
 identified as \code{tip1} and \code{tip2}.  This function applies to trees
-with the class \code{\link[ape:read.tree]{phylo}}, \linkS4class{phylo4} or
-\linkS4class{phylo4d}. Several tips can be provided at a time.
+with the class \code{\link[ape:read.tree]{phylo}}, \code{\link[phylobase]{phylo4-class}} or
+\code{\link[phylobase]{phylo4d-class}}. Several tips can be provided at a time.
 }
 \details{
 The function checks if there are cases where tip1 and tip2 are the same.

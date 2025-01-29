@@ -31,7 +31,7 @@ table.phylo4d(
 )
 }
 \arguments{
-\item{x}{a \linkS4class{phylo4d} object}
+\item{x}{a \code{\link[phylobase]{phylo4d-class}} object}
 
 \item{treetype}{the type of tree to be plotted ("phylogram" or "cladogram")}
 
@@ -97,7 +97,7 @@ No return value, function produces only a plot.
 }
 \description{
 This function represents traits onto the tips of a phylogeny. Plotted objects
-must be valid \linkS4class{phylo4d} objects (implemented by the 
+must be valid \code{\link[phylobase]{phylo4d-class}} objects (implemented by the 
 \code{phylobase} package). Current version allows plotting of a tree and one 
 or more quantitative traits (possibly containing missing data, represented by
 an 'x').\cr
@@ -112,7 +112,7 @@ complete.
 For large trees, consider using \code{\link{bullseye}}.
 
 The function \code{table.phylo4d} is based on former plot method for 
-\linkS4class{phylo4d} objects from the \code{phylobase} package.  It replaces
+\code{\link[phylobase]{phylo4d-class}} objects from the \code{phylobase} package.  It replaces
 the deprecated \code{ade4} functions \code{\link[ade4]{symbols.phylog}} and
 \code{\link[ade4]{table.phylog}}.
 }
@@ -157,7 +157,7 @@ title("Phylogeny and the principal components")
 
 }
 \seealso{
-The \linkS4class{phylo4d} class for storing 
+The \code{\link[phylobase]{phylo4d-class}} class for storing 
   \code{phylogeny+data}.\cr
   
   For large trees, consider using \code{\link{bullseye}}.

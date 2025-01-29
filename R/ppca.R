@@ -32,7 +32,7 @@
 #' structures.\cr
 #' 
 #' @aliases ppca print.ppca summary.ppca scatter.ppca screeplot.ppca plot.ppca
-#' @param x a \linkS4class{phylo4d} object (for \code{ppca}) or a ppca object 
+#' @param x a \code{\link[phylobase]{phylo4d-class}} object (for \code{ppca}) or a ppca object 
 #'   (for other methods).
 #' @param prox a marix of phylogenetic proximities as returned by 
 #'   \code{\link{proxTips}}. If not provided, this matrix will be constructed 
@@ -76,7 +76,7 @@
 #'   to represent of global scores.} \item{as}{a data.frame giving the
 #'   coordinates of the axes of an 'ordinary' PCA onto the ppca axes.}
 #'   \item{call}{the matched call.} \item{tre}{a phylogenetic tre with class
-#'   \linkS4class{phylo4}.} \item{prox}{a matrix of phylogenetic proximities.}
+#'   \code{\link[phylobase]{phylo4-class}}.} \item{prox}{a matrix of phylogenetic proximities.}
 #'   
 #'   Other functions have different outputs:\cr
 #'   

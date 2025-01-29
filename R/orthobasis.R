@@ -17,7 +17,7 @@
 #' 
 #' @aliases orthobasis.phylo me.phylo
 #' @param x A tree of class \code{\link[ape:read.tree]{phylo}},
-#' \linkS4class{phylo4} or \linkS4class{phylo4d}.
+#' \code{\link[phylobase]{phylo4-class}} or \code{\link[phylobase]{phylo4d-class}}.
 #' @param prox a matrix of phylogenetic proximities as returned by
 #' \code{\link{proxTips}}.
 #' @param method a character string (full or abbreviated without ambiguity)

@@ -6,10 +6,10 @@
 #' data. It re-implements and extends phylogenetic procedures from the
 #' \code{ade4} package (which are now deprecated).\cr
 #' 
-#' Comparative data (phylogeny+traits) are handled as \linkS4class{phylo4d}
+#' Comparative data (phylogeny+traits) are handled as \code{\link[phylobase]{phylo4d-class}}
 #' objects, a canonical class implemented by the \code{phylobase} package.
 #' Trees are handled as \code{\link[ape:read.tree]{phylo}} objects (from the
-#' \code{ape} package) or as \linkS4class{phylo4} objects (\code{phylobase}'s
+#' \code{ape} package) or as \code{\link[phylobase]{phylo4-class}} objects (\code{phylobase}'s
 #' extension of \code{phylo} objects).\cr
 #' 
 #' Main functionalities of \code{adephylo} are summarized below.\cr
@@ -114,14 +114,13 @@
 #' 
 #' @name adephylo-package
 #' @aliases adephylo-package adephylo
-#' @docType package
 #' @author Thibaut Jombart <tjombart@@imperial.ac.uk>\cr with contributions
 #' Stephane Dray <stephane.dray@@univ-lyon1.fr> and Anders Ellern Bilgrau
 #' <abilgrau@@math.aau.dk>. \cr Parts of former code from \code{ade4} by Daniel
 #' Chessel and Sebastien Ollier.
 #' @seealso The \code{ade4} package for multivariate analysis.
-#' @keywords manip multivariate
-NULL
+#' @keywords internal manip multivariate
+"_PACKAGE"
 
 
 

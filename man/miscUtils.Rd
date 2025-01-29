@@ -7,7 +7,7 @@
 .tipToRoot(x, tip, root, include.root = FALSE)
 }
 \arguments{
-\item{x}{A valid tree of class \linkS4class{phylo4}.}
+\item{x}{A valid tree of class \code{\link[phylobase]{phylo4-class}}.}
 
 \item{tip}{An integer identifying a tip by its numbers.}
 
@@ -23,7 +23,7 @@ node of the path from tip to root (TRUE), or not (FALSE, default).}
 These hidden functions are utils for adephylo, used by other functions.
 Regular users can use them as well, but no validity checks are performed for
 the arguments: speed is here favored over safety.  Most of these functions
-handle trees inheriting \linkS4class{phylo4} class.\cr
+handle trees inheriting \code{\link[phylobase]{phylo4-class}} class.\cr
 }
 \details{
 \code{.tipToRoot} finds the set of nodes between a tip and the root of a

@@ -34,7 +34,7 @@ ppca(
 \method{plot}{ppca}(x, axes = 1:ncol(x$li), useLag = FALSE, ...)
 }
 \arguments{
-\item{x}{a \linkS4class{phylo4d} object (for \code{ppca}) or a ppca object 
+\item{x}{a \code{\link[phylobase]{phylo4d-class}} object (for \code{ppca}) or a ppca object 
 (for other methods).}
 
 \item{prox}{a marix of phylogenetic proximities as returned by 
@@ -94,7 +94,7 @@ The class \code{ppca} are given to lists with the following
   to represent of global scores.} \item{as}{a data.frame giving the
   coordinates of the axes of an 'ordinary' PCA onto the ppca axes.}
   \item{call}{the matched call.} \item{tre}{a phylogenetic tre with class
-  \linkS4class{phylo4}.} \item{prox}{a matrix of phylogenetic proximities.}
+  \code{\link[phylobase]{phylo4-class}}.} \item{prox}{a matrix of phylogenetic proximities.}
   
   Other functions have different outputs:\cr
   

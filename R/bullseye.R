@@ -19,8 +19,8 @@
 #' with ape's \code{\link[ape]{plot.phylo}}.
 #' 
 #' 
-#' @param phy a tree in \code{phylo}, \linkS4class{phylo4} or
-#' \linkS4class{phylo4d} format.
+#' @param phy a tree in \code{phylo}, \code{\link[phylobase]{phylo4-class}} or
+#' \code{\link[phylobase]{phylo4d-class}} format.
 #' @param traits an optional data.frame of traits.
 #' @param col.tips.by an optional vector used to define colors for tip labels;
 #' if unamed, must be ordered in the same order as \code{phy$tip.label}.
@@ -52,7 +52,7 @@
 #' 
 #' @returns No return value, function produces only a plot. 
 #' 
-#' The \linkS4class{phylo4d} class for storing \code{phylogeny+data}.\cr
+#' The \code{\link[phylobase]{phylo4d-class}} class for storing \code{phylogeny+data}.\cr
 #' 
 #' \code{\link[ape]{plot.phylo}} from the \code{ape} package.\cr
 #' 

@@ -8,7 +8,7 @@ listTips(x)
 }
 \arguments{
 \item{x}{A tree of class \code{\link[ape:read.tree]{phylo}},
-\linkS4class{phylo4} or \linkS4class{phylo4d}.}
+\code{\link[phylobase]{phylo4-class}} or \code{\link[phylobase]{phylo4d-class}}.}
 }
 \value{
 A list whose components are vectors of named tips for a given node.
@@ -16,7 +16,7 @@ A list whose components are vectors of named tips for a given node.
 \description{
 The function \code{listTips} lists the tips descending from each node of a
 tree. The tree can be of class \code{\link[ape:read.tree]{phylo}},
-\linkS4class{phylo4} or \linkS4class{phylo4d}.
+\code{\link[phylobase]{phylo4-class}} or \code{\link[phylobase]{phylo4d-class}}.
 }
 \examples{
 

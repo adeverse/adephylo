@@ -6,7 +6,7 @@
 #' Graphical display of phylogeny and traits
 #' 
 #' This function represents traits onto the tips of a phylogeny. Plotted objects
-#' must be valid \linkS4class{phylo4d} objects (implemented by the 
+#' must be valid \code{\link[phylobase]{phylo4d-class}} objects (implemented by the 
 #' \code{phylobase} package). Current version allows plotting of a tree and one 
 #' or more quantitative traits (possibly containing missing data, represented by
 #' an 'x').\cr
@@ -20,11 +20,11 @@
 #' For large trees, consider using \code{\link{bullseye}}.
 #' 
 #' The function \code{table.phylo4d} is based on former plot method for 
-#' \linkS4class{phylo4d} objects from the \code{phylobase} package.  It replaces
+#' \code{\link[phylobase]{phylo4d-class}} objects from the \code{phylobase} package.  It replaces
 #' the deprecated \code{ade4} functions \code{\link[ade4]{symbols.phylog}} and
 #' \code{\link[ade4]{table.phylog}}.
 #' 
-#' @param x a \linkS4class{phylo4d} object
+#' @param x a \code{\link[phylobase]{phylo4d-class}} object
 #' @param treetype the type of tree to be plotted ("phylogram" or "cladogram")
 #' @param symbol the type of symbol used to represent data ("circles", 
 #'   "squares", or "colors")
@@ -63,7 +63,7 @@
 #' @param \dots further arguments to be passed to plot methods from \code{ape}. 
 #'   See \code{\link[ape]{plot.phylo}}.
 #' @author Thibaut Jombart \email{tjombart@@imperial.ac.uk}
-#' @seealso The \linkS4class{phylo4d} class for storing 
+#' @seealso The \code{\link[phylobase]{phylo4d-class}} class for storing 
 #'   \code{phylogeny+data}.\cr
 #'   
 #'   For large trees, consider using \code{\link{bullseye}}.

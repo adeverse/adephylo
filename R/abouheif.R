@@ -13,7 +13,7 @@
 #' 
 #' \code{abouheif.moran} can be used in two ways:\cr - providing a data.frame
 #' of traits (\code{x}) and a matrix of phylogenetic proximities (\code{W})\cr
-#' - providing a \linkS4class{phylo4d} object (\code{x}) and specifying the
+#' - providing a \code{\link[phylobase]{phylo4d-class}} object (\code{x}) and specifying the
 #' type of proximity to be used (\code{method}).
 #' 
 #' \code{W} is a squared symmetric matrix whose terms are all positive or
@@ -27,7 +27,7 @@
 #' W_ij}. For each vector x of the data frame x, the test is based on the Moran
 #' statistic \eqn{x^{t}Ax}{t(x)Ax} where x is D-centred.
 #' 
-#' @param x a data frame with continuous variables, or a \linkS4class{phylo4d}
+#' @param x a data frame with continuous variables, or a \code{\link[phylobase]{phylo4d-class}}
 #' object (i.e. containing both a tree, and tip data). In the latter case,
 #' \code{method} argument is used to determine which proximity should be used.
 #' @param W a \emph{n} by \emph{n} matrix (\emph{n} being the number rows in x)

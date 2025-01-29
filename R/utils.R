@@ -3,7 +3,7 @@
 #' These hidden functions are utils for adephylo, used by other functions.
 #' Regular users can use them as well, but no validity checks are performed for
 #' the arguments: speed is here favored over safety.  Most of these functions
-#' handle trees inheriting \linkS4class{phylo4} class.\cr
+#' handle trees inheriting \code{\link[phylobase]{phylo4-class}} class.\cr
 #' 
 #' \code{.tipToRoot} finds the set of nodes between a tip and the root of a
 #' tree.\cr
@@ -11,7 +11,7 @@
 #' 
 #' @rdname miscUtils
 #' @aliases .tipToRoot
-#' @param x A valid tree of class \linkS4class{phylo4}.
+#' @param x A valid tree of class \code{\link[phylobase]{phylo4-class}}.
 #' @param tip An integer identifying a tip by its numbers.
 #' @param root An integer identifying the root of the tree by its number.
 #' @param include.root a logical stating whether the root must be included as a
@@ -63,15 +63,15 @@
 #' 
 #' The function \code{sp.tips} finds the shortest path between tips of a tree,
 #' identified as \code{tip1} and \code{tip2}.  This function applies to trees
-#' with the class \code{\link[ape:read.tree]{phylo}}, \linkS4class{phylo4} or
-#' \linkS4class{phylo4d}. Several tips can be provided at a time.
+#' with the class \code{\link[ape:read.tree]{phylo}}, \code{\link[phylobase]{phylo4-class}} or
+#' \code{\link[phylobase]{phylo4d-class}}. Several tips can be provided at a time.
 #' 
 #' The function checks if there are cases where tip1 and tip2 are the same.
 #' These cases are deleted when detected, issuing a warning (unless
 #' \code{quiet} is set to TRUE).
 #' 
 #' @param x A tree of class \code{\link[ape:read.tree]{phylo}},
-#' \linkS4class{phylo4} or \linkS4class{phylo4d}.
+#' \code{\link[phylobase]{phylo4-class}} or \code{\link[phylobase]{phylo4d-class}}.
 #' @param tip1 A vector of integers identifying tips by their numbers, or a
 #' vector of characters identifying tips by their names. Recycled if needed.
 #' @param tip2 A vector of integers identifying tips by their numbers, or a
@@ -232,11 +232,11 @@ sp.tips <- function(x, tip1, tip2, useTipNames=FALSE, quiet=FALSE, include.mrca=
 #' 
 #' The function \code{listDD} lists the direct descendants from each node of a
 #' tree. The tree can be of class \code{\link[ape:read.tree]{phylo}},
-#' \linkS4class{phylo4} or \linkS4class{phylo4d}.
+#' \code{\link[phylobase]{phylo4-class}} or \code{\link[phylobase]{phylo4d-class}}.
 #' 
 #' 
 #' @param x A tree of class \code{\link[ape:read.tree]{phylo}},
-#' \linkS4class{phylo4} or \linkS4class{phylo4d}.
+#' \code{\link[phylobase]{phylo4-class}} or \code{\link[phylobase]{phylo4d-class}}.
 #' @param nameBy a character string indicating whether the returned list must
 #' be named by node labels ("label") or by node numbers ("number").
 #' @return A list whose components are vectors of named nodes (or tips) for a

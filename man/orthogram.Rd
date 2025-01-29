@@ -24,7 +24,7 @@ orthogram(
 \item{x}{a numeric vector corresponding to the quantitative variable}
 
 \item{tre}{a tree of class \code{\link[ape:read.tree]{phylo}}, 
-\linkS4class{phylo4} or \linkS4class{phylo4d}.}
+\code{\link[phylobase]{phylo4-class}} or \code{\link[phylobase]{phylo4d-class}}.}
 
 \item{orthobas}{an object of class \code{'orthobasis'}}
 

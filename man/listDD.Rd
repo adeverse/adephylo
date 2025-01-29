@@ -8,7 +8,7 @@ listDD(x, nameBy = c("label", "number"))
 }
 \arguments{
 \item{x}{A tree of class \code{\link[ape:read.tree]{phylo}},
-\linkS4class{phylo4} or \linkS4class{phylo4d}.}
+\code{\link[phylobase]{phylo4-class}} or \code{\link[phylobase]{phylo4d-class}}.}
 
 \item{nameBy}{a character string indicating whether the returned list must
 be named by node labels ("label") or by node numbers ("number").}
@@ -20,7 +20,7 @@ given internal node.
 \description{
 The function \code{listDD} lists the direct descendants from each node of a
 tree. The tree can be of class \code{\link[ape:read.tree]{phylo}},
-\linkS4class{phylo4} or \linkS4class{phylo4d}.
+\code{\link[phylobase]{phylo4-class}} or \code{\link[phylobase]{phylo4d-class}}.
 }
 \examples{
 
