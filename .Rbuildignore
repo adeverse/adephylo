@@ -8,3 +8,4 @@ cran-comments.md
 ^\.Rproj\.user$
 TODO
 ^\.github$
+^codemeta\.json$

@@ -1,0 +1,156 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "identifier": "adephylo",
+  "description": "Multivariate tools to analyze comparative data, i.e. a phylogeny and some traits measured for each taxa. The package contains functions to represent comparative data, compute phylogenetic proximities, perform multivariate analysis with phylogenetic constraints and test for the presence of phylogenetic autocorrelation. The package is described in Jombart et al (2010) <doi:10.1093/bioinformatics/btq292>.",
+  "name": "adephylo: Exploratory Analyses for the Phylogenetic Comparative Method",
+  "codeRepository": "https://github.com/adeverse/adephylo",
+  "issueTracker": "https://github.com/adeverse/adephylo/issues",
+  "license": "https://spdx.org/licenses/GPL-2.0",
+  "version": "1.1.17",
+  "programmingLanguage": {
+    "@type": "ComputerLanguage",
+    "name": "R",
+    "url": "https://r-project.org"
+  },
+  "runtimePlatform": "R version 4.4.3 (2025-02-28)",
+  "provider": {
+    "@id": "https://cran.r-project.org",
+    "@type": "Organization",
+    "name": "Comprehensive R Archive Network (CRAN)",
+    "url": "https://cran.r-project.org"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Stéphane",
+      "familyName": "Dray",
+      "email": "stephane.dray@univ-lyon1.fr",
+      "@id": "https://orcid.org/0000-0003-0153-1105"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Thibaut",
+      "familyName": "Jombart",
+      "email": "t.jombart@imperial.ac.uk"
+    }
+  ],
+  "contributor": [
+    {
+      "@type": "Person",
+      "givenName": "Anders Ellern",
+      "familyName": "Bilgrau",
+      "email": "abilgrau@math.aau.dk"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Aurélie",
+      "familyName": "Siberchicot",
+      "email": "aurelie.siberchicot@univ-lyon1.fr",
+      "@id": "https://orcid.org/0000-0002-7638-8318"
+    }
+  ],
+  "maintainer": [
+    {
+      "@type": "Person",
+      "givenName": "Aurélie",
+      "familyName": "Siberchicot",
+      "email": "aurelie.siberchicot@univ-lyon1.fr",
+      "@id": "https://orcid.org/0000-0002-7638-8318"
+    }
+  ],
+  "softwareRequirements": {
+    "1": {
+      "@type": "SoftwareApplication",
+      "identifier": "methods",
+      "name": "methods"
+    },
+    "2": {
+      "@type": "SoftwareApplication",
+      "identifier": "ade4",
+      "name": "ade4",
+      "version": ">= 1.7-10",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=ade4"
+    },
+    "3": {
+      "@type": "SoftwareApplication",
+      "identifier": "phylobase",
+      "name": "phylobase",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=phylobase"
+    },
+    "4": {
+      "@type": "SoftwareApplication",
+      "identifier": "ape",
+      "name": "ape",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=ape"
+    },
+    "5": {
+      "@type": "SoftwareApplication",
+      "identifier": "adegenet",
+      "name": "adegenet",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=adegenet"
+    },
+    "SystemRequirements": null
+  },
+  "fileSize": "1105.296KB",
+  "citation": [
+    {
+      "@type": "ScholarlyArticle",
+      "datePublished": "2010",
+      "author": [
+        {
+          "@type": "Person",
+          "givenName": "Thibaut",
+          "familyName": "Jombart"
+        },
+        {
+          "@type": "Person",
+          "givenName": "St\\'ephane",
+          "familyName": "Dray"
+        }
+      ],
+      "name": "adephylo: exploratory analyses for the phylogenetic comparative method.",
+      "identifier": "10.1093/bioinformatics/btq292",
+      "pagination": "1907-1909",
+      "@id": "https://doi.org/10.1093/bioinformatics/btq292",
+      "sameAs": "https://doi.org/10.1093/bioinformatics/btq292",
+      "isPartOf": {
+        "@type": "PublicationIssue",
+        "datePublished": "2010",
+        "isPartOf": {
+          "@type": ["PublicationVolume", "Periodical"],
+          "volumeNumber": "26",
+          "name": "Bioinformatics"
+        }
+      }
+    }
+  ],
+  "readme": "https://github.com/adeverse/adephylo/blob/master/README.md",
+  "contIntegration": "https://github.com/adeverse/adephylo/actions/workflows/R-CMD-check.yaml",
+  "developmentStatus": "https://www.repostatus.org/#active",
+  "relatedLink": "https://CRAN.R-project.org/package=adephylo"
+}
