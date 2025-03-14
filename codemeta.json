@@ -116,7 +116,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "1105.296KB",
+  "fileSize": "1105.256KB",
   "citation": [
     {
       "@type": "ScholarlyArticle",
@@ -129,11 +129,16 @@
         },
         {
           "@type": "Person",
+          "givenName": "François",
+          "familyName": "Balloux"
+        },
+        {
+          "@type": "Person",
           "givenName": "St\\'ephane",
           "familyName": "Dray"
         }
       ],
-      "name": "adephylo: exploratory analyses for the phylogenetic comparative method.",
+      "name": "adephylo: new tools for investigating the phylogenetic signal in biological traits",
       "identifier": "10.1093/bioinformatics/btq292",
       "pagination": "1907-1909",
       "@id": "https://doi.org/10.1093/bioinformatics/btq292",
